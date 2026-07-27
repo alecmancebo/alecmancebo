@@ -95,19 +95,20 @@ body,
 html,
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: #000000;
 }
 
 .portfolio {
   width: 100%;
-  height: 100svh;
+  min-height: 100svh;
   margin: 0;
   background: #000000;
   color: #f3f3f3;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .header__nav-link,
@@ -129,12 +130,16 @@ body {
 
 /*MARK: Header*/
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
   min-height: 5.25rem;
   padding: 0 var(--layout-pad-x-xl);
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   gap: var(--space-11-xl);
   align-items: center;
+  background: #000000;
 }
 
 .header__pill {
@@ -212,6 +217,8 @@ body {
 /*MARK: Browser*/
 
 .browser {
+  flex: 1 0 auto;
+  min-height: 0;
   padding: var(--space-4-xl) var(--browser-pad-x-xl) 0;
 }
 
@@ -356,6 +363,58 @@ body {
   max-width: 40rem;
 }
 
+.grid-view {
+  margin-top: var(--space-12-xl);
+  background: transparent;
+  color: #f3f3f3;
+  min-height: 0;
+  overflow: visible;
+  padding: 18px 0 0;
+}
+
+.grid-view__canvas {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 68px 18px;
+  align-items: start;
+}
+
+.grid-view__card {
+  grid-column: var(--project-start) / span var(--project-span);
+  grid-row: var(--project-row);
+  min-width: 0;
+}
+
+.grid-view__media {
+  display: grid;
+  grid-template-columns: repeat(var(--project-span), minmax(0, 1fr));
+  gap: 8px;
+}
+
+.grid-view__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.grid-view__title {
+  margin: 10px 0 0;
+  font-size: var(--text-brand-name-xl);
+  letter-spacing: 0.05em;
+  line-height: 1.05;
+  color: #f3f3f3;
+}
+
+.grid-view__meta {
+  margin: 10px 0 0;
+  font-size: var(--text-nav-xl);
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  color: #f3f3f3;
+  max-width: 14ch;
+}
+
 .browser__stage {
   position: fixed;
   left: 0;
@@ -455,7 +514,7 @@ body {
 @media (max-width: 61.25rem) {
   .portfolio {
     width: 100%;
-    height: 100svh;
+    height: auto;
     margin: 0;
     border-inline: none;
   }
@@ -570,6 +629,34 @@ body {
     max-width: none;
   }
 
+  .grid-view {
+    margin-top: var(--space-10-t);
+    min-height: auto;
+    padding: 14px 0 0;
+  }
+
+  .grid-view__canvas {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 26px 14px;
+  }
+
+  .grid-view__card {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .grid-view__media {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-view__title {
+    font-size: var(--text-brand-name-t);
+  }
+
+  .grid-view__meta {
+    font-size: var(--text-nav-t);
+  }
+
   .footer {
     padding: var(--space-8-t) var(--footer-pad-x-t);
     min-height: 9.5rem;
@@ -651,6 +738,34 @@ body {
   .browser__stage {
     top: 42px;
     bottom: 0;
+  }
+
+  .grid-view {
+    margin-top: var(--space-8-m);
+    min-height: auto;
+    padding: 12px 0 0;
+  }
+
+  .grid-view__canvas {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .grid-view__card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .grid-view__media {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-view__title {
+    font-size: var(--text-brand-name-m);
+  }
+
+  .grid-view__meta {
+    font-size: var(--text-nav-m);
   }
 
   .browser__item-button {
