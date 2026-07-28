@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import CodedText from './CodedText'
+import CodedText from '../effects/CodedText'
+import { useLanguage } from '../effects/LanguageContext'
+
 
 const projects = [
   { id: '001', title: 'TRANSPAPELADES', category: 'editorial', seed: 'transpapelades' },
@@ -10,13 +12,6 @@ const projects = [
   { id: '006', title: 'BAILANDO DESTINOS', category: 'branding', seed: 'otrsjs-prfsj' },
   { id: '007', title: 'UNA ULTIMA COSA', category: 'editorial', seed: 'una-ultima-cosa' },
   { id: '008', title: 'AHORA SI QUE SI', category: 'digital', seed: 'ahora-si-que-si' },
-]
-
-const filterOptions = [
-  { value: 'all', label: 'ALL' },
-  { value: 'editorial', label: 'EDITORIAL' },
-  { value: 'branding', label: 'BRANDING' },
-  { value: 'digital', label: 'DIGITAL' },
 ]
 
 const gridProjects = [
@@ -204,8 +199,16 @@ function ViewFilterSection() {
   const lastWheelChangeRef = useRef(0)
   const browserRef = useRef(null)
 
+  const { t } = useLanguage()
+  const filterOptions = [
+    { value: 'all', label: t('all') },
+    { value: 'editorial', label: t('editorial') },
+    { value: 'branding', label: t('branding') },
+    { value: 'digital', label: t('digital') },
+  ];
+
   const nextViewMode = viewMode === 'list' ? 'grid' : 'list'
-  const viewLabel = viewMode === 'list' ? '[INDEX VIEW]' : '[GRID VIEW]'
+  const viewLabel = viewMode === 'list' ? t('indexView') : t('gridView')
 
   const filteredProjects = useMemo(() => {
     if (filter === 'all') {
@@ -337,7 +340,7 @@ function ViewFilterSection() {
           aria-expanded={isFilterOpen}
           aria-controls="browser-filter-menu"
         >
-          FILTER
+         {t('filter')}
         </button>
 
         {isFilterOpen ? (

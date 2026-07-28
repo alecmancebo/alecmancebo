@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import CodedText from './CodedText'
+import CodedText from '../effects/CodedText'
+import { useLanguage } from '../effects/LanguageContext'
 
 const navItems = ['WORK', 'ABOUT', 'CONTACT', 'PLAYGROUND']
 
@@ -12,11 +13,17 @@ function SidePill({ label, position }) {
 }
 
 function BrandBlock({ setTheme }) {
+
+  const { setLanguage } = useLanguage();
+
   return (
     <div className="header__brand">
         <img src="../../public/elementos/graffiti.svg" alt="Brand Logo" />
         <p>18:36 PM CEST</p>
-        <div><a href="#">[ENG]</a><a href="#">[SPA]</a></div>
+        <div>
+          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('en'); }}>[ENG]</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('es'); }}>[SPA]</a>
+        </div>
         <div>
           <a href="#" onClick={(e) => { e.preventDefault(); setTheme('dark'); }}>[BLA]</a>
           <a href="#" onClick={(e) => { e.preventDefault(); setTheme('light'); }}>[WHI]</a>
@@ -26,23 +33,31 @@ function BrandBlock({ setTheme }) {
 }
 
 function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu }) {
+
+  const { t } = useLanguage()
+
+  const navItems = [
+    { key: 'work', label: t('work') },
+    { key: 'about', label: t('about') },
+    { key: 'contact', label: t('contact') },
+    { key: 'playground', label: t('playground') }
+  ];
+
   return (
     <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`} aria-label="Main navigation">
       <button
         type="button"
         className="header__menu-toggle"
         onClick={onToggleMenu}
-        aria-expanded={isMenuOpen}
-        aria-controls="mobile-navigation"
       >
-        [{isMenuOpen ? 'CLOSE' : 'MENU'}]
+        [{isMenuOpen ? t('close') : t('menu')}]
       </button>
 
       <div className="header__nav-list" id="mobile-navigation">
         {navItems.map((item) => (
-            <a key={item} className="header__nav-link" href="#" onClick={onCloseMenu}>
-        <CodedText text={item} />
-            </a>
+          <a key={item.key} className="header__nav-link" href="#" onClick={onCloseMenu}>
+            <CodedText text={item.label} />
+          </a>
         ))}
       </div>
     </nav>

@@ -1,4 +1,6 @@
-import CodedText from './CodedText'
+import CodedText from '../effects/CodedText'
+import { useLanguage } from '../effects/LanguageContext'
+
 
 const socialLinks = ['VIMEO', 'INSTAGRAM', 'DRIBBLE', 'LINKEDIN', 'BEHANCE', "GITHUB", 'EMAIL'];
 
@@ -6,22 +8,28 @@ function FooterMeta() {
   return (
     <div className="footer__meta">
       <p>/////</p>
-      <p>PORTFOLIO 2024/2025</p>
-      <p>MADRID, ESPAÑA.</p>
+      <p>PORTFOLIO 2024/2026</p>
+      <p>MADRID, SPAIN.</p>
     </div>
   )
 }
 
 function FooterBio() {
+  const { t } = useLanguage();
   return (
     <div className="footer__bio">
-      <p>MULTIDISCIPLINARY DESIGNER<br></br>AND VISUAL ARTIST BASED <br></br>IN MADRID, SPAIN.</p>
+      <p>
+        {t('bioLine1')}<br></br>
+        {t('bioLine2')}<br></br>
+        {t('bioLine3')}
+      </p>
       <p className="footer__scroll-cta">BIO</p>
     </div>
   )
 }
 
 function FooterLinks() {
+  const { t } = useLanguage();
   return (
     <div className="footer__links-container">
       <div className="footer__links">
@@ -31,7 +39,7 @@ function FooterLinks() {
         </a>
         ))}
       </div>
-      <p className="footer__scroll-cta">LINKS</p>
+      <p className="footer__scroll-cta">{t('links')}</p>
     </div>
   )
 }
