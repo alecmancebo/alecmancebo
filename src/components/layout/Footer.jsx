@@ -1,3 +1,5 @@
+import CodedText from './CodedText'
+
 const socialLinks = ['VIMEO', 'INSTAGRAM', 'DRIBBLE', 'LINKEDIN', 'BEHANCE', "GITHUB", 'EMAIL'];
 
 function FooterMeta() {
@@ -23,11 +25,11 @@ function FooterLinks() {
   return (
     <div className="footer__links-container">
       <div className="footer__links">
-      {socialLinks.map((label) => (
+        {socialLinks.map((label) => (
         <a key={label} className="footer__link" href="#">
-          {label} --&gt;
+            <CodedText text={label} /> --&gt;
         </a>
-      ))}
+        ))}
       </div>
       <p className="footer__scroll-cta">LINKS</p>
     </div>

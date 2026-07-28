@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import CodedText from './CodedText'
 
 const navItems = ['WORK', 'ABOUT', 'CONTACT', 'PLAYGROUND']
 
@@ -39,9 +40,9 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu }) {
 
       <div className="header__nav-list" id="mobile-navigation">
         {navItems.map((item) => (
-          <a key={item} className="header__nav-link" href="#" onClick={onCloseMenu}>
-            {item}
-          </a>
+            <a key={item} className="header__nav-link" href="#" onClick={onCloseMenu}>
+        <CodedText text={item} />
+            </a>
         ))}
       </div>
     </nav>

@@ -402,12 +402,10 @@ body {
 
 .grid-view__title {
   margin: 10px 0 0;
-  line-height: 1.05;
 }
 
 .grid-view__meta {
   margin: 10px 0 0;
-  line-height: 1.05;
   max-width: 14ch;
 }
 

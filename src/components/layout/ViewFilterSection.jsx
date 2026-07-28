@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import CodedText from './CodedText'
 
 const projects = [
   { id: '001', title: 'TRANSPAPELADES', category: 'editorial', seed: 'transpapelades' },
