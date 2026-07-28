@@ -10,11 +10,16 @@ function SidePill({ label, position }) {
   )
 }
 
-function BrandBlock() {
+function BrandBlock({ setTheme }) {
   return (
     <div className="header__brand">
-      <span className="header__brand-mark">AR</span>
-      <span className="header__brand-name">ALEC RODRIGUEZ MANCEBO</span>
+        <img src="../../public/elementos/graffiti.svg" alt="Brand Logo" />
+        <p>18:36 PM CEST</p>
+        <div><a href="#">[ENG]</a><a href="#">[SPA]</a></div>
+        <div>
+          <a href="#" onClick={(e) => { e.preventDefault(); setTheme('dark'); }}>[BLA]</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setTheme('light'); }}>[WHI]</a>
+        </div>
     </div>
   )
 }
@@ -43,7 +48,7 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu }) {
   )
 }
 
-function Header() {
+function Header({ setTheme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -56,12 +61,14 @@ function Header() {
 
   return (
     <header className="header">
-      <SidePill label="SP" position="left" />
-      <BrandBlock />
+      {/*<SidePill label="SP" position="left" />*/}
+      <BrandBlock setTheme={setTheme}/>
       <MainNav isMenuOpen={isMenuOpen} onToggleMenu={toggleMenu} onCloseMenu={closeMenu} />
-      <SidePill label="WH" position="right" />
+      {/*<SidePill label="WH" position="right" />*/}
     </header>
   )
 }
+
+  
 
 export default Header

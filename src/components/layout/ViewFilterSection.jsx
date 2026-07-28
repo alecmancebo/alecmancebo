@@ -201,6 +201,7 @@ function ViewFilterSection() {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [activeProjectId, setActiveProjectId] = useState(projects[0].id)
   const lastWheelChangeRef = useRef(0)
+  const browserRef = useRef(null)
 
   const nextViewMode = viewMode === 'list' ? 'grid' : 'list'
   const viewLabel = viewMode === 'list' ? '[INDEX VIEW]' : '[GRID VIEW]'
@@ -279,30 +280,44 @@ function ViewFilterSection() {
     }
   }, [activeProjectId, filteredProjects])
 
-  const rotateProjectByWheel = (event) => {
-    if (viewMode !== 'list' || filteredProjects.length === 0) {
-      return
-    }
+  useEffect(() => {
+    const element = browserRef.current;
+    if (!element) return;
 
-    event.preventDefault()
+    const handleWheel = (event) => {
+      if (viewMode !== 'list' || filteredProjects.length === 0) {
+        return;
+      }
 
-    const now = Date.now()
-    if (now - lastWheelChangeRef.current < 160) {
-      return
-    }
+      // Ahora esto sí funcionará sin lanzar error
+      event.preventDefault();
 
-    lastWheelChangeRef.current = now
+      const now = Date.now();
+      if (now - lastWheelChangeRef.current < 160) {
+        return;
+      }
 
-    const direction = event.deltaY >= 0 ? 1 : -1
-    const currentIndex = filteredProjects.findIndex((project) => project.id === activeProjectId)
-    const safeIndex = currentIndex === -1 ? 0 : currentIndex
-    const nextIndex = (safeIndex + direction + filteredProjects.length) % filteredProjects.length
+      lastWheelChangeRef.current = now;
 
-    setActiveProjectId(filteredProjects[nextIndex].id)
-  }
+      const direction = event.deltaY >= 0 ? 1 : -1;
+      const currentIndex = filteredProjects.findIndex((project) => project.id === activeProjectId);
+      const safeIndex = currentIndex === -1 ? 0 : currentIndex;
+      const nextIndex = (safeIndex + direction + filteredProjects.length) % filteredProjects.length;
+
+      setActiveProjectId(filteredProjects[nextIndex].id);
+    };
+
+    // Añadimos el listener con passive en false
+    element.addEventListener('wheel', handleWheel, { passive: false });
+
+    // Limpieza del listener
+    return () => {
+      element.removeEventListener('wheel', handleWheel);
+    };
+  }, [viewMode, filteredProjects, activeProjectId]);
 
   return (
-    <section className={`browser browser--${viewMode}`} aria-label="Project browser" onWheel={rotateProjectByWheel}>
+    <section ref={browserRef} className={`browser browser--${viewMode}`} aria-label="Project browser">
       <div className="browser__toolbar">
         <div className="browser__views" role="group" aria-label="View selector">
           <button

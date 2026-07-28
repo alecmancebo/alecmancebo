@@ -1,4 +1,4 @@
-const socialLinks = ['VIMEO', 'INSTAGRAM', 'DRIBBLE', 'LINKEDIN', 'BEHANCE']
+const socialLinks = ['VIMEO', 'INSTAGRAM', 'DRIBBLE', 'LINKEDIN', 'BEHANCE', "GITHUB", 'EMAIL'];
 
 function FooterMeta() {
   return (
@@ -13,21 +13,23 @@ function FooterMeta() {
 function FooterBio() {
   return (
     <div className="footer__bio">
-      <p>Multidisciplinary designer</p>
-      <p>based in Madrid, Spain.</p>
-      <p className="footer__scroll-cta">[SCROLL TO EXPLORE]</p>
+      <p>MULTIDISCIPLINARY DESIGNER<br></br>AND VISUAL ARTIST BASED <br></br>IN MADRID, SPAIN.</p>
+      <p className="footer__scroll-cta">BIO</p>
     </div>
   )
 }
 
 function FooterLinks() {
   return (
-    <div className="footer__links">
+    <div className="footer__links-container">
+      <div className="footer__links">
       {socialLinks.map((label) => (
         <a key={label} className="footer__link" href="#">
           {label} --&gt;
         </a>
       ))}
+      </div>
+      <p className="footer__scroll-cta">LINKS</p>
     </div>
   )
 }
