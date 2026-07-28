@@ -21,12 +21,20 @@ function BrandBlock({ setTheme }) {
         <img src="../../public/elementos/graffiti.svg" alt="Brand Logo" />
         <p>18:36 PM CEST</p>
         <div>
-          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('en'); }}>[ENG]</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('es'); }}>[SPA]</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('en'); }}>
+            <CodedText text="[ENG]" />
+          </a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('es'); }}>
+            <CodedText text="[SPA]" />
+          </a>
         </div>
         <div>
-          <a href="#" onClick={(e) => { e.preventDefault(); setTheme('dark'); }}>[BLA]</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setTheme('light'); }}>[WHI]</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setTheme('dark'); }}>
+            <CodedText text="[BLA]" />
+          </a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setTheme('light'); }}>
+            <CodedText text="[WHI]" />
+          </a>
         </div>
     </div>
   )

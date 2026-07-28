@@ -99,6 +99,7 @@ a {
 
 button, a{
    color: var(--color-text);
+   cursor: none;
 }
 
 html,
@@ -120,6 +121,34 @@ body {
 
 .theme-light .header__brand img {
   filter: brightness(0);
+}
+
+/*MARK: Cursor*/
+
+/* Oculta el cursor nativo si lo deseas (opcional) */
+body {
+  cursor: none; 
+}
+
+.custom-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  z-index: 9999; 
+}
+
+.cursor-circle {
+  position: absolute;
+  width: 24px; /* Compensando el x - 12px de tu JS */
+  height: 24px;
+  border-radius: 50%;
+  background-color: white; /* Color base */
+  pointer-events: none;
+  /* Para que el movimiento sea fluido en pantallas con alta tasa de refresco */
+  will-change: top, left, transform; 
 }
 
 /*MARK: Portfolio*/
@@ -226,8 +255,6 @@ body {
   opacity: 0.8;
 }
 
-.header__menu-toggle:focus-visible {
-}
 
 .header__nav-link {
   opacity: 1;
@@ -344,7 +371,6 @@ body {
   gap: var(--space-5-xl);
   font: inherit;
   text-align: left;
-  cursor: pointer;
   opacity: 0.65;
 }
 

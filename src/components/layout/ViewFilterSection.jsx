@@ -329,7 +329,7 @@ function ViewFilterSection() {
             className="browser__control browser__control--active"
             onClick={() => setViewMode(nextViewMode)}
           >
-            {viewLabel}
+            <CodedText text={viewLabel} />
           </button>
         </div>
 
@@ -340,7 +340,7 @@ function ViewFilterSection() {
           aria-expanded={isFilterOpen}
           aria-controls="browser-filter-menu"
         >
-         {t('filter')}
+          <CodedText text={t('filter')} />
         </button>
 
         {isFilterOpen ? (
@@ -355,7 +355,7 @@ function ViewFilterSection() {
                   setIsFilterOpen(false)
                 }}
               >
-                {option.label}
+                <CodedText text={option.label} />
               </button>
             ))}
           </div>
@@ -373,8 +373,12 @@ function ViewFilterSection() {
                   onMouseEnter={() => setActiveProjectId(project.id)}
                   onFocus={() => setActiveProjectId(project.id)}
                 >
-                  <span className="browser__item-id">{project.id}</span>
-                  <span className="browser__item-title">{project.title}</span>
+                  <span className="browser__item-id">
+                    <CodedText text={project.id} />
+                  </span>
+                  <span className="browser__item-title">
+                    <CodedText text={project.title} />
+                  </span>
                 </button>
               </li>
             ))}
