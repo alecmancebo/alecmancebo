@@ -4,10 +4,12 @@ import Footer from './components/layout/Footer'
 import { useState, useEffect } from 'react'
 import { LanguageProvider } from './components/effects/LanguageContext' 
 import CustomCursor from './components/effects/CustomCursor';
+import About from './components/layout/About';
 
 function App() {
   const [theme, setTheme] = useState('dark')
   const [showSplash, setShowSplash] = useState(true)
+  const [currentPage, setCurrentPage] = useState('home');
 
   useEffect(() => {
     document.body.className = theme === 'light' ? 'theme-light' : ''
@@ -17,8 +19,11 @@ function App() {
     <LanguageProvider>
       <div className="portfolio">
         <CustomCursor />
-        <Header setTheme={setTheme} />
-        <ViewFilterSection />
+        <Header setTheme={setTheme} setCurrentPage={setCurrentPage} />
+        
+        {currentPage === 'home' && <ViewFilterSection />}
+        {currentPage === 'about' && <About />}
+        
         <Footer />
       </div>
     </LanguageProvider>

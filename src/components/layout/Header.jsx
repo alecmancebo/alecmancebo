@@ -3,7 +3,6 @@ import CodedText from '../effects/CodedText'
 import { useLanguage } from '../effects/LanguageContext'
 import RealTimeClock from '../effects/RealTimeClock';
 
-const navItems = ['WORK', 'ABOUT', 'CONTACT', 'PLAYGROUND']
 
 function SidePill({ label, position }) {
   return (
@@ -13,13 +12,15 @@ function SidePill({ label, position }) {
   )
 }
 
-function BrandBlock({ setTheme }) {
-
+function BrandBlock({ setTheme, setCurrentPage }) {
   const { setLanguage } = useLanguage();
 
   return (
     <div className="header__brand">
-        <img src="../../public/elementos/graffiti.svg" alt="Brand Logo" />
+        {/* Al hacer clic en el logo, previene la recarga y cambia el estado a 'home' */}
+        <a href="/" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); }}>
+          <img src="../../public/elementos/graffiti.svg" alt="Brand Logo" />
+        </a>
         <RealTimeClock />
         <div>
           <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('en'); }}>
@@ -41,15 +42,15 @@ function BrandBlock({ setTheme }) {
   )
 }
 
-function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu }) {
-
+function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, setCurrentPage }) {
   const { t } = useLanguage()
 
+  // Se ha añadido la propiedad 'view' para definir qué estado activar al clicar
   const navItems = [
-    { key: 'work', label: t('work') },
-    { key: 'about', label: t('about') },
-    { key: 'contact', label: t('contact') },
-    { key: 'playground', label: t('playground') }
+    { key: 'work', label: t('work'), path: '/', view: 'home' },
+    { key: 'about', label: t('about'), path: '/about', view: 'about' },
+    { key: 'contact', label: t('contact'), path: '/contact', view: 'contact' },
+    { key: 'playground', label: t('playground'), path: '/playground', view: 'playground' }
   ];
 
   return (
@@ -64,7 +65,16 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu }) {
 
       <div className="header__nav-list" id="mobile-navigation">
         {navItems.map((item) => (
-          <a key={item.key} className="header__nav-link" href="#" onClick={onCloseMenu}>
+          <a 
+            key={item.key} 
+            className="header__nav-link" 
+            href={item.path} 
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentPage(item.view);
+              onCloseMenu();
+            }}
+          >
             <CodedText text={item.label} />
           </a>
         ))}
@@ -73,7 +83,7 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu }) {
   )
 }
 
-function Header({ setTheme }) {
+function Header({ setTheme, setCurrentPage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -86,14 +96,11 @@ function Header({ setTheme }) {
 
   return (
     <header className="header">
-      {/*<SidePill label="SP" position="left" />*/}
-      <BrandBlock setTheme={setTheme}/>
-      <MainNav isMenuOpen={isMenuOpen} onToggleMenu={toggleMenu} onCloseMenu={closeMenu} />
-      {/*<SidePill label="WH" position="right" />*/}
+      {/* Pasamos setCurrentPage a los componentes hijos que lo necesitan */}
+      <BrandBlock setTheme={setTheme} setCurrentPage={setCurrentPage} />
+      <MainNav isMenuOpen={isMenuOpen} onToggleMenu={toggleMenu} onCloseMenu={closeMenu} setCurrentPage={setCurrentPage} />
     </header>
   )
 }
-
-  
 
 export default Header
