@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import CodedText from '../effects/CodedText'
 import { useLanguage } from '../effects/LanguageContext'
+import RealTimeClock from '../effects/RealTimeClock';
 
 const navItems = ['WORK', 'ABOUT', 'CONTACT', 'PLAYGROUND']
 
@@ -19,7 +20,7 @@ function BrandBlock({ setTheme }) {
   return (
     <div className="header__brand">
         <img src="../../public/elementos/graffiti.svg" alt="Brand Logo" />
-        <p>18:36 PM CEST</p>
+        <RealTimeClock />
         <div>
           <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('en'); }}>
             <CodedText text="[ENG]" />

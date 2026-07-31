@@ -7,6 +7,7 @@ import CustomCursor from './components/effects/CustomCursor';
 
 function App() {
   const [theme, setTheme] = useState('dark')
+  const [showSplash, setShowSplash] = useState(true)
 
   useEffect(() => {
     document.body.className = theme === 'light' ? 'theme-light' : ''

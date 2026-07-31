@@ -1,105 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import CodedText from '../effects/CodedText'
 import { useLanguage } from '../effects/LanguageContext'
-
-
-const projects = [
-  { id: '001', title: 'TRANSPAPELADES', category: 'editorial', seed: 'transpapelades' },
-  { id: '002', title: 'ECHAR RAICES', category: 'branding', seed: 'echar-raices' },
-  { id: '003', title: 'ENTRELINEAS', category: 'editorial', seed: 'entrelineas' },
-  { id: '004', title: 'Z-TAROT', category: 'digital', seed: 'z-tarot' },
-  { id: '005', title: 'GENDERTRASH', category: 'digital', seed: 'gendertrash' },
-  { id: '006', title: 'BAILANDO DESTINOS', category: 'branding', seed: 'otrsjs-prfsj' },
-  { id: '007', title: 'UNA ULTIMA COSA', category: 'editorial', seed: 'una-ultima-cosa' },
-  { id: '008', title: 'AHORA SI QUE SI', category: 'digital', seed: 'ahora-si-que-si' },
-]
-
-const gridProjects = [
-  {
-    id: 'g-01',
-    category: 'editorial',
-    title: 'MYSTICOPIA',
-    year: '2021',
-    disciplines: 'CREATIVE DIRECTION / DESIGN DIRECTION',
-    images: ['https://picsum.photos/seed/mysticopia-1/840/1080'],
-  },
-  {
-    id: 'g-02',
-    category: 'digital',
-    title: 'BECKLEY FOUNDATION',
-    year: '2022',
-    disciplines: 'PHOTOGRAPHY',
-    images: [
-      'https://picsum.photos/seed/beckley-1/840/1080',
-      'https://picsum.photos/seed/beckley-2/840/1080',
-      'https://picsum.photos/seed/beckley-3/840/1080',
-    ],
-  },
-  {
-    id: 'g-03',
-    category: 'branding',
-    title: 'PUBLIC GOODS',
-    year: '2022 + 2023',
-    disciplines: 'ART DIRECTION / PHOTOGRAPHY',
-    images: ['https://picsum.photos/seed/public-goods-1/840/1080', 'https://picsum.photos/seed/public-goods-2/840/1080'],
-  },
-  {
-    id: 'g-04',
-    category: 'editorial',
-    title: 'IN RESIDENCE',
-    year: '2021',
-    disciplines: 'DESIGN DIRECTION / ART DIRECTION / PHOTOGRAPHY',
-    images: ['https://picsum.photos/seed/in-residence-1/840/1080'],
-  },
-  {
-    id: 'g-05',
-    category: 'branding',
-    title: 'LEFT MUSIC',
-    year: '2023',
-    disciplines: 'CREATIVE DIRECTION / DESIGN DIRECTION',
-    images: [
-      'https://picsum.photos/seed/left-music-1/840/1080',
-      'https://picsum.photos/seed/left-music-2/840/1080',
-      'https://picsum.photos/seed/left-music-3/840/1080',
-    ],
-  },
-  {
-    id: 'g-06',
-    category: 'digital',
-    title: 'SPIRITUAL OBJECTS',
-    year: '2022',
-    disciplines: 'ART DIRECTION / PHOTOGRAPHY',
-    images: ['https://picsum.photos/seed/spiritual-objects-1/840/1080'],
-  },
-  {
-    id: 'g-07',
-    category: 'branding',
-    title: 'OPEN DOORS',
-    year: '2024',
-    disciplines: 'CAMPAIGN / DIGITAL MUNDO',
-    images: [
-      'https://picsum.photos/seed/open-doors-1/840/1080',
-      'https://picsum.photos/seed/open-doors-2/840/1080',
-      'https://picsum.photos/seed/open-doors-3/840/1080',
-    ],
-  },
-  {
-    id: 'g-08',
-    category: 'editorial',
-    title: 'PRISM STUDIO',
-    year: '2023',
-    disciplines: 'CREATIVE DIRECTION / PHOTOGRAPHY',
-    images: ['https://picsum.photos/seed/prism-studio-1/840/1080'],
-  },
-  {
-    id: 'g-09',
-    category: 'digital',
-    title: 'COLOR SYSTEM',
-    year: '2022',
-    disciplines: 'ART DIRECTION / DESIGN DIRECTION',
-    images: ['https://picsum.photos/seed/color-system-1/840/1080', 'https://picsum.photos/seed/color-system-2/840/1080'],
-  },
-]
+import ProjectDetail from './ProjectDetail'
+import { projects, projectMontageLayout, getGridProjects } from './PorfolioData';
 
 const defaultMontageLayout = [
   { src: 'https://picsum.photos/seed/default-1/900/1200', x: 16, y: 50, w: 14, z: 2 },
@@ -108,67 +11,6 @@ const defaultMontageLayout = [
   { src: 'https://picsum.photos/seed/default-4/900/1200', x: 76, y: 44, w: 15, z: 5 },
   { src: 'https://picsum.photos/seed/default-5/900/1200', x: 84, y: 64, w: 10, z: 1 },
 ]
-
-// Edita este objeto para controlar manualmente cada foto.
-// src = ruta/url de imagen, x/y = porcentaje del viewport, w = ancho en vw, z = profundidad.
-const projectMontageLayout = {
-  '001': [
-    { src: 'https://picsum.photos/seed/transpapelades-1/900/1200', x: 20, y: 49, w: 15, z: 2 },
-    { src: 'https://picsum.photos/seed/transpapelades-2/900/1200', x: 20, y: 67, w: 13, z: 3 },
-    { src: 'https://picsum.photos/seed/transpapelades-3/900/1200', x: 45, y: 58, w: 18, z: 5 },
-    { src: 'https://picsum.photos/seed/transpapelades-4/900/1200', x: 53, y: 76, w: 9, z: 4 },
-    { src: 'https://picsum.photos/seed/transpapelades-5/900/1200', x: 77, y: 53, w: 24, z: 1 },
-  ],
-  '002': [
-    { src: 'https://picsum.photos/seed/echar-raices-1/900/1200', x: 14, y: 53, w: 12, z: 2 },
-    { src: 'https://picsum.photos/seed/echar-raices-2/900/1200', x: 29, y: 64, w: 11, z: 4 },
-    { src: 'https://picsum.photos/seed/echar-raices-3/900/1200', x: 49, y: 49, w: 25, z: 3 },
-    { src: 'https://picsum.photos/seed/echar-raices-4/900/1200', x: 77, y: 58, w: 14, z: 5 },
-    { src: 'https://picsum.photos/seed/echar-raices-5/900/1200', x: 88, y: 44, w: 10, z: 1 },
-  ],
-  '003': [
-    { src: 'https://picsum.photos/seed/entrelineas-1/900/1200', x: 17, y: 46, w: 18, z: 3 },
-    { src: 'https://picsum.photos/seed/entrelineas-2/900/1200', x: 36, y: 64, w: 10, z: 1 },
-    { src: 'https://picsum.photos/seed/entrelineas-3/900/1200', x: 54, y: 52, w: 20, z: 5 },
-    { src: 'https://picsum.photos/seed/entrelineas-4/900/1200', x: 78, y: 48, w: 13, z: 4 },
-    { src: 'https://picsum.photos/seed/entrelineas-5/900/1200', x: 84, y: 68, w: 11, z: 2 },
-  ],
-  '004': [
-    { src: 'https://picsum.photos/seed/z-tarot-1/900/1200', x: 16, y: 57, w: 14, z: 2 },
-    { src: 'https://picsum.photos/seed/z-tarot-2/900/1200', x: 16, y: 75, w: 14, z: 3 },
-    { src: 'https://picsum.photos/seed/z-tarot-3/900/1200', x: 42, y: 62, w: 17, z: 4 },
-    { src: 'https://picsum.photos/seed/z-tarot-4/900/1200', x: 55, y: 77, w: 10, z: 5 },
-    { src: 'https://picsum.photos/seed/z-tarot-5/900/1200', x: 77, y: 52, w: 22, z: 1 },
-  ],
-  '005': [
-    { src: 'https://picsum.photos/seed/gendertrash-1/900/1200', x: 18, y: 52, w: 18, z: 2 },
-    { src: 'https://picsum.photos/seed/gendertrash-2/900/1200', x: 37, y: 62, w: 10, z: 4 },
-    { src: 'https://picsum.photos/seed/gendertrash-3/900/1200', x: 53, y: 49, w: 23, z: 5 },
-    { src: 'https://picsum.photos/seed/gendertrash-4/900/1200', x: 76, y: 60, w: 14, z: 3 },
-    { src: 'https://picsum.photos/seed/gendertrash-5/900/1200', x: 86, y: 44, w: 9, z: 1 },
-  ],
-  '006': [
-    { src: 'https://picsum.photos/seed/otrsjs-prfsj-1/900/1200', x: 16, y: 53, w: 12, z: 2 },
-    { src: 'https://picsum.photos/seed/otrsjs-prfsj-2/900/1200', x: 26, y: 66, w: 11, z: 4 },
-    { src: 'https://picsum.photos/seed/otrsjs-prfsj-3/900/1200', x: 47, y: 55, w: 21, z: 5 },
-    { src: 'https://picsum.photos/seed/otrsjs-prfsj-4/900/1200', x: 78, y: 50, w: 16, z: 3 },
-    { src: 'https://picsum.photos/seed/otrsjs-prfsj-5/900/1200', x: 84, y: 67, w: 10, z: 1 },
-  ],
-  '007': [
-    { src: 'https://picsum.photos/seed/una-ultima-cosa-1/900/1200', x: 18, y: 51, w: 17, z: 3 },
-    { src: 'https://picsum.photos/seed/una-ultima-cosa-2/900/1200', x: 33, y: 66, w: 10, z: 2 },
-    { src: 'https://picsum.photos/seed/una-ultima-cosa-3/900/1200', x: 54, y: 50, w: 22, z: 5 },
-    { src: 'https://picsum.photos/seed/una-ultima-cosa-4/900/1200', x: 75, y: 62, w: 12, z: 4 },
-    { src: 'https://picsum.photos/seed/una-ultima-cosa-5/900/1200', x: 86, y: 46, w: 11, z: 1 },
-  ],
-  '008': [
-    { src: 'https://picsum.photos/seed/ahora-si-que-si-1/900/1200', x: 16, y: 56, w: 12, z: 2 },
-    { src: 'https://picsum.photos/seed/ahora-si-que-si-2/900/1200', x: 31, y: 65, w: 9, z: 4 },
-    { src: 'https://picsum.photos/seed/ahora-si-que-si-3/900/1200', x: 51, y: 49, w: 24, z: 5 },
-    { src: 'https://picsum.photos/seed/ahora-si-que-si-4/900/1200', x: 76, y: 44, w: 15, z: 3 },
-    { src: 'https://picsum.photos/seed/ahora-si-que-si-5/900/1200', x: 82, y: 63, w: 10, z: 1 },
-  ],
-}
 
 const spreadPatternX = [-1.2, 1.2, -0.9, 1, 0]
 const spreadPatternY = [-1, 1.15, -0.8, 0.9, 0]
@@ -198,13 +40,19 @@ function ViewFilterSection() {
   const [activeProjectId, setActiveProjectId] = useState(projects[0].id)
   const lastWheelChangeRef = useRef(0)
   const browserRef = useRef(null)
+  const [viewingProject, setViewingProject] = useState(null)
 
   const { t } = useLanguage()
+
+  const gridProjects = useMemo(() => getGridProjects(t), [t]);
+
   const filterOptions = [
     { value: 'all', label: t('all') },
-    { value: 'editorial', label: t('editorial') },
-    { value: 'branding', label: t('branding') },
-    { value: 'digital', label: t('digital') },
+    { value: 'web', label: t('web') },
+    { value: 'gameDev', label: t('gameDev') },
+    { value: 'uxui', label: t('uxui') },
+    { value: 'threed', label: t('threed') },
+    { value: 'graphic', label: t('graphic') },
   ];
 
   const nextViewMode = viewMode === 'list' ? 'grid' : 'list'
@@ -214,17 +62,17 @@ function ViewFilterSection() {
     if (filter === 'all') {
       return projects
     }
-
-    return projects.filter((project) => project.category === filter)
+    // Usamos includes para que los proyectos con múltiples categorías se filtren correctamente
+    return projects.filter((project) => project.category.includes(filter))
   }, [filter])
 
   const filteredGridProjects = useMemo(() => {
     if (filter === 'all') {
       return gridProjects
     }
-
-    return gridProjects.filter((project) => project.category === filter)
-  }, [filter])
+    // Usamos includes para que los proyectos con múltiples categorías se filtren correctamente
+    return gridProjects.filter((project) => project.category.includes(filter))
+  }, [filter, gridProjects])
 
   const getImagesForCount = (images, count) => {
     if (images.length >= count) {
@@ -293,7 +141,6 @@ function ViewFilterSection() {
         return;
       }
 
-      // Ahora esto sí funcionará sin lanzar error
       event.preventDefault();
 
       const now = Date.now();
@@ -311,14 +158,16 @@ function ViewFilterSection() {
       setActiveProjectId(filteredProjects[nextIndex].id);
     };
 
-    // Añadimos el listener con passive en false
     element.addEventListener('wheel', handleWheel, { passive: false });
 
-    // Limpieza del listener
     return () => {
       element.removeEventListener('wheel', handleWheel);
     };
   }, [viewMode, filteredProjects, activeProjectId]);
+
+  if (viewingProject) {
+    return <ProjectDetail project={viewingProject} onBack={() => setViewingProject(null)} />
+  }
 
   return (
     <section ref={browserRef} className={`browser browser--${viewMode}`} aria-label="Project browser">
@@ -329,7 +178,7 @@ function ViewFilterSection() {
             className="browser__control browser__control--active"
             onClick={() => setViewMode(nextViewMode)}
           >
-            <CodedText text={viewLabel} />
+            <CodedText key={viewLabel} text={viewLabel} />
           </button>
         </div>
 
@@ -371,7 +220,15 @@ function ViewFilterSection() {
                   type="button"
                   className={`browser__item-button ${activeProjectId === project.id ? 'browser__item-button--active' : ''}`}
                   onMouseEnter={() => setActiveProjectId(project.id)}
-                  onFocus={() => setActiveProjectId(project.id)}
+                  onFocus={() => setActiveProjectId(project.id)} onClick={() => {
+                    const projectData = projectsWithMontage.find(p => p.id === project.id);
+                    setViewingProject({
+                      ...project,
+                      year: '2024',
+                      disciplines: project.category,
+                      images: projectData.montage.map(m => m.src) // Extraemos las URLs del montaje
+                    });
+                  }}
                 >
                   <span className="browser__item-id">
                     <CodedText text={project.id} />
@@ -409,6 +266,13 @@ function ViewFilterSection() {
                 key={project.id}
                 className="grid-view__card"
                 style={{
+                  '--project-span': project.gridColumnSpan,
+                  '--project-start': project.gridColumnStart,
+                  '--project-row': project.gridRow,
+                }}
+                onClick={() => setViewingProject(project)}
+                style={{
+                  cursor: 'pointer', 
                   '--project-span': project.gridColumnSpan,
                   '--project-start': project.gridColumnStart,
                   '--project-row': project.gridRow,

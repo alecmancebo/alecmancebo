@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
 
 *{
   margin: 0;
@@ -7,17 +9,20 @@
 }
 
 :root {
-  font-family: 'Roboto Mono', monospace;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   /* Text Variables */
-  --text-xl: 0.75rem;
-  --text-l: 0.75rem;
-  --text-t: 0.75rem;
-  --text-m: 0.75rem;
+  --text-xl: 40px;
+  --text-l: 24px;
+  --text-t: 18px;
+  --text-m: 12px;
+
+  --font-mono: 'Roboto Mono', monospace;
+  --font-sans: 'Google Sans', sans-serif;
 
   /* Color Variables */
   --color-bg: #000000;
@@ -30,7 +35,7 @@
   --browser-pad-x-xl: clamp(14px, 3.2vw, 52px);
   --footer-pad-x-xl: clamp(14px, 2.8vw, 44px);
   --footer-reel-w-xl: clamp(7.5rem, 9vw, 9.25rem);
-  --footer-reel-h-xl: clamp(4.75rem, 5.8vw, 5.9rem);
+  --footer-reel-h-xl: clamp(4.75rem, 5.8vw, 5.9rem); /*cambiar*/
 
   --space-0-xl: 0px;
   --space-1-xl: 2px;
@@ -102,6 +107,12 @@ button, a{
    cursor: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 html,
 body {
   margin: 0;
@@ -125,7 +136,6 @@ body {
 
 /*MARK: Cursor*/
 
-/* Oculta el cursor nativo si lo deseas (opcional) */
 body {
   cursor: none; 
 }
@@ -142,14 +152,99 @@ body {
 
 .cursor-circle {
   position: absolute;
-  width: 24px; /* Compensando el x - 12px de tu JS */
+  width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: white; /* Color base */
+  background-color: white;
   pointer-events: none;
-  /* Para que el movimiento sea fluido en pantallas con alta tasa de refresco */
   will-change: top, left, transform; 
 }
+
+/*MARK: Splash*/
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-color, #000000);
+  color: var(--text-color, #ffffff);
+  z-index: 99999;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.splash-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; 
+}
+
+.layer-normal {
+  mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), transparent 0%, transparent 95%, black 100%);
+  -webkit-mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), transparent 0%, transparent 95%, black 100%);
+}
+
+.layer-distorted {
+  mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), black 0%, black 99%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), black 0%, black 99%, transparent 100%);
+  mix-blend-mode: lighten; 
+}
+
+.layer-distorted .splash-logo-center {
+  filter: url(#extreme-liquid);
+}
+
+.splash-logo-center svg {
+  width: 80vw;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+}
+
+.splash-logo-center svg path {
+  fill: transparent;
+  stroke: var(--text-color, #ffffff);
+  stroke-width: 2px;
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+  animation: 
+    drawGraffiti 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards, 
+    fillGraffiti 0.5s ease-out 1.5s forwards;
+}
+
+.splash-logo-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes drawGraffiti {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fillGraffiti {
+  to { fill: var(--text-color, #ffffff); }
+}
+
+.splash-text {
+  position: absolute;
+  bottom: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--text-m);
+  font-family: 'Roboto Mono', monospace;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 2s forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
 
 /*MARK: Portfolio*/
 
@@ -162,7 +257,8 @@ body {
   display: flex;
   flex-direction: column;
   overflow: visible;
-  font-size: var(--text-xl);
+  font-size: var(--text-m);
+  font-family: var(--font-mono);
 }
 
 .header__nav-link:hover,
@@ -185,6 +281,7 @@ body {
   grid-template-columns: 1fr auto;
   gap: var(--space-11-xl);
   align-items: center;
+  font-family: var(--font-mono);
 }
 
 .header__pill {
@@ -266,6 +363,7 @@ body {
   flex: 1 0 auto;
   min-height: 0;
   padding: var(--space-4-xl) var(--browser-pad-x-xl) 0;
+  font-family: var(--font-mono);
 }
 
 .browser__toolbar {
@@ -403,7 +501,7 @@ body {
 .grid-view__canvas {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 68px 18px;
+  gap: 68px 32px;
   align-items: start;
 }
 
@@ -416,7 +514,7 @@ body {
 .grid-view__media {
   display: grid;
   grid-template-columns: repeat(var(--project-span), minmax(0, 1fr));
-  gap: 8px;
+  gap: 32px;
 }
 
 .grid-view__media img {
@@ -424,6 +522,13 @@ body {
   height: auto;
   display: block;
   object-fit: contain;
+  filter: grayscale(1) contrast(1);
+  transition: filter 240ms ease;
+}
+
+
+.grid-view__card:hover img {
+  filter: grayscale(0) contrast(1);
 }
 
 .grid-view__title {
@@ -491,6 +596,7 @@ body {
   grid-template-columns: 1.3fr 0.6fr 0.5fr auto;
   align-items: end;
   gap: var(--space-12-xl);
+  font-family: var(--font-mono);
 }
 
 .footer__meta p {
@@ -526,6 +632,116 @@ body {
   background: #f2f2f2;
   overflow: hidden;
 }
+
+
+/*MARK: Project Detail*/
+
+.project-detail {
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px var(--layout-pad-x-xl) 4vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.project-detail__back-btn {
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--text-s);
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+.project-detail__back-btn:hover {
+  text-decoration: underline;
+}
+
+.project-detail__hero-header {
+  margin-bottom: var(--space-13-xl);
+}
+.project-detail__title {
+  font-size: 7vw; 
+  font-weight: 400;
+  margin-top: 2rem;
+  font-family: var(--font-sans);
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+}
+
+.project-detail__meta-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--text-m, 12px);
+  text-transform: uppercase;
+  margin-bottom: var(--space-9-xl);
+}
+.project-detail__category {
+  text-align: center;
+}
+.project-detail__year {
+  text-align: right;
+}
+
+.project-detail__hero-media {
+  width: 100%;
+  height: 70vh; 
+  margin-bottom: var(--space-9-xl);
+  background-color: var(--bg-color);
+}
+.project-detail__hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-detail__text-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4vw;
+  margin-bottom: var(--space-9-xl);
+}
+
+.text-grid__tag {
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--text-m, 12px);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.text-grid__subtitle {
+  font-size: var(--text-l);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.text-grid__col-2 p, 
+.text-grid__col-3 p {
+  margin-bottom: var(--space-9-xl);
+  opacity: 0.9;
+}
+
+.project-detail__gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-9-xl);
+  margin-bottom: var(--space-9-xl);
+}
+.gallery-grid__item {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color:#222;
+}
+.gallery-grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 @media screen and(max-width: 980px) {
   .portfolio {
@@ -750,5 +966,17 @@ body {
     width: var(--footer-reel-w-m);
     height: var(--footer-reel-h-m);
     margin-top: var(--space-2-m);
+  }
+
+  .project-detail__meta-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .project-detail__category {
+    display: none;
+  }
+  .project-detail__text-grid,
+  .project-detail__gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
