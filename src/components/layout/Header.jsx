@@ -49,7 +49,6 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, setCurrentPage }) {
   const navItems = [
     { key: 'work', label: t('work'), path: '/', view: 'home' },
     { key: 'about', label: t('about'), path: '/about', view: 'about' },
-    { key: 'contact', label: t('contact'), path: '/contact', view: 'contact' },
     { key: 'playground', label: t('playground'), path: '/playground', view: 'playground' }
   ];
 

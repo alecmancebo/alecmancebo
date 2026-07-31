@@ -746,7 +746,7 @@ body {
 .about-view {
   width: 100%;
   min-height: 100vh;
-  padding: calc(var(--space-13-xl) * 2) var(--layout-pad-x-xl) var(--space-10-xl) var(--layout-pad-x-xl);
+  padding: calc(var(--space-11-xl) * 2) var(--layout-pad-x-xl) var(--space-10-xl) var(--layout-pad-x-xl);
   background-color: var(--color-bg);
   color: var(--color-text);
 }
@@ -790,7 +790,6 @@ body {
   opacity: 0.9;
 }
 
-/* Botón READ EULA */
 .about__btn-outline {
   display: inline-block;
   font-family: 'Roboto Mono', monospace;
@@ -814,7 +813,6 @@ body {
 .about__media {
   width: 70%;
   aspect-ratio: 4 / 3;
-  /* Color blanco puro (o casi) para el cuadrado como en el boceto */
   background-color: #f3f3f3; 
   margin-bottom: var(--space-9-xl);
 }
@@ -823,7 +821,6 @@ body {
   width: 80%;
   height: 100%;
   object-fit: cover;
-  /* Escala de grises por defecto para mantener la estética brutalista */
   filter: grayscale(1);
   transition: filter 0.3s ease;
 }
@@ -848,6 +845,59 @@ body {
 }
 
 
+/*MARK: Playground Page*/
+.playground-view {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--layout-pad-x-xl);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.playground__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8-xl);
+  max-width: 600px;
+}
+
+.playground__title {
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--text-xl);
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.playground__message {
+  font-size: var(--text-l);
+  line-height: 1.5;
+  opacity: 0.9;
+  margin-bottom: var(--space-9-xl);
+}
+
+.playground__back-btn {
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--text-m);
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  padding: var(--space-4-xl) var(--space-6-xl);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.playground__back-btn:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/*MARK: Media Queries*/
 
 @media screen and(max-width: 980px) {
   .portfolio {

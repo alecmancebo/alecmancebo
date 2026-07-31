@@ -25,7 +25,7 @@ export default function About() {
           <div className="about__media">
             <img src="https://picsum.photos/seed/ermes-profile/600/450" alt="Ermes Olea" loading="lazy" />
           </div>
-
+          
           <a href="#" className="about__link">
             <CodedText text={t('aboutPdf')} />
           </a>
@@ -64,14 +64,14 @@ export default function About() {
             {t('aboutListCredits').map((item, i) => <li key={`design-${i}`}>{item}</li>)}
           </ul>
 
-          <h4 className="about__section-title"><CodedText text={t('aboutTitleDev')} /></h4>
-          <ul className="about__list">
-            {t('aboutListCredits').map((item, i) => <li key={`dev-${i}`}>{item}</li>)}
-          </ul>
 
           <h4 className="about__section-title"><CodedText text={t('aboutTitleFonts')} /></h4>
           <ul className="about__list">
             {t('aboutListFonts').map((item, i) => <li key={`fonts-${i}`}>{item}</li>)}
+          </ul>
+
+            <ul className="about__list">
+            <p>Alec Rodríguez Mancebo</p>
           </ul>
         </div>
 
