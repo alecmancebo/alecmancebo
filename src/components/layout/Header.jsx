@@ -15,12 +15,15 @@ function SidePill({ label, position }) {
 function BrandBlock({ setTheme, setCurrentPage }) {
   const { setLanguage } = useLanguage();
 
+  const handleLogoClick = () => {
+    setCurrentPage('home')
+  }
+
   return (
     <div className="header__brand">
-        {/* Al hacer clic en el logo, previene la recarga y cambia el estado a 'home' */}
-        <a href="/" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); }}>
-          <img src="../../public/elementos/graffiti.svg" alt="Brand Logo" />
-        </a>
+        <button type="button" className="header__brand-logo" onClick={handleLogoClick} aria-label="Go to home">
+          <img src="/elementos/graffiti.svg" alt="Brand Logo" />
+        </button>
         <RealTimeClock />
         <div>
           <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('en'); }}>

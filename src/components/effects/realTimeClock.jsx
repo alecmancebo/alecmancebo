@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import CodedText from './CodedText';
 
 export default function RealTimeClock() {
   const [time, setTime] = useState(new Date());
@@ -20,5 +19,5 @@ export default function RealTimeClock() {
     hour12: false
   });
 
-  return <CodedText text={`MAD ${timeString}`} />;
+  return <span>{`MAD ${timeString}`}</span>;
 }

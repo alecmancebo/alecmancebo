@@ -2,7 +2,15 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import CodedText from '../effects/CodedText'
 import { useLanguage } from '../effects/LanguageContext'
 import ProjectDetail from './ProjectDetail'
-import { projects, projectMontageLayout, getGridProjects } from './PorfolioData';
+import {
+  projects,
+  projectMontageLayout,
+  projectDetailImages,
+  projectPageImages,
+  projectPageImageSpans,
+  projectPageTextEveryImages,
+  getGridProjects,
+} from './PorfolioData';
 
 const defaultMontageLayout = [
   { src: 'https://picsum.photos/seed/default-1/900/1200', x: 16, y: 50, w: 14, z: 2 },
@@ -14,8 +22,8 @@ const defaultMontageLayout = [
 
 const spreadPatternX = [-1.2, 1.2, -0.9, 1, 0]
 const spreadPatternY = [-1, 1.15, -0.8, 0.9, 0]
-const spreadStepX = 6
-const spreadStepY = 7
+const spreadStepX = 0
+const spreadStepY = 0
 
 const clampPercent = (value, min, max) => Math.max(min, Math.min(max, value))
 
@@ -42,9 +50,9 @@ function ViewFilterSection() {
   const browserRef = useRef(null)
   const [viewingProject, setViewingProject] = useState(null)
 
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
-  const gridProjects = useMemo(() => getGridProjects(t), [t]);
+  const gridProjects = useMemo(() => getGridProjects(language), [language]);
 
   const filterOptions = [
     { value: 'all', label: t('all') },
@@ -119,6 +127,35 @@ function ViewFilterSection() {
     () => projectsWithMontage.find((project) => project.id === activeProjectId) ?? projectsWithMontage[0],
     [activeProjectId, projectsWithMontage],
   )
+
+  const openProjectDetail = (project) => {
+    const baseProject = projects.find((item) => item.id === project.id || item.title === project.title)
+    const projectData = projectsWithMontage.find((item) => item.id === baseProject?.id)
+
+    const detailImages =
+      (baseProject && projectPageImages[baseProject.id])
+      ?? (baseProject && projectDetailImages[baseProject.id])
+      ?? project.images
+      ?? projectData?.montage.map((image) => image.src)
+      ?? []
+
+    const detailSpans = (baseProject && projectPageImageSpans[baseProject.id]) ?? []
+    const detailMediaItems = detailImages.map((src, index) => ({
+      src,
+      span: detailSpans[index] ?? 1,
+    }))
+
+    setViewingProject({
+      ...project,
+      id: baseProject?.id ?? project.id,
+      category: baseProject?.category ?? project.category,
+      projectUrl: baseProject?.projectUrl ?? project.projectUrl ?? '#',
+      year: project.year || '2024',
+      disciplines: project.disciplines ?? baseProject?.category,
+      textEveryImages: (baseProject && projectPageTextEveryImages[baseProject.id]) ?? 1,
+      images: detailMediaItems,
+    })
+  }
 
   useEffect(() => {
     if (filteredProjects.length === 0) {
@@ -220,15 +257,8 @@ function ViewFilterSection() {
                   type="button"
                   className={`browser__item-button ${activeProjectId === project.id ? 'browser__item-button--active' : ''}`}
                   onMouseEnter={() => setActiveProjectId(project.id)}
-                  onFocus={() => setActiveProjectId(project.id)} onClick={() => {
-                    const projectData = projectsWithMontage.find(p => p.id === project.id);
-                    setViewingProject({
-                      ...project,
-                      year: '2024',
-                      disciplines: project.category,
-                      images: projectData.montage.map(m => m.src) // Extraemos las URLs del montaje
-                    });
-                  }}
+                  onFocus={() => setActiveProjectId(project.id)}
+                  onClick={() => openProjectDetail(project)}
                 >
                   <span className="browser__item-id">
                     <CodedText text={project.id} />
@@ -265,14 +295,9 @@ function ViewFilterSection() {
               <article
                 key={project.id}
                 className="grid-view__card"
+                onClick={() => openProjectDetail(project)}
                 style={{
-                  '--project-span': project.gridColumnSpan,
-                  '--project-start': project.gridColumnStart,
-                  '--project-row': project.gridRow,
-                }}
-                onClick={() => setViewingProject(project)}
-                style={{
-                  cursor: 'pointer', 
+                  cursor: 'pointer',
                   '--project-span': project.gridColumnSpan,
                   '--project-start': project.gridColumnStart,
                   '--project-row': project.gridRow,
