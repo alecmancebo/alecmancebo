@@ -11,6 +11,12 @@ function App() {
   const [theme, setTheme] = useState('dark')
   const [showSplash, setShowSplash] = useState(true)
   const [currentPage, setCurrentPage] = useState('home');
+  const [viewingProject, setViewingProject] = useState(null);
+
+  const navigateToPage = (page) => {
+    setCurrentPage(page)
+    setViewingProject(null)
+  }
 
   useEffect(() => {
     document.body.className = theme === 'light' ? 'theme-light' : ''
@@ -20,9 +26,14 @@ function App() {
     <LanguageProvider>
       <div className="portfolio">
         <CustomCursor />
-        <Header setTheme={setTheme} setCurrentPage={setCurrentPage} />
+        <Header setTheme={setTheme} onNavigatePage={navigateToPage} />
         
-        {currentPage === 'home' && <ViewFilterSection />}
+        {currentPage === 'home' && (
+          <ViewFilterSection
+            viewingProject={viewingProject}
+            setViewingProject={setViewingProject}
+          />
+        )}
         {currentPage === 'about' && <About />}
         {currentPage === 'playground' && <Playground setCurrentPage={setCurrentPage} />}
         

@@ -737,6 +737,26 @@ body {
 .project-detail__category:focus-visible {
   opacity: 1;
 }
+
+.project-detail__next-project {
+  margin: var(--space-10-xl) 0 var(--space-11-xl);
+}
+
+.project-detail__next-link {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.project-detail__next-link:hover,
+.project-detail__next-link:focus-visible {
+  opacity: 0.8;
+}
+
 .project-detail__year {
   text-align: right;
 }
@@ -768,6 +788,14 @@ body {
   opacity: 0.9;
 }
 
+.project-detail__text-list {
+  margin: 0 0 var(--space-9-xl) 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.55rem;
+  opacity: 0.9;
+}
+
 .project-detail__media-grid {
   display: grid;
   grid-template-columns: repeat(var(--detail-columns, 2), minmax(0, 1fr));
@@ -784,10 +812,6 @@ body {
 .project-detail__media-item {
   width: 100%;
   grid-column: span var(--media-span, 1);
-}
-
-.project-detail__media-item--lead {
-  grid-column: 1 / -1;
 }
 
 .project-detail__media-item img {

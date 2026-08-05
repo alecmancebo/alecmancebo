@@ -12,11 +12,11 @@ function SidePill({ label, position }) {
   )
 }
 
-function BrandBlock({ setTheme, setCurrentPage }) {
+function BrandBlock({ setTheme, onNavigatePage }) {
   const { setLanguage } = useLanguage();
 
   const handleLogoClick = () => {
-    setCurrentPage('home')
+    onNavigatePage('home')
   }
 
   return (
@@ -45,7 +45,7 @@ function BrandBlock({ setTheme, setCurrentPage }) {
   )
 }
 
-function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, setCurrentPage }) {
+function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, onNavigatePage }) {
   const { t } = useLanguage()
 
   // Se ha añadido la propiedad 'view' para definir qué estado activar al clicar
@@ -73,7 +73,7 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, setCurrentPage }) {
             href={item.path} 
             onClick={(e) => {
               e.preventDefault();
-              setCurrentPage(item.view);
+              onNavigatePage(item.view);
               onCloseMenu();
             }}
           >
@@ -85,7 +85,7 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, setCurrentPage }) {
   )
 }
 
-function Header({ setTheme, setCurrentPage }) {
+function Header({ setTheme, onNavigatePage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -98,9 +98,9 @@ function Header({ setTheme, setCurrentPage }) {
 
   return (
     <header className="header">
-      {/* Pasamos setCurrentPage a los componentes hijos que lo necesitan */}
-      <BrandBlock setTheme={setTheme} setCurrentPage={setCurrentPage} />
-      <MainNav isMenuOpen={isMenuOpen} onToggleMenu={toggleMenu} onCloseMenu={closeMenu} setCurrentPage={setCurrentPage} />
+      {/* Pasamos onNavigatePage a los componentes hijos que lo necesitan */}
+      <BrandBlock setTheme={setTheme} onNavigatePage={onNavigatePage} />
+      <MainNav isMenuOpen={isMenuOpen} onToggleMenu={toggleMenu} onCloseMenu={closeMenu} onNavigatePage={onNavigatePage} />
     </header>
   )
 }

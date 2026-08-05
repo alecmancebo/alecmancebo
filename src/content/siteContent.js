@@ -177,7 +177,7 @@ const textDatabase = {
 		]
 	},
 
-	"ECHAR RAICES": {
+	"ECHAR RAÍCES": {
         en: [
             {
                 tag: 'THE STORY',
@@ -253,6 +253,66 @@ const textDatabase = {
             }
         ]
     },
+
+    "ENTRELÍNEAS": {
+		en: [
+			{
+				tag: 'WEB DESIGN & DEVELOPMENT',
+                subtitle: 'Historias que pasan de mano en mano',
+                col2: 'El modelo actual de intercambio de libros en los espacios públicos y culturales de Madrid no termina de funcionar debido al anonimato, la falta de civismo y la ausencia de mantenimiento. ¿Cómo podemos intervenir este ecosistema para devolverle al libro físico el valor que ha perdido?',
+                col3: 'Entrelíneas es una plataforma web que busca revitalizar el intercambio de libros en la ciudad de Madrid, fomentando la participación ciudadana y la creación de una comunidad alrededor del libro físico. La propuesta se centra en un sistema de geolocalización que permite a los usuarios descubrir, registrar y compartir libros en diferentes puntos de la ciudad, creando un mapa interactivo de la literatura urbana.'
+            },
+			{
+                tag: 'RESEARCH AND USERS',
+                subtitle: 'Defining the objectives',
+                col2: 'Para abordar el problema, la investigación inicial se centró en mapear el estado actual de iniciativas como las Metrotecas o el Bookcrossing. A través de encuestas, entrevistas y netnografía, se detectaron los fallos estructurales del sistema.',
+                col3: 'Se sintetizaron los hallazgos en perfiles de usuario (User Personas) para acotar los problemas a resolver: desde el perfil "cuidador" que sufre impotencia ante el vandalismo del tejido cultural de su barrio, hasta el perfil joven con fatiga digital que busca estímulos directos y filtrados.'
+            },
+            {
+                tag: 'IDEATION',
+                subtitle: 'Contemplating the future',
+                col2: 'Utilizando herramientas de priorización como la matriz MoSCoW, se definió la propuesta de valor del producto. Se conceptualizaron las siguientes funcionalidades Must-Have:',
+				col3: [
+					'Mapa interactivo con localización de puntos de intercambio en tiempo real.',
+					'Catálogo digitalizado y actualizado por cada punto físico.',
+					'Sistema de registro mediante escaneo de códigos QR y lectura de ISBN.',
+					'Módulo de reportes impulsado por la comunidad para alertar sobre puntos vacíos o vandalizados.'
+				]
+            },
+            {
+                tag: 'FLOWCHARTS AND ARCHITECTURE',
+                subtitle: 'Contemplating the future',
+                col2: 'Utilizando herramientas de priorización como la matriz MoSCoW, se definió la propuesta de valor del producto. Se conceptualizaron las siguientes funcionalidades Must-Have:',
+				col3: [
+					'Mapa interactivo con localización de puntos de intercambio en tiempo real.',
+					'Catálogo digitalizado y actualizado por cada punto físico.',
+					'Sistema de registro mediante escaneo de códigos QR y lectura de ISBN.',
+					'Módulo de reportes impulsado por la comunidad para alertar sobre puntos vacíos o vandalizados.'
+				]
+            },
+            {
+                tag: 'VISUAL IDENTITY',
+                subtitle: 'Transitioning identity',
+                col2: 'The visual identity was designed to convey modernity, professionalism, and warmth, starting from the colors of the trans flag adapted for a digital environment. The color palette relies on a vibrant fuchsia pink as the primary color for energy, a light pink that communicates empathy and care, and black to ensure visual contrast and the seriousness required for institutional content.',
+                col3: 'For typography, Museo Moderno was chosen for the logo and main headings, providing the project with a contemporary, fresh, and approachable look. Inter, a typeface specifically optimized for digital interfaces, was implemented for subtitles and body text. This entire system is brought together through a vector illustration style that combines flat color blocks with fine lines, conceptualizing the transition journey to provide a more human and accessible tone against the dryness of bureaucratic information.'
+            },
+            {
+                tag: 'WEB DESIGN',
+                subtitle: 'The website',
+                col2: 'A scalable and documented component system was created, ready for future code implementation. An adaptive base grid of twelve, eight, and four columns was established to ensure fully responsive behavior tailored to specific desktop, tablet, and mobile breakpoints.',
+                col3: 'Based on this modular structure, spacing rules, variable typographic scales, and a set of custom icons were defined to visually unify navigation throughout the platform.'
+            },
+            {
+                tag: 'SOCIAL MEDIA',
+                subtitle: 'Not just a website',
+                col2: 'To encourage the creation of a support network, a community forum structured by themes and tags was integrated, designed as a safe space where users can share experiences, resolve administrative doubts, and support each other during their transition.',
+                col3: 'In parallel, a social media communication strategy was designed by adapting the visual identity for interactive formats such as posts, reels, and stories on Instagram and TikTok. This cross-platform extension helps diversify the project\'s reach, capture attention dynamically, and educate users about trans* bureaucracy beyond the web environment.'
+            }
+		],
+		es: [
+			
+		]
+	},
     
 	DEFAULT: {
 		en: [
@@ -277,8 +337,8 @@ const textDatabase = {
 // MARK: PROJECTS - INDEX / GRID BASE LIST
 const projects = [
 	{ id: '001', title: 'TRANSPAPELADES', category: 'web', seed: 'transpapelades', projectUrl: 'https://www.figma.com/proto/3DFEMbsYkkBTMtyLTK1JZm/Transpapelades?node-id=909-23563&viewport=328%2C554%2C0.02&t=Rcr2OJrNfdRrTgkx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=909%3A23563&show-proto-sidebar=1&page-id=97%3A2' },
-	{ id: '002', title: 'ECHAR RAICES', category: 'web, gameDev', seed: 'echar-raices', projectUrl: 'https://echar-raices.onrender.com/' },
-	{ id: '003', title: 'ENTRELINEAS', category: 'uxui', seed: 'entrelineas', projectUrl: '#project-003' },
+	{ id: '002', title: 'ECHAR RAÍCES', category: 'web, gameDev', seed: 'echar-raices', projectUrl: 'https://echar-raices.onrender.com/' },
+	{ id: '003', title: 'ENTRELÍNEAS', category: 'uxui', seed: 'entrelineas', projectUrl: '#project-003' },
 	{ id: '004', title: 'OMEGA TRAICION', category: 'web, gameDev, graphic', seed: 'omega-traicion', projectUrl: '#project-004' },
 	{ id: '005', title: 'MINDSCAPE', category: 'uxui', seed: 'mindscape', projectUrl: '#project-005' },
 	{ id: '006', title: 'ERMES OLEA PORFOLIO', category: 'web', seed: 'ermes-olea-porfolio', projectUrl: '#project-006' },
@@ -357,10 +417,12 @@ const projectDetailImages = {
 
 // MARK: PROJECT DETAIL PAGE - SEPARATE IMAGES FROM GRID
 const projectPageImages = {
-	'001': ['/trabajos/transpapelades-1.png', '/trabajos/Transpapelades 13.mp4',  "/trabajos/Transpapelades 14.png",'/trabajos/Transpapelades 09.mp4', '/trabajos/Transpapelades 10.png', '/trabajos/Transpapelades 12.png', '/trabajos/Transpapelades 11.png', '/trabajos/Transpapelades - user 1.png', '/trabajos/Transpapelades - user 3.png', '/trabajos/Transpapelades - ideacion 1.png', '/trabajos/Transpapelades - ideacion 2.png','/trabajos/Transpapelades - identidad 5.mp4', '/trabajos/Transpapelades - identidad 1.png', '/trabajos/Transpapelades - identidad 2.png', '/trabajos/Transpapelades - identidad 3.png', '/trabajos/Transpapelades - identidad 4.png', '/trabajos/Transpapelades 15.mp4', '/trabajos/Transpapelades - web  1.png', '/trabajos/Transpapelades - web  2.png', '/trabajos/Transpapelades - web  3.png', '/trabajos/Transpapelades - web  4.png', '/trabajos/Transpapelades - web  5.mp4', '/trabajos/Transpapelades - rrss 2.png', '/trabajos/Transpapelades - rrss 1.png', '/trabajos/Transpapelades - rrss 6.png','/trabajos/Transpapelades - rrss 4.mp4', '/trabajos/Transpapelades - rrss 5.mp4', '/trabajos/Transpapelades - rrss 3.png',],
+	'001': ['/trabajos/transpapelades-1.png', '/trabajos/Transpapelades 13.mp4',  "/trabajos/Transpapelades 14.png", '/trabajos/Transpapelades 09.mp4', '/trabajos/Transpapelades 10.png', '/trabajos/Transpapelades 12.png', '/trabajos/Transpapelades 11.png', '/trabajos/Transpapelades - user 1.png', '/trabajos/Transpapelades - user 3.png', '/trabajos/Transpapelades - ideacion 1.png', '/trabajos/Transpapelades - ideacion 2.png','/trabajos/Transpapelades - identidad 5.mp4', '/trabajos/Transpapelades - identidad 1.png', '/trabajos/Transpapelades - identidad 2.png', '/trabajos/Transpapelades - identidad 3.png', '/trabajos/Transpapelades - identidad 4.png', '/trabajos/Transpapelades 15.mp4', '/trabajos/Transpapelades - web  1.png', '/trabajos/Transpapelades - web  2.png', '/trabajos/Transpapelades - web  3.png', '/trabajos/Transpapelades - web  4.png', '/trabajos/Transpapelades - web  5.mp4', '/trabajos/Transpapelades - rrss 2.png', '/trabajos/Transpapelades - rrss 1.png', '/trabajos/Transpapelades - rrss 6.png','/trabajos/Transpapelades - rrss 4.mp4', '/trabajos/Transpapelades - rrss 5.mp4', '/trabajos/Transpapelades - rrss 3.png',],
 
-	'002': ['/trabajos/Echar-raices 05.png', '/trabajos/Echar-raices 04.png', '/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 03.png'],
-	'003': ['/trabajos/Entrelineas 04.png', '/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 03.png', '/trabajos/Entrelineas 02.png'],
+	'002': ['/trabajos/Echar-raices 05.png', '/trabajos/Echar - raices historia - 1.mp4', '/trabajos/Echar - raices historia - 2.png', '/trabajos/Echar - raices historia - 3.mp4', '/trabajos/Echar - raices visual - 1.png', '/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 03.png', '/trabajos/Echar-raices 02.png', "/trabajos/Echar - raices visual - 4.gif", "/trabajos/Echar - raices codigo - 1.mp4", "/trabajos/Echar - raices codigo - 2.png", "/trabajos/Echar - raices codigo - 3.png", "/trabajos/Echar - raices flujo - 1.png", "/trabajos/Echar - raices flujo - 2.gif", "/trabajos/Echar - raices visual - 4.gif","/trabajos/Echar - raices flujo - 3.gif", "/trabajos/Echar - raices flujo - 4.png", "/trabajos/Echar - raices uxui - 1.png", "/trabajos/Echar - raices uxui - 2.png", "/trabajos/Echar - raices uxui - 3.png"],
+
+	'003': ['/trabajos/Entrelineas inicio - 1.mp4', '/trabajos/Entrelineas inicio - 2.mp4', '/trabajos/Entrelineas inicio - 3.mp4', '/trabajos/Entrelineas inicio - 4.png', '/trabajos/Entrelineas research - 1.png', '/trabajos/Entrelineas ideation - 1.png', '/trabajos/Entrelineas ideation - 2.png', '/trabajos/Entrelineas ideation - 3.png', '/trabajos/Entrelineas ideation - 4.png', '/trabajos/Entrelineas ideation - 5.png', '/trabajos/Entrelineas ideation - 6.png', '/trabajos/Entrelineas ideation - 7.png',],
+
 	'004': ['/trabajos/Omega-traicion 03.png', '/trabajos/Omega-traicion 05.png', '/trabajos/Omega-traicion 01.png', '/trabajos/Omega-traicion 04.png', '/trabajos/Omega-traicion 02.png'],
 	'005': ['/trabajos/mindscape05.png', '/trabajos/mindscape01.png', '/trabajos/mindscape03.png', '/trabajos/mindscape04.png', '/trabajos/mindscape02.png'],
 	'006': ['/trabajos/E-porfolio.png', '/trabajos/E-porfolio-2.png', '/trabajos/E-porfolio-3.png', '/trabajos/E-porfolio-1.png'],
@@ -371,11 +433,11 @@ const projectPageImages = {
 // MARK: PROJECT DETAIL PAGE - IMAGE SPANS (1, 2, OR 4)
 const projectPageImageSpans = {
 	'001': [4, 4, 4, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 1, 1, 2],
-	'002': [2, 1, 1, 2],
-	'003': [1, 1, 1, 1],
+	'002': [ 4, 2, 2, 4, 2, 2, 4, 1, 3, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2],
+	'003': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1],
 	'004': [4, 2, 1, 1, 2],
 	'005': [2, 1, 1, 1, 1],
-	'006': [4, 2, 1, 1],
+	'006': [3, 2, 1, 1],
 	'007': [2, 1, 1, 2],
 	'008': [4, 2, 1, 1],
 }
@@ -383,8 +445,8 @@ const projectPageImageSpans = {
 // MARK: PROJECT DETAIL PAGE - TEXT EVERY N IMAGES (number or pattern array)
 const projectPageTextEveryImages = {
 	'001': [6, 2, 2, 6, 0, 5, 5],
-	'002': [0, 2, 2, 2, 2],
-	'003': 1,
+	'002': [0, 3, 5, 3, 5, 3],
+	'003': [3, 1, 8],
 	'004': 2,
 	'005': 2,
 	'006': 1,

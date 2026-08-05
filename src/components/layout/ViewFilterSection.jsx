@@ -41,14 +41,13 @@ const buildProjectMontage = (project) => {
   }))
 }
 
-function ViewFilterSection() {
+function ViewFilterSection({ viewingProject, setViewingProject }) {
   const [viewMode, setViewMode] = useState('list')
   const [filter, setFilter] = useState('all')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [activeProjectId, setActiveProjectId] = useState(projects[0].id)
   const lastWheelChangeRef = useRef(0)
   const browserRef = useRef(null)
-  const [viewingProject, setViewingProject] = useState(null)
 
   const { t, language } = useLanguage()
 
@@ -128,6 +127,20 @@ function ViewFilterSection() {
     [activeProjectId, projectsWithMontage],
   )
 
+  const getNextProject = (projectId) => {
+    if (filteredProjects.length === 0) {
+      return null
+    }
+
+    const currentIndex = filteredProjects.findIndex((item) => item.id === projectId)
+
+    if (currentIndex === -1) {
+      return filteredProjects[0]
+    }
+
+    return filteredProjects[(currentIndex + 1) % filteredProjects.length]
+  }
+
   const openProjectDetail = (project) => {
     const baseProject = projects.find((item) => item.id === project.id || item.title === project.title)
     const projectData = projectsWithMontage.find((item) => item.id === baseProject?.id)
@@ -145,15 +158,18 @@ function ViewFilterSection() {
       span: detailSpans[index] ?? 1,
     }))
 
+    const resolvedProjectId = baseProject?.id ?? project.id
+
     setViewingProject({
       ...project,
-      id: baseProject?.id ?? project.id,
+      id: resolvedProjectId,
       category: baseProject?.category ?? project.category,
       projectUrl: baseProject?.projectUrl ?? project.projectUrl ?? '#',
       year: project.year || '2024',
       disciplines: project.disciplines ?? baseProject?.category,
       textEveryImages: (baseProject && projectPageTextEveryImages[baseProject.id]) ?? 1,
       images: detailMediaItems,
+      nextProject: getNextProject(resolvedProjectId),
     })
   }
 
@@ -203,7 +219,13 @@ function ViewFilterSection() {
   }, [viewMode, filteredProjects, activeProjectId]);
 
   if (viewingProject) {
-    return <ProjectDetail project={viewingProject} onBack={() => setViewingProject(null)} />
+    return (
+      <ProjectDetail
+        project={viewingProject}
+        onBack={() => setViewingProject(null)}
+        onOpenProject={openProjectDetail}
+      />
+    )
   }
 
   return (
@@ -276,6 +298,15 @@ function ViewFilterSection() {
               <article
                 key={image.key}
                 className="browser__stage-item"
+                onClick={() => openProjectDetail(activeProject)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openProjectDetail(activeProject);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
                 style={{
                   '--x': `${image.x}%`,
                   '--y': `${image.y}%`,

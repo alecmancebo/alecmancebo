@@ -5,12 +5,38 @@ import { textDatabase } from './PorfolioData';
 
 const isVideoFile = (src) => /\.(mp4|webm|ogg)$/i.test(src);
 
-export default function ProjectDetail({ project, onBack }) {
+export default function ProjectDetail({ project, onBack, onOpenProject }) {
   const { language } = useLanguage();
+
+  const renderTextContent = (content) => {
+    if (Array.isArray(content)) {
+      return (
+        <ul className="project-detail__text-list">
+          {content.map((item, index) => (
+            <li key={`list-item-${index}`}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    if (!content) {
+      return null;
+    }
+
+    return <p>{content}</p>;
+  };
 
   // 1. Extraemos los datos dinámicos del proyecto actual
   const projectTexts = textDatabase[project.title] || textDatabase['DEFAULT'];
   const textBlocks = projectTexts[language] || projectTexts['en'];
+  const normalizeSpan = (value, fallback = 1) => {
+    if (!Number.isInteger(value)) {
+      return fallback;
+    }
+
+    return Math.max(1, Math.min(4, value));
+  };
+
   const images = (project.images || [])
     .map((item) => {
       if (typeof item === 'string') {
@@ -19,12 +45,13 @@ export default function ProjectDetail({ project, onBack }) {
 
       return {
         src: item?.src,
-        span: item?.span === 4 ? 4 : item?.span === 2 ? 2 : 1,
+        span: normalizeSpan(item?.span, 1),
       }
     })
     .filter((item) => Boolean(item.src));
   const mediaColumns = 4;
   const [leadImage, ...galleryImages] = images;
+  const leadSpan = normalizeSpan(leadImage?.span, mediaColumns);
   const textEveryImagesPattern = Array.isArray(project.textEveryImages)
     ? project.textEveryImages
         .filter((value) => Number.isInteger(value) && value >= 0)
@@ -95,7 +122,7 @@ export default function ProjectDetail({ project, onBack }) {
         <section className="project-detail__media-grid" style={{ '--detail-columns': String(mediaColumns) }}>
           <figure
             className="project-detail__media-item project-detail__media-item--lead"
-            style={{ '--media-span': String(mediaColumns) }}
+            style={{ '--media-span': String(Math.min(mediaColumns, leadSpan)) }}
           >
             {isVideoFile(leadImage.src) ? (
               <video
@@ -127,10 +154,10 @@ export default function ProjectDetail({ project, onBack }) {
                   <h2 className="text-grid__subtitle">{textBlock.subtitle}</h2>
                 </div>
                 <div className="text-grid__col-2">
-                  <p>{textBlock.col2}</p>
+                  {renderTextContent(textBlock.col2)}
                 </div>
                 <div className="text-grid__col-3">
-                  <p>{textBlock.col3}</p>
+                  {renderTextContent(textBlock.col3)}
                 </div>
               </section>
             ) : null}
@@ -170,6 +197,18 @@ export default function ProjectDetail({ project, onBack }) {
           </section>
         );
       })}
+
+      {project.nextProject && onOpenProject ? (
+        <div className="project-detail__next-project">
+          <button
+            type="button"
+            className="project-detail__next-link"
+            onClick={() => onOpenProject(project.nextProject)}
+          >
+            <CodedText text={`[NEXT: ${project.nextProject.title.toUpperCase()}]`} />
+          </button>
+        </div>
+      ) : null}
     </article>
   );
 }
