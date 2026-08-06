@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import CodedText from '../effects/CodedText'
 import { useLanguage } from '../effects/LanguageContext'
-import RealTimeClock from '../effects/RealTimeClock';
+import RealTimeClock from '../effects/realTimeClock';
 
 
 function SidePill({ label, position }) {
