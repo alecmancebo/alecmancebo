@@ -1,6 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function CustomCursor() {
+  const [isMobile, setIsMobile] = useState(false);
   const canvasRef = useRef(null);
   
   const points = useRef(Array.from({ length: 20 }, () => ({ x: -100, y: -100 })));
@@ -12,6 +13,15 @@ export default function CustomCursor() {
   const currentWidth = useRef(16); // Tamaño actual renderizado
 
   useEffect(() => {
+    const updateMobileState = () => setIsMobile(window.innerWidth <= 640);
+    updateMobileState();
+
+    window.addEventListener('resize', updateMobileState);
+
+    if (isMobile) {
+      return () => window.removeEventListener('resize', updateMobileState);
+    }
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
 
@@ -84,8 +94,13 @@ export default function CustomCursor() {
       window.removeEventListener('resize', resize);
       document.removeEventListener("mouseover", handleMouseOver);
       cancelAnimationFrame(requestRef.current);
+      window.removeEventListener('resize', updateMobileState);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <>

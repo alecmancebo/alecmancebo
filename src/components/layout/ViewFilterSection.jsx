@@ -30,15 +30,33 @@ const clampPercent = (value, min, max) => Math.max(min, Math.min(max, value))
 const buildProjectMontage = (project) => {
   const layout = projectMontageLayout[project.id] ?? defaultMontageLayout
 
-  return layout.map((slot, imageIndex) => ({
-    x: clampPercent(slot.x + spreadPatternX[imageIndex % spreadPatternX.length] * spreadStepX, 2, 98),
-    y: clampPercent(slot.y + spreadPatternY[imageIndex % spreadPatternY.length] * spreadStepY, 6, 94),
-    w: slot.w,
-    z: slot.z,
-    key: `${project.id}-${imageIndex}`,
-    src: slot.src,
-    alt: `${project.title} visual ${imageIndex + 1}`,
-  }))
+  return layout.map((slot, imageIndex) => {
+    const baseX = slot.x ?? 0
+    const baseY = slot.y ?? 0
+    const baseW = slot.w ?? 12
+    const baseZ = slot.z ?? 1
+
+    const mobileOverride = slot.mobile ?? {}
+    const tabletOverride = slot.tablet ?? {}
+
+    return {
+      x: clampPercent(baseX + spreadPatternX[imageIndex % spreadPatternX.length] * spreadStepX, 2, 98),
+      y: clampPercent(baseY + spreadPatternY[imageIndex % spreadPatternY.length] * spreadStepY, 6, 94),
+      w: baseW,
+      z: baseZ,
+      key: `${project.id}-${imageIndex}`,
+      src: slot.src,
+      alt: `${project.title} visual ${imageIndex + 1}`,
+      mobileX: clampPercent((mobileOverride.x ?? baseX) + spreadPatternX[imageIndex % spreadPatternX.length] * spreadStepX, 2, 98),
+      mobileY: clampPercent((mobileOverride.y ?? baseY) + spreadPatternY[imageIndex % spreadPatternY.length] * spreadStepY, 6, 94),
+      mobileW: mobileOverride.w ?? baseW,
+      mobileScale: mobileOverride.scale ?? 1.06,
+      tabletX: clampPercent((tabletOverride.x ?? baseX) + spreadPatternX[imageIndex % spreadPatternX.length] * spreadStepX, 2, 98),
+      tabletY: clampPercent((tabletOverride.y ?? baseY) + spreadPatternY[imageIndex % spreadPatternY.length] * spreadStepY, 6, 94),
+      tabletW: tabletOverride.w ?? baseW,
+      tabletScale: tabletOverride.scale ?? 1.1,
+    }
+  })
 }
 
 function ViewFilterSection({ viewingProject, setViewingProject }) {
@@ -186,6 +204,24 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
   }, [activeProjectId, filteredProjects])
 
   useEffect(() => {
+    if (viewMode !== 'list' || filteredProjects.length === 0) {
+      return
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveProjectId((currentId) => {
+        const currentIndex = filteredProjects.findIndex((project) => project.id === currentId)
+        const safeIndex = currentIndex === -1 ? 0 : currentIndex
+        const nextIndex = (safeIndex + 1) % filteredProjects.length
+
+        return filteredProjects[nextIndex].id
+      })
+    }, 5000)
+
+    return () => window.clearInterval(intervalId)
+  }, [viewMode, filteredProjects])
+
+  useEffect(() => {
     const element = browserRef.current;
     if (!element) return;
 
@@ -278,8 +314,6 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
                 <button
                   type="button"
                   className={`browser__item-button ${activeProjectId === project.id ? 'browser__item-button--active' : ''}`}
-                  onMouseEnter={() => setActiveProjectId(project.id)}
-                  onFocus={() => setActiveProjectId(project.id)}
                   onClick={() => openProjectDetail(project)}
                 >
                   <span className="browser__item-id">
@@ -312,6 +346,14 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
                   '--y': `${image.y}%`,
                   '--w': `${image.w}vw`,
                   '--z': image.z,
+                  '--mobile-x': `${image.mobileX}%`,
+                  '--mobile-y': `${image.mobileY}%`,
+                  '--mobile-w': `${image.mobileW}vw`,
+                  '--mobile-scale': image.mobileScale,
+                  '--tablet-x': `${image.tabletX}%`,
+                  '--tablet-y': `${image.tabletY}%`,
+                  '--tablet-w': `${image.tabletW}vw`,
+                  '--tablet-scale': image.tabletScale,
                 }}
               >
                 <img src={image.src} alt={image.alt} loading="lazy" />

@@ -709,6 +709,9 @@ const projects = [
 ]
 
 // MARK: HOME - INDEX COLLAGE LAYOUT
+// Each item can optionally define breakpoint-specific overrides:
+// mobile: { x, y, w, scale }
+// tablet: { x, y, w, scale }
 const projectMontageLayout = {
 	'01': [
 		{ src: '/trabajos/transpapelades-1.png', x: 22, y: 65, w: 34, z: 2 },
