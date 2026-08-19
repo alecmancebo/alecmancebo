@@ -47,7 +47,7 @@ const aboutContent = {
 	en: {
 		aboutCopyright: 'A. R. MANCEBO ©2026',
 		aboutBio: 'My multidisciplinary background allows me to create complex designs with a holistic perspective, connecting different areas and tools. My work ranges from motion graphics to ux/ui, video editing, photography and 3d modelling.',
-		aboutEula: 'READ CV',
+		aboutCV: 'DOWNLOAD CV',
 		aboutPdf: 'PORTFOLIO PDF -->',
 		aboutTitleStack: 'STACK',
 		aboutTitleSoftware: 'SOFTWARE',
@@ -68,7 +68,7 @@ const aboutContent = {
 	es: {
 		aboutCopyright: 'A. R. MANCEBO ©2026',
 		aboutBio: 'Mi formación multidisciplinar me permite crear diseños complejos con una perspectiva holística, conectando diferentes áreas y herramientas. Mi trabajo varía desde motion graphic hasta ux/ui, fotografía, edición de video y modelización 3D.',
-		aboutEula: 'LEER CV',
+		aboutCV: 'DESCARGAR CV',
 		aboutPdf: 'PORTFOLIO PDF -->',
 		aboutTitleStack: 'STACK',
 		aboutTitleSoftware: 'SOFTWARE',
@@ -714,43 +714,97 @@ const projects = [
 // tablet: { x, y, w, scale }
 const projectMontageLayout = {
 	'01': [
-		{ src: '/trabajos/transpapelades-1.png', x: 22, y: 65, w: 34, z: 2 },
-		{ src: '/trabajos/transpapelades-2.png', x: 60, y: 60, w: 14, z: 1 },
-		{ src: '/trabajos/transpapelades-4.png', x: 50, y: 44, w: 14, z: 4 },
-		{ src: '/trabajos/transpapelades-3.jpg', x: 82, y: 34, w: 24, z: 3 },
+		{ src: '/trabajos/transpapelades-1.png', x: 22, y: 65, w: 34, z: 2,
+           
+        },
+		{ src: '/trabajos/transpapelades-2.png', x: 60, y: 60, w: 14, z: 1, 
+            tablet: { x: 60, y: 60, w: 14}
+        },
+		{ src: '/trabajos/transpapelades-4.png', x: 50, y: 44, w: 14, z: 4,
+             tablet: { x: 40, y: 38, w: 20 }
+         },
+		{ src: '/trabajos/transpapelades-3.jpg', x: 82, y: 34, w: 24, z: 3,
+             tablet: { y: 30}
+         },
 	],
 	'02': [
-		{ src: '/trabajos/Echar-raices 04.png', x: 19, y: 52, w: 13, z: 5 },
-		{ src: '/trabajos/Echar-raices 02.png', x: 46, y: 48, w: 24, z: 2 },
-		{ src: '/trabajos/Echar-raices 03.png', x: 76, y: 45, w: 24, z: 3 },
-		{ src: '/trabajos/Echar-raices 01.png', x: 88, y: 61, w: 14, z: 4 },
-		{ src: '/trabajos/Echar-raices 05.png', x: 32, y: 78, w: 22, z: 4 },
+		{ src: '/trabajos/Echar-raices 04.png', x: 19, y: 52, w: 13, z: 5,
+            tablet: { x: 16,y: 45, w: 16}
+         },
+		{ src: '/trabajos/Echar-raices 02.png', x: 46, y: 48, w: 24, z: 2,
+            tablet: { y: 40, w: 25}
+         },
+		{ src: '/trabajos/Echar-raices 03.png', x: 76, y: 45, w: 24, z: 3,
+            tablet: { x: 78, y: 30, w: 26}
+         },
+		{ src: '/trabajos/Echar-raices 01.png', x: 88, y: 61, w: 14, z: 4,
+            tablet: { x: 86, y: 60, w: 20}
+         },
+		{ src: '/trabajos/Echar-raices 05.png', x: 32, y: 78, w: 22, z: 4,
+            tablet: { x: 30, y: 78, w: 28}
+         },
 	],
 	'03': [
-		{ src: '/trabajos/Entrelineas 04.png', x: 35, y: 44, w: 38, z: 2 },
-		{ src: '/trabajos/Entrelineas 02.png', x: 32, y: 68, w: 9, z: 5 },
-		{ src: '/trabajos/Entrelineas 01.png', x: 70, y: 64, w: 23, z: 5 },
-		{ src: '/trabajos/Entrelineas 03.png', x: 82, y: 40, w: 16, z: 4 },
-        { src: '/trabajos/Entrelineas 05.png', x: 17, y: 78, w: 8, z: 4 },
+		{ src: '/trabajos/Entrelineas 04.png', x: 35, y: 44, w: 38, z: 2,
+            tablet: { x: 34, y: 44, w: 40}
+         },
+		{ src: '/trabajos/Entrelineas 02.png', x: 32, y: 68, w: 9, z: 5,
+            tablet: { x: 30, y: 68, w: 12}
+         },
+		{ src: '/trabajos/Entrelineas 01.png', x: 70, y: 64, w: 23, z: 5,
+            tablet: { x: 72, y: 60, w: 26 }
+         },
+		{ src: '/trabajos/Entrelineas 03.png', x: 82, y: 40, w: 16, z: 4,
+            tablet: { x: 84, y: 36, w: 16 }
+         },
+        { src: '/trabajos/Entrelineas 05.png', x: 17, y: 78, w: 8, z: 4,
+            tablet: { x: 66, y: 20, w: 8 }
+         },
 	],
 	'04': [
-		{ src: '/trabajos/E-porfolio.png', x: 21, y: 66, w: 32, z: 2 },
-		{ src: '/trabajos/E-porfolio-2.png', x: 38, y: 38, w: 12, z: 4 },
-		{ src: '/trabajos/E-porfolio-1.png', x: 78, y: 40, w: 22, z: 3 },
-		{ src: '/trabajos/E-porfolio-3.png', x: 58, y: 62, w: 11, z: 5 },
-        { src: '/trabajos/E-porfolio-4.png', x: 58, y: 24, w: 8, z: 5 },
+		{ src: '/trabajos/E-porfolio.png', x: 21, y: 66, w: 32, z: 2,
+            tablet: { x: 28, y: 70, w: 38 }
+         },
+		{ src: '/trabajos/E-porfolio-2.png', x: 38, y: 38, w: 12, z: 4,
+            tablet: { x: 36, y: 34, w: 14 }
+         },
+		{ src: '/trabajos/E-porfolio-1.png', x: 78, y: 40, w: 22, z: 3,
+            tablet: { x: 82, y: 34, w: 24 }
+         },
+		{ src: '/trabajos/E-porfolio-3.png', x: 58, y: 62, w: 11, z: 5,
+            tablet: { x: 60, y: 60, w: 13 }
+         },
+        { src: '/trabajos/E-porfolio-4.png', x: 58, y: 24, w: 8, z: 5,
+            tablet: { x: 56, y: 18, w: 10 }
+         },
 	],
 	'05': [
-		{ src: '/trabajos/Fade04.png', x: 27, y: 62, w: 32, z: 2 },
-		{ src: '/trabajos/Fade02.png', x: 40, y: 27, w: 20, z: 4 },
-		{ src: '/trabajos/Fade03.png', x: 80, y: 38, w: 25, z: 3 },
-		{ src: '/trabajos/Fade01.png', x: 63, y: 74, w: 18, z: 5 },
+		{ src: '/trabajos/Fade04.png', x: 27, y: 62, w: 32, z: 2,
+            tablet: { x: 27, y: 58, w: 38 }
+         },
+		{ src: '/trabajos/Fade02.png', x: 40, y: 27, w: 20, z: 4,
+            tablet: { x: 40, y: 27, w: 26 }
+         },
+		{ src: '/trabajos/Fade03.png', x: 80, y: 38, w: 25, z: 3,
+            tablet: { x: 80, y: 38, w: 29 }
+         },
+		{ src: '/trabajos/Fade01.png', x: 63, y: 74, w: 18, z: 5,
+            tablet: { x: 63, y: 74, w: 22 }
+         },
 	],
 	'06': [
-		{ src: '/trabajos/Huddle 02.png', x: 40, y: 42, w: 35, z: 4 },
-		{ src: '/trabajos/Huddle 03.png', x: 20, y: 68, w: 30, z: 2 },
-		{ src: '/trabajos/Huddle 01.png', x: 65, y: 76, w: 16, z: 3 },
-		{ src: '/trabajos/Huddle 04.png', x: 84, y: 39, w: 14, z: 5 },
+		{ src: '/trabajos/Huddle 02.png', x: 40, y: 42, w: 35, z: 4,
+           tablet: { x: 40, y: 38, w: 38 }
+         },
+		{ src: '/trabajos/Huddle 03.png', x: 20, y: 68, w: 30, z: 2,
+            tablet: { x: 20, y: 68, w: 32 }
+         },
+		{ src: '/trabajos/Huddle 01.png', x: 65, y: 76, w: 16, z: 3,
+            tablet: { x: 65, y: 74, w: 19 }
+         },
+		{ src: '/trabajos/Huddle 04.png', x: 84, y: 39, w: 14, z: 5,
+            tablet: { x: 84, y: 32, w: 17 }
+         },
 	],
 }
 
@@ -770,7 +824,7 @@ const projectPageImages = {
 
 	'02': ['/trabajos/Echar-raices 05.png', '/trabajos/Echar - raices historia - 1.mp4', '/trabajos/Echar - raices historia - 2.png', '/trabajos/Echar - raices historia - 3.mp4', '/trabajos/Echar - raices visual - 1.png', '/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 03.png', '/trabajos/Echar-raices 02.png', "/trabajos/Echar - raices visual - 4.gif", "/trabajos/Echar - raices codigo - 1.mp4", "/trabajos/Echar - raices codigo - 2.png", "/trabajos/Echar - raices codigo - 3.png", "/trabajos/Echar - raices flujo - 1.png", "/trabajos/Echar - raices flujo - 2.gif", "/trabajos/Echar - raices visual - 4.gif","/trabajos/Echar - raices flujo - 3.gif", "/trabajos/Echar - raices flujo - 4.png", "/trabajos/Echar - raices uxui - 1.png", "/trabajos/Echar - raices uxui - 2.png", "/trabajos/Echar - raices uxui - 3.png"],
 
-	'03': ['/trabajos/Entrelineas inicio - 1.mp4', '/trabajos/Entrelineas inicio - 2.mp4', '/trabajos/Entrelineas inicio - 3.mp4', '/trabajos/Entrelineas inicio - 4.png', '/trabajos/Entrelineas research - 1.png', '/trabajos/Entrelineas ideation - 1.png', '/trabajos/Entrelineas ideation - 2.png', '/trabajos/Entrelineas ideation - 3.png', '/trabajos/Entrelineas ideation - 4.png', '/trabajos/Entrelineas ideation - 5.png', '/trabajos/Entrelineas ideation - 6.png', '/trabajos/Entrelineas ideation - 7.png',],
+	'03': ['/trabajos/Entrelineas inicio - 1.mp4', '/trabajos/Entrelineas inicio - 2.mp4', '/trabajos/Entrelineas inicio - 3.mp4', '/trabajos/Entrelineas inicio - 4.png', '/trabajos/Entrelineas research - 1.png', '/trabajos/Entrelineas ideation - 1.png', '/trabajos/Entrelineas ideation - 2.png', '/trabajos/Entrelineas ideation - 3.png', '/trabajos/Entrelineas ideation - 4.png', '/trabajos/Entrelineas ideation - 5.png', '/trabajos/Entrelineas ideation - 6.png', '/trabajos/Entrelineas ideation - 7.png', '/trabajos/Entrelineas ideation - 9.mp4', '/trabajos/Entrelineas ideation - 10.png'],
 
 	'04': ['/trabajos/E-porfolio.png', '/trabajos/E-porfolio-2.png', '/trabajos/E-porfolio-3.png', '/trabajos/E-porfolio-1.png'],
 	'05': ['/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade01.png', '/trabajos/Fade02.png'],
@@ -781,7 +835,7 @@ const projectPageImages = {
 const projectPageImageSpans = {
 	'01': [4, 4, 4, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 1, 1, 2],
 	'02': [ 4, 2, 2, 4, 2, 2, 4, 1, 3, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2],
-	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1],
+	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1,2,2],
 	'04': [3, 2, 1, 1],
 	'05': [2, 1, 1, 2],
 	'06': [4, 2, 1, 1],
@@ -791,7 +845,7 @@ const projectPageImageSpans = {
 const projectPageTextEveryImages = {
 	'01': [6, 2, 2, 6, 0, 5, 5],
 	'02': [0, 3, 5, 3, 5, 3],
-	'03': [3, 1, 8],
+	'03': [3, 1, 9],
 	'04': 1,
 	'05': 2,
 	'06': 1,

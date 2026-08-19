@@ -12,10 +12,12 @@ function App() {
   const [showSplash, setShowSplash] = useState(true)
   const [currentPage, setCurrentPage] = useState('home');
   const [viewingProject, setViewingProject] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigateToPage = (page) => {
     setCurrentPage(page)
     setViewingProject(null)
+    setIsMenuOpen(false)
   }
 
   useEffect(() => {
@@ -24,9 +26,14 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="portfolio">
+      <div className={`portfolio ${isMenuOpen ? 'portfolio--menu-open' : ''}`}>
         <CustomCursor />
-        <Header setTheme={setTheme} onNavigatePage={navigateToPage} />
+        <Header
+          setTheme={setTheme}
+          onNavigatePage={navigateToPage}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
         
         {currentPage === 'home' && (
           <ViewFilterSection

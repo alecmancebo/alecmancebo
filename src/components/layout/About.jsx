@@ -18,17 +18,19 @@ export default function About() {
         
         {/* COLUMNA 1 */}
         <div className="about__col">
-          <button className="about__btn-outline">
-            <CodedText text={t('aboutEula')} />
-          </button>
+          <a
+            className="about__btn-outline"
+            href="/trabajos/CV%20-%20ALEC%20RODRIGUEZ%20MANCEBO.pdf"
+            download="CV - ALEC RODRIGUEZ MANCEBO.pdf"
+            aria-label="Descargar CV"
+          >
+            <CodedText text={t('aboutCV')} />
+          </a>
           
           <div className="about__media">
-            <img src="https://picsum.photos/seed/ermes-profile/600/450" alt="Ermes Olea" loading="lazy" />
+            <img src="/elementos/ALEC.png" alt="ALEC" loading="lazy" />
           </div>
           
-          <a href="#" className="about__link">
-            <CodedText text={t('aboutPdf')} />
-          </a>
         </div>
 
         {/* COLUMNA 2 */}

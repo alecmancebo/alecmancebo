@@ -64,8 +64,12 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
   const [filter, setFilter] = useState('all')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [activeProjectId, setActiveProjectId] = useState(projects[0].id)
+  const [prevProjectId, setPrevProjectId] = useState(null)
+  const [isCompactViewport, setIsCompactViewport] = useState(() => (typeof window !== 'undefined' ? window.innerWidth <= 980 : false))
   const lastWheelChangeRef = useRef(0)
   const browserRef = useRef(null)
+  const transitionTimeoutRef = useRef(null)
+  const lastActiveProjectIdRef = useRef(projects[0].id)
 
   const { t, language } = useLanguage()
 
@@ -204,7 +208,46 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
   }, [activeProjectId, filteredProjects])
 
   useEffect(() => {
-    if (viewMode !== 'list' || filteredProjects.length === 0) {
+    if (viewMode !== 'list') {
+      return
+    }
+
+    // Si el activeProjectId cambió, iniciar la transición
+    if (activeProjectId !== lastActiveProjectIdRef.current) {
+      setPrevProjectId(lastActiveProjectIdRef.current)
+      lastActiveProjectIdRef.current = activeProjectId
+
+      // Limpiar timeout anterior si existe
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current)
+      }
+
+      // Después de 3 segundos, limpiar el proyecto anterior
+      transitionTimeoutRef.current = setTimeout(() => {
+        setPrevProjectId(null)
+      }, 3000)
+    }
+
+    return () => {
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current)
+      }
+    }
+  }, [activeProjectId, viewMode])
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsCompactViewport(window.innerWidth <= 980)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    if (viewMode !== 'list' || filteredProjects.length === 0 || !isCompactViewport) {
       return
     }
 
@@ -216,10 +259,10 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
 
         return filteredProjects[nextIndex].id
       })
-    }, 5000)
+    }, 8000)
 
     return () => window.clearInterval(intervalId)
-  }, [viewMode, filteredProjects])
+  }, [viewMode, filteredProjects, isCompactViewport])
 
   useEffect(() => {
     const element = browserRef.current;
@@ -328,9 +371,34 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
           </ul>
 
           <div className="browser__stage" aria-hidden="true">
-            {activeProject?.montage.map((image) => (
+            {prevProjectId && (
+              projectsWithMontage.find((p) => p.id === prevProjectId)?.montage.map((image, index) => (
+                <article
+                  key={`prev-${prevProjectId}-${index}`}
+                  className="browser__stage-item browser__stage-item--exiting"
+                  style={{
+                    '--x': `${image.x}%`,
+                    '--y': `${image.y}%`,
+                    '--w': `${image.w}vw`,
+                    '--z': image.z,
+                    '--mobile-x': `${image.mobileX}%`,
+                    '--mobile-y': `${image.mobileY}%`,
+                    '--mobile-w': `${image.mobileW}vw`,
+                    '--mobile-scale': image.mobileScale,
+                    '--tablet-x': `${image.tabletX}%`,
+                    '--tablet-y': `${image.tabletY}%`,
+                    '--tablet-w': `${image.tabletW}vw`,
+                    '--tablet-scale': image.tabletScale,
+                  }}
+                  aria-hidden="true"
+                >
+                  <img src={image.src} alt="" loading="lazy" />
+                </article>
+              ))
+            )}
+            {activeProject?.montage.map((image, index) => (
               <article
-                key={image.key}
+                key={`${activeProjectId}-${index}`}
                 className="browser__stage-item"
                 onClick={() => openProjectDetail(activeProject)}
                 onKeyDown={(event) => {

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import CodedText from '../effects/CodedText'
 import TypewriterText from '../effects/TypewriterText'
 import { useLanguage } from '../effects/LanguageContext'
@@ -61,10 +62,34 @@ function FooterLinks() {
   )
 }
 
+const footerReelImages = [
+  '/trabajos/transpapelades-1.png',
+  '/trabajos/Echar-raices 03.png',
+  '/trabajos/Entrelineas 04.png',
+  '/trabajos/E-porfolio-1.png',
+  '/trabajos/Fade04.png',
+  '/trabajos/Huddle 01.png',
+]
+
 function FooterReelSlot() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((previousIndex) => (previousIndex + 1) % footerReelImages.length)
+    }, 1000)
+
+    return () => clearInterval(intervalId)
+  }, [])
+
   return (
     <div className="footer__reel" aria-label="Videoreel slot">
-      <div className="footer__reel-slot"></div>
+      <div className="footer__reel-slot">
+        <img
+          src={footerReelImages[currentImageIndex]}
+          alt="Work preview"
+        />
+      </div>
     </div>
   )
 }
