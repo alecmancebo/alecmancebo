@@ -650,6 +650,10 @@ body {
   max-width: none;
 }
 
+.mobile-reel {
+  display: none;
+}
+
 .browser__list {
   position: relative;
   z-index: 12;
@@ -691,6 +695,16 @@ body {
 .footer__scroll-cta {
   margin-top: var(--space-3-xl);
   font-weight: 700;
+}
+
+.footer__links-toggle {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .footer__links-container {
@@ -1259,6 +1273,12 @@ body {
     --text-m: 12px;
   }
 
+  .portfolio:has(.mobile-reel) {
+    height: 100svh;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
   .header__nav-link {
     font-size: var(--text-l);
   }
@@ -1404,6 +1424,18 @@ body {
     padding-inline: var(--browser-pad-x-xl);
   }
 
+  .portfolio:has(.mobile-reel) .browser {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .portfolio.portfolio--menu-open > :not(.header) {
+    display: none;
+  }
+
   .browser__list,
   .browser__grid {
     margin-top: var(--space-8-xl);
@@ -1412,20 +1444,37 @@ body {
   .browser__index-view {
     margin-top: var(--space-8-xl);
     gap: var(--space-6-xl);
-    min-height: 280px;
+    grid-template-rows: auto minmax(0, 1fr);
+    flex: 1 1 auto;
+    min-height: 0;
+    align-items: center;
+  }
+
+  .mobile-reel {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    width: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .mobile-reel img {
+    display: block;
+    align-self: center;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center center;
   }
 
   .browser__stage {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    min-height: 420px;
-    margin-top: 10px;
-    z-index: 2;
-    overflow: visible;
+    display: none;
   }
 
   .browser__stage-item {
@@ -1468,7 +1517,7 @@ body {
   }
 
   .grid-view__canvas {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 26px;
   }
 
@@ -1494,12 +1543,12 @@ body {
   }
 
   .footer {
-    position: fixed;
+    position: relative;
     left: 0;
-    bottom: 0;
+    bottom: auto;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 0.6fr;
     gap: var(--space-6-xl);
     padding-inline: var(--footer-pad-x-xl);
     align-items: start;
@@ -1513,13 +1562,38 @@ body {
   .footer__bio,
   .footer__links-container,
   .footer__scroll-cta {
-    grid-column: 1;
+    grid-column: auto;
     grid-row: auto;
     justify-self: start;
   }
 
+  .footer__meta {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+  }
+
   .footer__links-container {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: end;
     order: 1;
+  }
+
+  .footer__links {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + var(--space-6-xl));
+    align-items: flex-start;
+    min-width: max-content;
+    text-align: left;
+  }
+
+  .footer__links-container--open .footer__links {
+    display: flex;
   }
 
   .footer__bio {
@@ -1531,6 +1605,8 @@ body {
   }
 
   .footer__scroll-cta {
+    grid-column: 2;
+    grid-row: 1;
     order: 4;
   }
 
@@ -1540,6 +1616,10 @@ body {
 
   .footer__scroll-cta {
     margin-top: 0;
+  }
+
+  .project-detail {
+    padding-top: var(--space-8-xl);
   }
 
   .project-detail__meta-bar {
@@ -1554,11 +1634,21 @@ body {
     gap: 2rem;
   }
 
+  .project-detail__text-grid--no-heading .text-grid__col-1 {
+    display: none;
+  }
+
   .project-detail__media-item {
     grid-column: 1 / -1;
   }
 
-
+  .project-detail__title {
+  font-size: 14vw; 
+  margin-top: var(--space-2-xl);
+  font-family: var(--font-sans);
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+}
 
   .about-view {
     padding: calc(var(--space-8-xl) * 4) var(--layout-pad-x-xl) var(--space-8-xl);

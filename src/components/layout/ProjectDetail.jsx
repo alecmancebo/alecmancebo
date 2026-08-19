@@ -148,7 +148,7 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
         return (
           <section key={`interleave-${index}`}>
             {textBlock ? (
-              <section className="project-detail__text-grid">
+              <section className={`project-detail__text-grid ${!textBlock.tag && !textBlock.subtitle ? 'project-detail__text-grid--no-heading' : ''}`}>
                 <div className="text-grid__col-1">
                   <h4 className="text-grid__tag">{textBlock.tag}</h4>
                   <h2 className="text-grid__subtitle">{textBlock.subtitle}</h2>

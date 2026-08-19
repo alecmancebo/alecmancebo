@@ -11,6 +11,7 @@ import {
   projectPageTextEveryImages,
   getGridProjects,
 } from './PorfolioData';
+import { footerReelImages } from './Footer';
 
 const defaultMontageLayout = [
   { src: 'https://picsum.photos/seed/default-1/900/1200', x: 16, y: 50, w: 14, z: 2 },
@@ -24,6 +25,24 @@ const spreadPatternX = [-1.2, 1.2, -0.9, 1, 0]
 const spreadPatternY = [-1, 1.15, -0.8, 0.9, 0]
 const spreadStepX = 0
 const spreadStepY = 0
+
+function MobileReel() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setCurrentImageIndex((previousIndex) => (previousIndex + 1) % footerReelImages.length)
+    }, 1000)
+
+    return () => window.clearInterval(intervalId)
+  }, [])
+
+  return (
+    <div className="mobile-reel" aria-label="Work reel">
+      <img src={footerReelImages[currentImageIndex]} alt="Work preview" />
+    </div>
+  )
+}
 
 const clampPercent = (value, min, max) => Math.max(min, Math.min(max, value))
 
@@ -369,6 +388,8 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
               </li>
             ))}
           </ul>
+
+          <MobileReel />
 
           <div className="browser__stage" aria-hidden="true">
             {prevProjectId && (

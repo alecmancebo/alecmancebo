@@ -40,8 +40,10 @@ export function FooterBio() {
 
 function FooterLinks() {
   const { t } = useLanguage();
+  const [areLinksOpen, setAreLinksOpen] = useState(false)
+
   return (
-    <div className="footer__links-container">
+    <div className={`footer__links-container ${areLinksOpen ? 'footer__links-container--open' : ''}`}>
       <div className="footer__links">
         {socialLinks.map((link, index) => (
         <a 
@@ -55,18 +57,23 @@ function FooterLinks() {
         </a>
         ))}
       </div>
-      <p className="footer__scroll-cta">
+      <button
+        type="button"
+        className="footer__scroll-cta footer__links-toggle"
+        aria-expanded={areLinksOpen}
+        onClick={() => setAreLinksOpen((previousState) => !previousState)}
+      >
         <TypewriterText text={t('links')} speed={15} delay={500} />
-      </p>
+      </button>
     </div>
   )
 }
 
-const footerReelImages = [
+export const footerReelImages = [
   '/trabajos/transpapelades-1.png',
   '/trabajos/Echar-raices 03.png',
   '/trabajos/Entrelineas 04.png',
-  '/trabajos/E-porfolio-1.png',
+  '/trabajos/E-porfolio.png',
   '/trabajos/Fade04.png',
   '/trabajos/Huddle 01.png',
 ]
