@@ -285,14 +285,6 @@ const textDatabase = {
                 ]
             },
             {
-                tag: 'FLOWCHARTS AND ARCHITECTURE',
-                subtitle: 'Defining the structure',
-                col2: 'The prototyping process materialized the app\'s information architecture. The three most critical app processes were mapped out to avoid friction points and guarantee a seamless user experience: logging a book, searching for a book, and locating an exchange point.',
-                col3: [
-                    "A flat and simplified navigation structure was designed, based on four pillars in the bottom tab bar (Home/Map, Discover, Scan, and Profile). This drastically reduces cognitive load and ensures that any critical feature is a maximum of two clicks away."
-                ]
-            },
-            {
                 tag: 'VISUAL IDENTITY',
                 subtitle: 'A clean visual system that prioritizes content',
                 col2: 'The color palette combines a scale of blues that evokes the transparency and solidity of public services, drawing inspiration from Madrid\'s identity, with a vibrant red accent that pays tribute to the Community of Madrid and guides the primary calls to action. Typographically, Archivo was selected to give titles a robust geometric structure, complemented by Inter as the backbone to ensure flawless technical readability and prevent visual fatigue in any environment.',

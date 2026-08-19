@@ -183,6 +183,20 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
     return filteredProjects[(currentIndex + 1) % filteredProjects.length]
   }
 
+  const getPreviousProject = (projectId) => {
+    if (filteredProjects.length === 0) {
+      return null
+    }
+
+    const currentIndex = filteredProjects.findIndex((item) => item.id === projectId)
+
+    if (currentIndex === -1) {
+      return filteredProjects[filteredProjects.length - 1]
+    }
+
+    return filteredProjects[(currentIndex - 1 + filteredProjects.length) % filteredProjects.length]
+  }
+
   const openProjectDetail = (project) => {
     const baseProject = projects.find((item) => item.id === project.id || item.title === project.title)
     const projectData = projectsWithMontage.find((item) => item.id === baseProject?.id)
@@ -212,6 +226,7 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
       textEveryImages: (baseProject && projectPageTextEveryImages[baseProject.id]) ?? 1,
       images: detailMediaItems,
       nextProject: getNextProject(resolvedProjectId),
+      previousProject: getPreviousProject(resolvedProjectId),
     })
   }
 

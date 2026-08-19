@@ -820,6 +820,8 @@ body {
 
 .project-detail__next-project {
   margin: var(--space-10-xl) 0 var(--space-11-xl);
+  display: flex;
+    justify-content: space-between;
 }
 
 .project-detail__next-link {
@@ -1242,10 +1244,11 @@ body {
     width: 100%;
     padding: var(--space-8-xl) var(--footer-pad-x-xl);
     min-height: 9rem;
+    grid-template-columns: 0.5fr 0.6fr 0.5fr auto;
     align-items: flex-end;
   }
 
-  .portfolio:has(.grid-view) .footer {
+  .portfolio:has(.grid-view, .project-detail) .footer {
     position: relative;
     left: auto;
     bottom: auto;

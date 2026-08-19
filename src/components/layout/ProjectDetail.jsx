@@ -1,4 +1,5 @@
 import CodedText from '../effects/CodedText';
+import { useEffect, useRef } from 'react';
 import { useLanguage } from '../effects/LanguageContext';
 // Importamos la base de datos de textos desde tu nuevo archivo centralizado
 import { textDatabase } from './PorfolioData'; 
@@ -7,6 +8,18 @@ const isVideoFile = (src) => /\.(mp4|webm|ogg)$/i.test(src);
 
 export default function ProjectDetail({ project, onBack, onOpenProject }) {
   const { language } = useLanguage();
+  const projectDetailRef = useRef(null);
+
+  useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      projectDetailRef.current?.scrollIntoView({ block: 'start', behavior: 'auto' });
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, [project.id]);
 
   const renderTextContent = (content) => {
     if (Array.isArray(content)) {
@@ -91,7 +104,7 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
   const sectionCount = Math.max(textBlocks.length, imageChunks.length);
 
   return (
-    <article className="project-detail" id={`project-${project.id}`}>
+    <article ref={projectDetailRef} className="project-detail" id={`project-${project.id}`}>
       
       {/* CABECERA GIGANTE (Fija en la parte superior) */}
       <header className="project-detail__hero-header">
@@ -198,15 +211,26 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
         );
       })}
 
-      {project.nextProject && onOpenProject ? (
+      {(project.previousProject || project.nextProject) && onOpenProject ? (
         <div className="project-detail__next-project">
-          <button
-            type="button"
-            className="project-detail__next-link"
-            onClick={() => onOpenProject(project.nextProject)}
-          >
-            <CodedText text={`[NEXT: ${project.nextProject.title.toUpperCase()}]`} />
-          </button>
+          {project.previousProject ? (
+            <button
+              type="button"
+              className="project-detail__next-link"
+              onClick={() => onOpenProject(project.previousProject)}
+            >
+              <CodedText text={`[PREVIOUS: ${project.previousProject.title.toUpperCase()}]`} />
+            </button>
+          ) : null}
+          {project.nextProject ? (
+            <button
+              type="button"
+              className="project-detail__next-link"
+              onClick={() => onOpenProject(project.nextProject)}
+            >
+              <CodedText text={`[NEXT: ${project.nextProject.title.toUpperCase()}]`} />
+            </button>
+          ) : null}
         </div>
       ) : null}
     </article>
