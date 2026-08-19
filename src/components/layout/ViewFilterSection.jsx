@@ -85,6 +85,7 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
   const [activeProjectId, setActiveProjectId] = useState(projects[0].id)
   const [prevProjectId, setPrevProjectId] = useState(null)
   const [isCompactViewport, setIsCompactViewport] = useState(() => (typeof window !== 'undefined' ? window.innerWidth <= 980 : false))
+  const [isTabletViewport, setIsTabletViewport] = useState(() => (typeof window !== 'undefined' ? window.innerWidth > 640 && window.innerWidth <= 980 : false))
   const lastWheelChangeRef = useRef(0)
   const browserRef = useRef(null)
   const transitionTimeoutRef = useRef(null)
@@ -150,13 +151,13 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
 
       return {
         ...project,
-        images: getImagesForCount(project.images, projectSpan),
+        images: getImagesForCount(project.images, isTabletViewport ? 2 : projectSpan),
         gridColumnStart: rowStart[slot],
         gridRow: row + 1,
         gridColumnSpan: projectSpan,
       }
     })
-  }, [filteredGridProjects])
+  }, [filteredGridProjects, isTabletViewport])
 
   const projectsWithMontage = useMemo(
     () => projects.map((project) => ({ ...project, montage: buildProjectMontage(project) })),
@@ -257,6 +258,7 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
   useEffect(() => {
     const handleResize = () => {
       setIsCompactViewport(window.innerWidth <= 980)
+      setIsTabletViewport(window.innerWidth > 640 && window.innerWidth <= 980)
     }
 
     handleResize()
@@ -358,7 +360,6 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
                 className={`browser__filter-option ${filter === option.value ? 'browser__filter-option--active' : ''}`}
                 onClick={() => {
                   setFilter(option.value)
-                  setIsFilterOpen(false)
                 }}
               >
                 <CodedText text={option.label} />
