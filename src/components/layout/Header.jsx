@@ -2,6 +2,7 @@ import { useState } from 'react'
 import CodedText from '../effects/CodedText'
 import { useLanguage } from '../effects/LanguageContext'
 import RealTimeClock from '../effects/realTimeClock';
+import { FooterBio } from './Footer'
 
 
 function SidePill({ label, position }) {
@@ -46,24 +47,7 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, onNavigatePage, setThe
       </button>
 
       <div className="header__nav-list" id="mobile-navigation">
-        <div className="header__nav-group">
-          {navItems.map((item) => (
-            <a
-              key={item.key}
-              className="header__nav-link"
-              href={item.path}
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigatePage(item.view);
-                onCloseMenu();
-              }}
-            >
-              <CodedText text={item.label} />
-            </a>
-          ))}
-        </div>
-
-        <div className="header__nav-meta">
+        <div className="header__nav-controls">
           <div className="header__nav-time">
             <RealTimeClock />
           </div>
@@ -84,6 +68,30 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, onNavigatePage, setThe
             <a href="#" onClick={(e) => { e.preventDefault(); setTheme('light'); }}>
               <CodedText text="[WHI]" />
             </a>
+          </div>
+
+        </div>
+
+        <div className="header__nav-group">
+          {navItems.map((item) => (
+            <a
+              key={item.key}
+              className="header__nav-link"
+              href={item.path}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigatePage(item.view);
+                onCloseMenu();
+              }}
+            >
+              <CodedText text={item.label} />
+            </a>
+          ))}
+        </div>
+
+        <div className="header__nav-meta">
+          <div className="header__mobile-bio">
+            <FooterBio />
           </div>
         </div>
       </div>

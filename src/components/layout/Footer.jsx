@@ -6,7 +6,7 @@ import { useLanguage } from '../effects/LanguageContext'
 const socialLinks = [
   { label: 'VIMEO', url: 'https://vimeo.com/alecrmancebo' },
   { label: 'INSTAGRAM', url: 'https://www.instagram.com/alekxty/' },
-  { label: 'DRIBBBLE', url: 'https://dribbble.com/alecrmancebo' }, // Corregido 'DRIBBLE' a 'DRIBBBLE'
+  { label: 'DRIBBBLE', url: 'https://dribbble.com/alecrmancebo' }, 
   { label: 'LINKEDIN', url: 'https://www.linkedin.com/in/alec-mancebo/' },
   { label: 'BEHANCE', url: 'https://www.behance.net/alecrodrgu' },
   { label: 'GITHUB', url: 'https://github.com/alecmancebo' },
@@ -22,7 +22,7 @@ function FooterMeta() {
   )
 }
 
-function FooterBio() {
+export function FooterBio() {
   const { t } = useLanguage();
   return (
     <div className="footer__bio">
@@ -31,7 +31,7 @@ function FooterBio() {
         <TypewriterText text={t('bioLine2')} speed={15} delay={200} /><br></br>
         <TypewriterText text={t('bioLine3')} speed={15} delay={300} />
       </p>
-      <p className="footer__scroll-cta">
+      <p className="footer__bio-label">
         <TypewriterText text="BIO" speed={15} delay={400} />
       </p>
     </div>
