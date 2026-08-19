@@ -1276,6 +1276,10 @@ body {
     margin-top: var(--space-3-xl);
   }
 
+  .project-detail{
+    padding-top: var(--space-10-xl)
+  }
+
   .about-view {
     padding: calc(var(--space-11-xl) * 3) var(--layout-pad-x-xl) var(--space-11-xl);
   }

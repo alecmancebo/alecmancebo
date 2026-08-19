@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import CodedText from '../effects/CodedText'
+import TypewriterText from '../effects/TypewriterText'
 import { useLanguage } from '../effects/LanguageContext'
 import ProjectDetail from './ProjectDetail'
 import {
@@ -487,12 +488,12 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
                   ))}
                 </div>
                 <h3 className="grid-view__title">
-                  {project.title} [{project.year}]
+                  <TypewriterText text={`${project.title} [${project.year}]`} />
                 </h3>
                 <p className="grid-view__meta">
                   {project.disciplines.split(' / ').map((discipline, index, list) => (
                     <span key={`${project.id}-discipline-${index}`}>
-                      {discipline}
+                      <TypewriterText text={discipline} />
                       {index < list.length - 1 ? <br /> : null}
                     </span>
                   ))}

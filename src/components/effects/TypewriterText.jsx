@@ -1,35 +1,77 @@
+import { useState, useEffect, useRef } from 'react';
 
-import { useState, useEffect } from 'react';
+export const TYPEWRITER_PAGE_DELAY = 0;
 
-export default function TypewriterText({ text, speed = 15, delay = 0 }) {
-  const [displayedText, setDisplayedText] = useState('');
+export default function TypewriterText({ text = "", speed = 10, delay = 0 }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
 
+  // 1. Detectar cuándo el elemento entra en pantalla (Scroll)
   useEffect(() => {
-    // Evitamos errores si no hay texto
-    if (!text) return;
+    const currentElement = containerRef.current;
+    if (!currentElement) return;
 
-    setDisplayedText('');
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Una vez que es visible y empieza a escribir, desconectamos el observador 
+          // para que no se reinicie la animación al subir y bajar el scroll.
+          observer.disconnect(); 
+        }
+      },
+      {
+        threshold: 0, // Se activa cuando el 10% del texto entra en pantalla
+        rootMargin: '0px 0px 50px 0px' // Margen de holgura
+      }
+    );
+
+    observer.observe(currentElement);
+
+    return () => {
+      if (currentElement) observer.unobserve(currentElement);
+    };
+  }, []);
+
+  // 2. Lógica de escritura que ahora espera a que 'isVisible' sea true
+  useEffect(() => {
+    if (!text || !isVisible) return;
+
+    setCurrentIndex(0);
     let i = 0;
 
-    // Retraso inicial antes de empezar a escribir
     const startTimeout = setTimeout(() => {
       const typingInterval = setInterval(() => {
-        setDisplayedText(text.substring(0, i + 1));
-        i++;
-        if (i >= text.length) clearInterval(typingInterval);
+        setCurrentIndex((prev) => {
+          const next = prev + 1;
+          if (next >= text.length) clearInterval(typingInterval);
+          return next;
+        });
       }, speed);
 
       return () => clearInterval(typingInterval);
-    }, delay);
+    }, TYPEWRITER_PAGE_DELAY + delay);
 
     return () => clearTimeout(startTimeout);
-  }, [text, speed, delay]);
+  }, [text, speed, delay, isVisible]);
+
+  // 3. Dividimos el texto en dos fragmentos
+  const visibleText = text.substring(0, currentIndex);
+  const hiddenText = text.substring(currentIndex);
 
   return (
-    <span>
-      {displayedText}
-      {/* Añadimos una clase para el cursor parpadeante (opcional) */}
-      {displayedText.length < text.length && <span className="typewriter-cursor">_</span>}
+    <span ref={containerRef} style={{ display: 'inline' }}>
+      {/* Texto que ya se ha escrito */}
+      <span>{visibleText}</span>
+      
+      {/* Cursor parpadeante (solo se muestra cuando el elemento es visible y no ha terminado) */}
+      {isVisible && currentIndex < text.length && (
+        <span className="typewriter-cursor">_</span>
+      )}
+      
+      {/* Texto restante con 'visibility: hidden'. No se ve, pero RESERVA EL ESPACIO EXACTO */}
+      <span style={{ visibility: 'hidden' }}>{hiddenText}</span>
     </span>
   );
 }

@@ -1,6 +1,7 @@
 import CodedText from '../effects/CodedText';
 import { useEffect, useRef } from 'react';
 import { useLanguage } from '../effects/LanguageContext';
+import TypewriterText from '../effects/TypewriterText';
 // Importamos la base de datos de textos desde tu nuevo archivo centralizado
 import { textDatabase } from './PorfolioData'; 
 
@@ -26,7 +27,7 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
       return (
         <ul className="project-detail__text-list">
           {content.map((item, index) => (
-            <li key={`list-item-${index}`}>{item}</li>
+            <li key={`list-item-${index}`}><TypewriterText text={item} /></li>
           ))}
         </ul>
       );
@@ -36,7 +37,7 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
       return null;
     }
 
-    return <p>{content}</p>;
+    return <p><TypewriterText text={content} /></p>;
   };
 
   // 1. Extraemos los datos dinámicos del proyecto actual
@@ -108,7 +109,7 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
       
       {/* CABECERA GIGANTE (Fija en la parte superior) */}
       <header className="project-detail__hero-header">
-        <h1 className="project-detail__title">{project.title}</h1>
+        <h1 className="project-detail__title"><TypewriterText text={project.title} /></h1>
       </header>
 
       {/* BARRA DE METADATOS (Fija en la parte superior) */}
@@ -163,8 +164,8 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
             {textBlock ? (
               <section className={`project-detail__text-grid ${!textBlock.tag && !textBlock.subtitle ? 'project-detail__text-grid--no-heading' : ''}`}>
                 <div className="text-grid__col-1">
-                  <h4 className="text-grid__tag">{textBlock.tag}</h4>
-                  <h2 className="text-grid__subtitle">{textBlock.subtitle}</h2>
+                  <h4 className="text-grid__tag"><TypewriterText text={textBlock.tag} /></h4>
+                  <h2 className="text-grid__subtitle"><TypewriterText text={textBlock.subtitle} /></h2>
                 </div>
                 <div className="text-grid__col-2">
                   {renderTextContent(textBlock.col2)}

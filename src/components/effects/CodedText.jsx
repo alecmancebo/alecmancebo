@@ -1,5 +1,6 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
+import { TYPEWRITER_PAGE_DELAY } from './TypewriterText'
 
 function randChar() {
   let c = "abcdefghijklmnopqrstuvwxyz1234567890!@#$^&*()…æ_+-=;[]/~`"
@@ -10,9 +11,30 @@ function randChar() {
 export default function CodedText({ text, fromRight = false }) {
   const textRef = useRef(null)
   const tlRef = useRef(null)
+  const [displayedText, setDisplayedText] = useState('')
+
+  useEffect(() => {
+    setDisplayedText('')
+    let characterIndex = 0
+    let typingInterval
+    const revealTimeout = window.setTimeout(() => {
+      typingInterval = window.setInterval(() => {
+        characterIndex += 1
+        setDisplayedText(text.substring(0, characterIndex))
+        if (characterIndex >= text.length) {
+          window.clearInterval(typingInterval)
+        }
+      }, 15)
+    }, TYPEWRITER_PAGE_DELAY)
+
+    return () => {
+      window.clearTimeout(revealTimeout)
+      window.clearInterval(typingInterval)
+    }
+  }, [text])
 
   const handlePointerOver = () => {
-    if (!textRef.current) return
+    if (!textRef.current || displayedText !== text) return
 
     // Mata la animación anterior si se hace hover repetidamente
     if (tlRef.current) tlRef.current.kill()
@@ -55,7 +77,7 @@ export default function CodedText({ text, fromRight = false }) {
 
   return (
     <span ref={textRef} onPointerOver={handlePointerOver} style={{ display: 'inline-block' }}>
-      {text}
+      {displayedText}
     </span>
   )
 }

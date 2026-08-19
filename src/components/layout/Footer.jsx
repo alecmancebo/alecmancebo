@@ -15,9 +15,9 @@ const socialLinks = [
 function FooterMeta() {
   return (
     <div className="footer__meta">
-      <p><TypewriterText text="/////" speed={20} delay={100} /></p>
-      <p><TypewriterText text="PORTFOLIO 2024/2026" speed={20} delay={200} /></p>
-      <p><TypewriterText text="MADRID, SPAIN." speed={20} delay={300} /></p>
+      <p><TypewriterText text="/////" /></p>
+      <p><TypewriterText text="PORTFOLIO 2024/2026" /></p>
+      <p><TypewriterText text="MADRID, SPAIN." /></p>
     </div>
   )
 }
@@ -27,12 +27,12 @@ export function FooterBio() {
   return (
     <div className="footer__bio">
       <p>
-        <TypewriterText text={t('bioLine1')} speed={15} delay={100} /><br></br>
-        <TypewriterText text={t('bioLine2')} speed={15} delay={200} /><br></br>
-        <TypewriterText text={t('bioLine3')} speed={15} delay={300} />
+        <TypewriterText text={t('bioLine1')} /><br></br>
+        <TypewriterText text={t('bioLine2')} /><br></br>
+        <TypewriterText text={t('bioLine3')} />
       </p>
       <p className="footer__bio-label">
-        <TypewriterText text="BIO" speed={15} delay={400} />
+        <TypewriterText text="BIO" />
       </p>
     </div>
   )
@@ -63,7 +63,7 @@ function FooterLinks() {
         aria-expanded={areLinksOpen}
         onClick={() => setAreLinksOpen((previousState) => !previousState)}
       >
-        <TypewriterText text={t('links')} speed={15} delay={500} />
+        <TypewriterText text={t('links')} />
       </button>
     </div>
   )

@@ -342,14 +342,6 @@ const textDatabase = {
 				]
             },
             {
-                tag: 'DIAGRAMAS DE FLUJO Y ARQUITECTURA',
-                subtitle: 'Definiendo la estructura',
-                col2: 'El proceso de prototipado materializó la arquitectura de información de la app. Se mapearon los tres procesos más críticos de la aplicación para evitar puntos de fricción y garantizar la fluidez de la experiencia de usuario: el registro de un libro, la búsqueda de un libro y la localización de un punto de intercambio.',
-				col3: [
-					"Se diseñó una estructura de navegación plana y simplificada basada en cuatro pilares en la barra inferior (Home/Mapa, Descubrir, Escaneo y Perfil). Esto reduce drásticamente la fatiga mental del usuario y permite que cualquier funcionalidad crítica esté a un máximo de dos clics de distancia."
-				]
-            },
-            {
                 tag: 'IDENTIDAD VISUAL',
                 subtitle: 'Un sistema visual limpio que prioriza el contenido',
                 col2: 'La identidad cromática combina una escala de azules que evoca la transparencia y solidez de los servicios públicos, inspirándose en la identidad madrileña, con un acento en rojo vibrante que rinde homenaje a la Comunidad de Madrid y guía las llamadas a la acción principales. A nivel tipográfico, se ha seleccionado Archivo para dotar a los títulos de una estructura geométrica robusta, complementada por Inter como columna vertebral para garantizar una legibilidad técnica impecable y sin fatiga visual en cualquier entorno.',
@@ -395,12 +387,6 @@ const textDatabase = {
                 col3: 'The process began with an initial meeting to align the client\'s artistic vision with the actual possibilities of web development, setting clear expectations. A workflow was developed based on partial deliveries, regular meetings, and visual prototypes to integrate client feedback at key moments in the design process.'
             },
             {
-                tag: 'THE CREATIVE CONCEPT',
-                subtitle: 'Tactility in a digital space',
-                col2: 'The art direction for this project not only seeks physical materiality but also incorporates the spirit of fanzines and photocopies, embracing asymmetry, intentional misalignment, and imperfect strokes. There is an overlapping of elements, analog textures, and blur effects that imitate a studio desk or a creative workshop where tools, sketches, and notes are scattered spontaneously.',
-                col3: 'It deliberately breaks with the classic rules of the digital grid through overlays and graphic elements that simulate physical cutouts, reflecting an underground and countercultural aesthetic adapted to the web medium. This accurately represents Ermes\'s artistic identity without sacrificing functionality.'
-            },
-            {
                 tag: 'VISUAL IDENTITY',
                 subtitle: '',
                 col2: 'The color palette relies on a selection of raw tones, harsh contrasts, and faded ink colors reminiscent of printing, which helps the content stand out. The use of layers with blurs and transparencies allows the visual elements to be structured without losing the illusion of stacking real sheets of paper.',
@@ -431,12 +417,6 @@ const textDatabase = {
                 subtitle: 'Un portfolio digital para un artista multidisciplinar',
                 col2: 'Un artista y diseñador multidisciplinar que necesitaba un espacio digital propio para exhibir su trabajo, alejado de las plantillas corporativas tradicionales. El reto de este proyecto se trataba de traducir una identidad creativa compleja a una interfaz web funcional. El objetivo principal era construir una experiencia inmersiva que no perdiera de vista la usabilidad, organizando el contenido del cliente bajo un diseño minimalista pero con mucha personalidad.',
                 col3: 'El proceso comenzó con una reunión inicial con el cliente para alinear su visión artística  con las posibilidades reales de desarrollo web, estableciendo expectativas claras. Se desarrolló un flujo de trabajo basado en entregas parciales, reuniones periódicas y prototipos visuales, para integrar el feedback del cliente en momentos clave del proceso de diseño.'
-            },
-            {
-                tag: 'EL CONCEPTO CREATIVO',
-                subtitle: 'Lo táctil en lo digital',
-                col2: 'La dirección de arte de este proyecto no solo busca la materialidad física, sino que incorpora el espíritu del fanzine y el fotocopiado, abraza la asimetría, el desalineamiento intencionado y el trazo imperfecto. Hay superposición de elementos, texturas analógicas y efectos de desenfoque, que imitan una mesa de estudio o un taller creativo donde hay herramientas, bocetos y notas colocadas de forma espontánea.',
-                col3: 'Rompe deliberadamente con las reglas clásicas de la retícula digital mediante superposiciones y elementos gráficos que simulan recortes físicos, reflejando una estética underground y contracultural adaptada al soporte web que representa la identidad artística de Ermes sin perder la funcionalidad.'
             },
             {
                 tag: 'LA IDENTIDAD VISUAL',
@@ -816,7 +796,7 @@ const projectPageImages = {
 
 	'02': ['/trabajos/Echar-raices 05.png', '/trabajos/Echar - raices historia - 1.mp4', '/trabajos/Echar - raices historia - 2.png', '/trabajos/Echar - raices historia - 3.mp4', '/trabajos/Echar - raices visual - 1.png', '/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 03.png', '/trabajos/Echar-raices 02.png', "/trabajos/Echar - raices visual - 4.gif", "/trabajos/Echar - raices codigo - 1.mp4", "/trabajos/Echar - raices codigo - 2.png", "/trabajos/Echar - raices codigo - 3.png", "/trabajos/Echar - raices flujo - 1.png", "/trabajos/Echar - raices flujo - 2.gif", "/trabajos/Echar - raices visual - 4.gif","/trabajos/Echar - raices flujo - 3.gif", "/trabajos/Echar - raices flujo - 4.png", "/trabajos/Echar - raices uxui - 1.png", "/trabajos/Echar - raices uxui - 2.png", "/trabajos/Echar - raices uxui - 3.png"],
 
-	'03': ['/trabajos/Entrelineas inicio - 1.mp4', '/trabajos/Entrelineas inicio - 2.mp4', '/trabajos/Entrelineas inicio - 3.mp4', '/trabajos/Entrelineas inicio - 4.png', '/trabajos/Entrelineas research - 1.png', '/trabajos/Entrelineas ideation - 1.png', '/trabajos/Entrelineas ideation - 2.png', '/trabajos/Entrelineas ideation - 3.png', '/trabajos/Entrelineas ideation - 4.png', '/trabajos/Entrelineas ideation - 5.png', '/trabajos/Entrelineas ideation - 6.png', '/trabajos/Entrelineas ideation - 7.png', '/trabajos/Entrelineas ideation - 9.mp4', '/trabajos/Entrelineas ideation - 10.png'],
+	'03': ['/trabajos/Entrelineas inicio - 1.mp4', '/trabajos/Entrelineas inicio - 2.mp4', '/trabajos/Entrelineas inicio - 3.mp4', '/trabajos/Entrelineas inicio - 4.png', '/trabajos/Entrelineas research - 1.png', '/trabajos/Entrelineas ideation - 1.png', '/trabajos/Entrelineas ideation - 2.png', '/trabajos/Entrelineas ideation - 3.png', '/trabajos/Entrelineas ideation - 4.png', '/trabajos/Entrelineas ideation - 5.png', '/trabajos/Entrelineas ideation - 6.png', '/trabajos/Entrelineas ideation - 7.png', '/trabajos/Entrelineas ideation - 9.mp4', '/trabajos/Entrelineas ideation - 10.png', '/trabajos/Entrelineas visual - 1.gif',],
 
 	'04': ['/trabajos/E-porfolio.png', '/trabajos/E-porfolio-2.png', '/trabajos/E-porfolio-3.png', '/trabajos/E-porfolio-1.png'],
 	'05': ['/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade01.png', '/trabajos/Fade02.png'],
@@ -827,7 +807,7 @@ const projectPageImages = {
 const projectPageImageSpans = {
 	'01': [4, 4, 4, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 1, 1, 2],
 	'02': [ 4, 2, 2, 4, 2, 2, 4, 1, 3, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2],
-	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1,2,2],
+	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2],
 	'04': [3, 2, 1, 1],
 	'05': [2, 1, 1, 2],
 	'06': [4, 2, 1, 1],
@@ -837,7 +817,7 @@ const projectPageImageSpans = {
 const projectPageTextEveryImages = {
 	'01': [6, 2, 2, 6, 0, 5, 5],
 	'02': [0, 3, 5, 3, 5, 3],
-	'03': [3, 1, 9],
+	'03': [3, 1, 9, 2],
 	'04': 1,
 	'05': 2,
 	'06': 1,

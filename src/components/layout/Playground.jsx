@@ -1,4 +1,5 @@
 import CodedText from '../effects/CodedText';
+import TypewriterText from '../effects/TypewriterText';
 import { useLanguage } from '../effects/LanguageContext';
 
 export default function Playground({ setCurrentPage }) {
@@ -23,10 +24,10 @@ export default function Playground({ setCurrentPage }) {
     <section className="playground-view">
       <div className="playground__content">
         <h2 className="playground__title">
-          [ {t.title} ]
+          [ <TypewriterText text={t.title} /> ]
         </h2>
         <p className="playground__message">
-          {t.message}
+          <TypewriterText text={t.message} />
         </p>
         <button 
           className="playground__back-btn"

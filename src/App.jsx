@@ -26,26 +26,27 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className={`portfolio ${isMenuOpen ? 'portfolio--menu-open' : ''}`}>
-        <CustomCursor />
-        <Header
-          setTheme={setTheme}
-          onNavigatePage={navigateToPage}
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        />
-        
-        {currentPage === 'home' && (
-          <ViewFilterSection
-            viewingProject={viewingProject}
-            setViewingProject={setViewingProject}
+        <div className={`portfolio ${isMenuOpen ? 'portfolio--menu-open' : ''}`}>
+          <CustomCursor />
+          <Header
+            setTheme={setTheme}
+            onNavigatePage={navigateToPage}
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
           />
-        )}
-        {currentPage === 'about' && <About />}
-        {currentPage === 'playground' && <Playground setCurrentPage={setCurrentPage} />}
-        
-        <Footer />
-      </div>
+          
+          {currentPage === 'home' && (
+            <ViewFilterSection
+              viewingProject={viewingProject}
+              setViewingProject={setViewingProject}
+            />
+          )}
+          {currentPage === 'about' && <About />}
+          {currentPage === 'playground' && <Playground setCurrentPage={setCurrentPage} />}
+          
+          <Footer />
+        </div>
+     
     </LanguageProvider>
   )
 }
