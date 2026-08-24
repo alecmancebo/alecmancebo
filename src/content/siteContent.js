@@ -191,7 +191,7 @@ const textDatabase = {
             },
             {
                 col2: "The plant growth inside the protagonist acts as a visual metaphor for what is struggling to break free, illustrating the vertigo and fear that comes with accepting our true nature. In this context, resisting the plant invasion symbolizes an agonizing struggle against one's own destiny and identity.",
-                col3: "This game explores the psychological anguish of losing control over your own body against your will. The player is faced with the duality of desperately fighting the transformation or accepting physical assimilation with their surroundings."
+                col3: "This game explores the psychological anguish of losing control over your own body against your will. The player is faced with the duality of desperately fighting the transformation or accepting physical assimilation with their surroundings. The concept and art were created by designer Ermes Olea (@sandrune.art)."
             },
             {
                 tag: 'VISUAL IDENTITY',
@@ -229,7 +229,7 @@ const textDatabase = {
 			},
             {
                 col2: "El crecimiento vegetal en el interior del protagonista actúa como una metáfora visual de aquello que pugna por liberarse, ilustrando el vértigo y el miedo que produce aceptar nuestra verdadera naturaleza. En este contexto, resistirse a la invasión de las plantas simboliza una lucha agónica contra el propio destino y la identidad.",
-                col3: "Este juego explora la angustia psicológica de perder el control sobre el propio cuerpo contra tu voluntad. El jugador se enfrenta a la dualidad de luchar desesperadamente contra la transformación o aceptar la asimilación física con el entorno."
+                col3: "Este juego explora la angustia psicológica de perder el control sobre el propio cuerpo contra tu voluntad. El jugador se enfrenta a la dualidad de luchar desesperadamente contra la transformación o aceptar la asimilación física con el entorno. El concepto original y arte del juego fueron creados por el diseñador Ermes Olea (@sandrune.art)."
             },
             {
 				tag: 'LA IDENTIDAD VISUAL',
@@ -461,12 +461,6 @@ const textDatabase = {
                 col3: 'The arrangement of objects simulates a scenario where nature has reclaimed the place after a long period of time, leaving behind buried furniture, crooked lamps, and scattered drawers. Furthermore, the scale of all elements is calculated to make the player feel small and isolated, stripping away any sense of control over the environment. The graphic design and color palette transport the user to a dreamlike atmosphere.'
             },
             {
-                tag: 'SYMBOLISM AND MEANING',
-                subtitle: 'The architecture of dreams',
-                col2: 'The piece explores concepts such as dreaming, the mechanisms of memory, and the imagination triggered while asleep. The conceptual premise stems from the experience of waking up, seeking to reflect how the human brain can merge everyday experiences with entirely imagined and distorted spaces.',
-                col3: 'The progression of the experience alludes to the ephemeral nature of how we experience dreams in real life. Just as we are unable to retain all of our dream memories upon waking, the game conveys that same sense of loss and melancholy. This concept materializes in an environment where the destruction of the path traveled symbolizes the human inability to hold onto a fading dream, thereby evoking emotions and reflections on the fleeting nature of consciousness.'
-            },
-            {
                 tag: 'CORE MECHANICS',
                 subtitle: 'Moving forward to destroy the path',
                 col2: 'The actions available to the user within the experience are intentionally limited to walking, jumping, and running freely throughout the available space. The truly significant and transformative action of the piece is the inexorable forward movement through the designed environment. If the player accidentally falls or intentionally jumps off the edges of the path, the system will automatically relocate them. This fall penalty instantly returns the character to the established starting point to restart their journey.',
@@ -497,12 +491,6 @@ const textDatabase = {
                 subtitle: 'Islas flotantes suspendidas en el vacío',
                 col2: 'FADE presenta un modelo estético minuciosamente enfocado en la exploración audiovisual y evocativa por encima de cualquier estructura narrativa compleja. La propuesta visual combina  elementos artificiales y cotidianos propios de un hogar con un entorno natural surrealista que desafía las leyes de la gravedad. En este espacio nos encontramos con elementos como árboles dispuestos boca abajo y formaciones de rocas y piedras flotando en suspensión.',
                 col3: 'La disposición de los objetos simula un escenario donde la naturaleza ha reconquistado el lugar tras un largo periodo de tiempo, dejando atrás muebles enterrados, lámparas torcidas y cajones tirados. Además, la escala de todos los elementos está calculada para hacer sentir pequeño y aislado al jugador, despojándolo de cualquier sensación de control sobre el entorno. El diseño gráfico y la paleta de colores transportan al usuario a una atmósfera onírica.'
-            },
-            {
-                tag: 'SIMBOLISMO Y SIGNIFICADO',
-                subtitle: 'La arquitectura de los sueños',
-                col2: 'La obra explora conceptos como el sueño, los mecanismos de la memoria y la imaginación que se activan al soñar. La premisa conceptual parte de la vivencia de un despertar, y busca reflejar cómo el cerebro humano es capaz de fusionar las experiencias cotidianas con espacios totalmente imaginados y distorsionados.',
-                col3: 'La progresión de la experiencia alude a la naturaleza efímera con la que experimentamos los sueños en la vida real. Del mismo modo que al despertar somos incapaces de retener la totalidad de los recuerdos oníricos, el juego transmite esa misma sensación de pérdida y melancolía. El concepto se materializa en un entorno donde la destrucción del camino recorrido simboliza la imposibilidad humana de aferrarse al sueño que se desvanece, y el juego evoca así emociones y reflexiones sobre la fugacidad de la conciencia.'
             },
             {
                 tag: 'MECÁNICA PRINCIPAL',
@@ -799,7 +787,9 @@ const projectPageImages = {
 	'03': ['/trabajos/Entrelineas inicio - 1.mp4', '/trabajos/Entrelineas inicio - 2.mp4', '/trabajos/Entrelineas inicio - 3.mp4', '/trabajos/Entrelineas inicio - 4.png', '/trabajos/Entrelineas research - 1.png', '/trabajos/Entrelineas ideation - 1.png', '/trabajos/Entrelineas ideation - 2.png', '/trabajos/Entrelineas ideation - 3.png', '/trabajos/Entrelineas ideation - 4.png', '/trabajos/Entrelineas ideation - 5.png', '/trabajos/Entrelineas ideation - 6.png', '/trabajos/Entrelineas ideation - 7.png', '/trabajos/Entrelineas ideation - 9.mp4', '/trabajos/Entrelineas ideation - 10.png', '/trabajos/Entrelineas visual - 1.png', '/trabajos/Entrelineas visual - 2.png', '/trabajos/Entrelineas visual - 3.gif', '/trabajos/Entrelineas visual - 4.png', '/trabajos/Entrelineas visual - 5.png', '/trabajos/Entrelineas visual - 6.png', '/trabajos/Entrelineas visual - 7.png', '/trabajos/Entrelineas app- 1.png', '/trabajos/Entrelineas app- 2.png', '/trabajos/Entrelineas app - 4.mp4', '/trabajos/Entrelineas accesibilidad - 1.png', '/trabajos/Entrelineas accesibilidad - 2.png', '/trabajos/Entrelineas accesibilidad - 3.png', '/trabajos/Entrelineas web - 1.mp4', '/trabajos/Entrelineas web - 2.png', '/trabajos/Entrelineas web - 3.png'],
 
 	'04': ['/trabajos/Ermes - inicio 1.mp4', '/trabajos/Ermes - inicio 2.png', '/trabajos/Ermes - inicio 3.png', '/trabajos/Ermes inicio - 4.png', "/trabajos/Ermes inicio - 5.mp4", "/trabajos/Ermes visual - 1.png", "/trabajos/Ermes visual - 2.gif", '/trabajos/Ermes visual - 3.mp4', '/trabajos/Ermes visual - 4.mp4', '/trabajos/Ermes visual - 5.mp4', '/trabajos/Ermes visual - 6.png', '/trabajos/Ermes visual - 7.png', '/trabajos/Ermes front - 1.png', '/trabajos/Ermes front - 2.png', '/trabajos/Ermes front - 3.png', '/trabajos/Ermes escalability - 1.png', '/trabajos/Ermes conclusion - 1.png', '/trabajos/Ermes conclusion - 2.mp4', '/trabajos/Ermes conclusion - 3.mp4'],
-	'05': ['/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade01.png', '/trabajos/Fade02.png'],
+
+	'05': ['/trabajos/FADE Teaser.mp4', '/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade02.png', '/trabajos/Fade visual - 3.png', '/trabajos/Fade visual - 4.png', '/trabajos/Fade visual - 5.png', '/trabajos/Fade visual - 6.png', '/trabajos/Fade visual - 7.png', '/trabajos/Fade visual - 8.png', '/trabajos/Fade01.png', '/trabajos/Fade visual - 1.png', '/trabajos/Fade Mecanica - 1.mp4', '/trabajos/Fade Mecanica - 4.png', '/trabajos/Fade Mecanica - 5.png', '/trabajos/Fade Mecanica - 6.png', '/trabajos/Fade Assets - 1.webp', '/trabajos/Fade Assets - 2.webp', '/trabajos/Fade Assets - 3.png', '/trabajos/Fade Assets - 4.webp', '/trabajos/Fade Assets - 5.png', '/trabajos/Fade visual - 2.png', '/trabajos/Fade Conclusion - 1.png', '/trabajos/Fade Conclusion - 3.mp4',],
+
 	'06': ['/trabajos/Huddle 03.png', '/trabajos/Huddle 01.png', '/trabajos/Huddle 04.png', '/trabajos/Huddle 02.png'],
 }
 
@@ -809,7 +799,7 @@ const projectPageImageSpans = {
 	'02': [ 4, 2, 2, 4, 2, 2, 4, 1, 3, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2],
 	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 4, 2, 2],
 	'04': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 4, 4, 2, 2, 4, 4, 2, 2, 4],
-	'05': [2, 1, 1, 3],
+	'05': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4],
 	'06': [4, 2, 1, 1],
 }
 
@@ -819,7 +809,7 @@ const projectPageTextEveryImages = {
 	'02': [0, 3, 5, 3, 5, 3],
 	'03': [3, 1, 9, 7, 3, 3, 3, 3, 3, 3],
 	'04': [4, 7, 3, 1, 4],
-	'05': 2,
+	'05': [3, 6, 6, 5, 3] ,
 	'06': 1,
 }
 
