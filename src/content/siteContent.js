@@ -790,7 +790,7 @@ const projectPageImages = {
 
 	'05': ['/trabajos/FADE Teaser.mp4', '/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade02.png', '/trabajos/Fade visual - 3.png', '/trabajos/Fade visual - 4.png', '/trabajos/Fade visual - 5.png', '/trabajos/Fade visual - 6.png', '/trabajos/Fade visual - 7.png', '/trabajos/Fade visual - 8.png', '/trabajos/Fade01.png', '/trabajos/Fade visual - 1.png', '/trabajos/Fade Mecanica - 1.mp4', '/trabajos/Fade Mecanica - 4.png', '/trabajos/Fade Mecanica - 5.png', '/trabajos/Fade Mecanica - 6.png', '/trabajos/Fade Assets - 1.webp', '/trabajos/Fade Assets - 2.webp', '/trabajos/Fade Assets - 3.png', '/trabajos/Fade Assets - 4.webp', '/trabajos/Fade Assets - 5.png', '/trabajos/Fade visual - 2.png', '/trabajos/Fade Conclusion - 1.png', '/trabajos/Fade Conclusion - 3.mp4',],
 
-	'06': ['/trabajos/Huddle 03.png', '/trabajos/Huddle 01.png', '/trabajos/Huddle 04.png', '/trabajos/Huddle 02.png'],
+	'06': ['/trabajos/Huddle inicio - 1.mp4', '/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle inicio - 2.mp4', '/trabajos/Huddle research - 1.png', '/trabajos/Huddle research - 2.png', '/trabajos/Huddle research - 3.png', '/trabajos/Huddle research - 4.png', '/trabajos/Huddle ideation - 1.png', '/trabajos/Huddle architecture - 1.png',],
 }
 
 // MARK: PROJECT DETAIL PAGE - IMAGE SPANS (1, 2, OR 4)
@@ -800,7 +800,7 @@ const projectPageImageSpans = {
 	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 4, 2, 2],
 	'04': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 4, 4, 2, 2, 4, 4, 2, 2, 4],
 	'05': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4],
-	'06': [4, 2, 1, 1],
+	'06': [4, 2, 2, 4, 4, 4, 2, 2, 4, 4],
 }
 
 // MARK: PROJECT DETAIL PAGE - TEXT EVERY N IMAGES (number or pattern array)
@@ -809,8 +809,8 @@ const projectPageTextEveryImages = {
 	'02': [0, 3, 5, 3, 5, 3],
 	'03': [3, 1, 9, 7, 3, 3, 3, 3, 3, 3],
 	'04': [4, 7, 3, 1, 4],
-	'05': [3, 6, 6, 5, 3] ,
-	'06': 1,
+	'05': [3, 6, 6, 5, 3],
+	'06': [3, 4, 1, 1]
 }
 
 // MARK: GRID VIEW - PER LANGUAGE PROJECT CARDS
