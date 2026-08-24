@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react'
 import { LanguageProvider } from './components/effects/LanguageContext' 
 import CustomCursor from './components/effects/CustomCursor';
 import About from './components/layout/About';
-import Playground from './components/layout/Playground';
+/*import Playground from './components/layout/Playground';*/
+import Archive from './components/layout/Archive';
 
 function App() {
   const [theme, setTheme] = useState('dark')
@@ -42,7 +43,7 @@ function App() {
             />
           )}
           {currentPage === 'about' && <About />}
-          {currentPage === 'playground' && <Playground setCurrentPage={setCurrentPage} />}
+          {currentPage === 'archive' && <Archive />}
           
           <Footer />
         </div>

@@ -3,7 +3,7 @@ const homeTranslations = {
 	en: {
 		work: 'WORK',
 		about: 'ABOUT',
-		playground: 'PLAYGROUND',
+		archive: 'ARCHIVE',
 		menu: 'MENU',
 		close: 'CLOSE',
 		indexView: '[INDEX VIEW]',
@@ -23,7 +23,7 @@ const homeTranslations = {
 	es: {
 		work: 'TRABAJO',
 		about: 'PERFIL',
-		playground: 'PLAYGROUND',
+		archive: 'ARCHIVO',
 		menu: 'MENÚ',
 		close: 'CERRAR',
 		indexView: '[VISTA ÍNDICE]',
@@ -796,9 +796,9 @@ const projectPageImages = {
 
 	'02': ['/trabajos/Echar-raices 05.png', '/trabajos/Echar - raices historia - 1.mp4', '/trabajos/Echar - raices historia - 2.png', '/trabajos/Echar - raices historia - 3.mp4', '/trabajos/Echar - raices visual - 1.png', '/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 03.png', '/trabajos/Echar-raices 02.png', "/trabajos/Echar - raices visual - 4.gif", "/trabajos/Echar - raices codigo - 1.mp4", "/trabajos/Echar - raices codigo - 2.png", "/trabajos/Echar - raices codigo - 3.png", "/trabajos/Echar - raices flujo - 1.png", "/trabajos/Echar - raices flujo - 2.gif", "/trabajos/Echar - raices visual - 4.gif","/trabajos/Echar - raices flujo - 3.gif", "/trabajos/Echar - raices flujo - 4.png", "/trabajos/Echar - raices uxui - 1.png", "/trabajos/Echar - raices uxui - 2.png", "/trabajos/Echar - raices uxui - 3.png"],
 
-	'03': ['/trabajos/Entrelineas inicio - 1.mp4', '/trabajos/Entrelineas inicio - 2.mp4', '/trabajos/Entrelineas inicio - 3.mp4', '/trabajos/Entrelineas inicio - 4.png', '/trabajos/Entrelineas research - 1.png', '/trabajos/Entrelineas ideation - 1.png', '/trabajos/Entrelineas ideation - 2.png', '/trabajos/Entrelineas ideation - 3.png', '/trabajos/Entrelineas ideation - 4.png', '/trabajos/Entrelineas ideation - 5.png', '/trabajos/Entrelineas ideation - 6.png', '/trabajos/Entrelineas ideation - 7.png', '/trabajos/Entrelineas ideation - 9.mp4', '/trabajos/Entrelineas ideation - 10.png', '/trabajos/Entrelineas visual - 1.gif',],
+	'03': ['/trabajos/Entrelineas inicio - 1.mp4', '/trabajos/Entrelineas inicio - 2.mp4', '/trabajos/Entrelineas inicio - 3.mp4', '/trabajos/Entrelineas inicio - 4.png', '/trabajos/Entrelineas research - 1.png', '/trabajos/Entrelineas ideation - 1.png', '/trabajos/Entrelineas ideation - 2.png', '/trabajos/Entrelineas ideation - 3.png', '/trabajos/Entrelineas ideation - 4.png', '/trabajos/Entrelineas ideation - 5.png', '/trabajos/Entrelineas ideation - 6.png', '/trabajos/Entrelineas ideation - 7.png', '/trabajos/Entrelineas ideation - 9.mp4', '/trabajos/Entrelineas ideation - 10.png', '/trabajos/Entrelineas visual - 1.png', '/trabajos/Entrelineas visual - 2.png', '/trabajos/Entrelineas visual - 3.gif', '/trabajos/Entrelineas visual - 4.png', '/trabajos/Entrelineas visual - 5.png', '/trabajos/Entrelineas visual - 6.png', '/trabajos/Entrelineas visual - 7.png', '/trabajos/Entrelineas app- 1.png', '/trabajos/Entrelineas app- 2.png', '/trabajos/Entrelineas app - 4.mp4', '/trabajos/Entrelineas accesibilidad - 1.png', '/trabajos/Entrelineas accesibilidad - 2.png', '/trabajos/Entrelineas accesibilidad - 3.png', '/trabajos/Entrelineas web - 1.mp4', '/trabajos/Entrelineas web - 2.png', '/trabajos/Entrelineas web - 3.png'],
 
-	'04': ['/trabajos/E-porfolio.png', '/trabajos/E-porfolio-2.png', '/trabajos/E-porfolio-3.png', '/trabajos/E-porfolio-1.png'],
+	'04': ['/trabajos/Ermes - inicio 1.mp4', '/trabajos/Ermes - inicio 2.png', '/trabajos/Ermes - inicio 3.png', '/trabajos/Ermes inicio - 4.png', "/trabajos/Ermes inicio - 5.mp4", "/trabajos/Ermes visual - 1.png", "/trabajos/Ermes visual - 2.gif", '/trabajos/Ermes visual - 3.mp4', '/trabajos/Ermes visual - 4.mp4', '/trabajos/Ermes visual - 5.mp4', '/trabajos/Ermes visual - 6.png', '/trabajos/Ermes visual - 7.png', '/trabajos/Ermes front - 1.png', '/trabajos/Ermes front - 2.png', '/trabajos/Ermes front - 3.png', '/trabajos/Ermes escalability - 1.png', '/trabajos/Ermes conclusion - 1.png', '/trabajos/Ermes conclusion - 2.mp4', '/trabajos/Ermes conclusion - 3.mp4'],
 	'05': ['/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade01.png', '/trabajos/Fade02.png'],
 	'06': ['/trabajos/Huddle 03.png', '/trabajos/Huddle 01.png', '/trabajos/Huddle 04.png', '/trabajos/Huddle 02.png'],
 }
@@ -807,9 +807,9 @@ const projectPageImages = {
 const projectPageImageSpans = {
 	'01': [4, 4, 4, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 1, 1, 2],
 	'02': [ 4, 2, 2, 4, 2, 2, 4, 1, 3, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2],
-	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2],
-	'04': [3, 2, 1, 1],
-	'05': [2, 1, 1, 2],
+	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 4, 2, 2],
+	'04': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 4, 4, 2, 2, 4, 4, 2, 2, 4],
+	'05': [2, 1, 1, 3],
 	'06': [4, 2, 1, 1],
 }
 
@@ -817,8 +817,8 @@ const projectPageImageSpans = {
 const projectPageTextEveryImages = {
 	'01': [6, 2, 2, 6, 0, 5, 5],
 	'02': [0, 3, 5, 3, 5, 3],
-	'03': [3, 1, 9, 2],
-	'04': 1,
+	'03': [3, 1, 9, 7, 3, 3, 3, 3, 3, 3],
+	'04': [4, 7, 3, 1, 4],
 	'05': 2,
 	'06': 1,
 }
@@ -843,6 +843,26 @@ const gridProjectsByLanguage = {
 	]
 }
 
+// MARK: ARCHIVE VIEW - PER LANGUAGE PROJECT CARDS
+const archiveProjectsByLanguage = {
+	en: [
+		{ id: 'a-1', category: 'product', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'product, graphic', span: 1, images: ['/archivo/Omega traicion thumbnail.jpeg'] },
+		{ id: 'a-2', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
+		{ id: 'a-3', category: 'photography', title: 'GENDERTRASH', year: '2023', disciplines: 'photography', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: 'a-4', category: 'web', title: 'BAILANDO DESTINOS', year: '2026', disciplines: 'web', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
+		{ id: 'a-5', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2026', disciplines: 'Web', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: 'a-6', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/Z-tarot thumbnail.png'] },
+	],
+	es: [
+		{ id: 'a-1', category: 'producto', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'producto, gráfico', span: 1, images: ['/trabajos/Omega traicion thumbnail.jpeg'] },
+		{ id: 'a-2', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
+		{ id: 'a-3', category: 'photografía', title: 'GENDERTRASH', year: '2023', disciplines: 'photografía', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: 'a-4', category: 'web', title: 'BAILANDO DESTINOS', year: '20264', disciplines: 'web', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
+		{ id: 'a-5', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: 'a-6', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/Z-tarot thumbnail.png'] },
+	]
+}
+
 // MARK: PUBLIC API - SINGLE OBJECT FOR THE APP
 export const siteContent = {
 	translations: homeTranslations,
@@ -855,4 +875,8 @@ export const siteContent = {
 	projectPageImageSpans,
 	projectPageTextEveryImages,
 	gridProjectsByLanguage,
+    archiveProjectsByLanguage
 }
+
+
+

@@ -16,3 +16,6 @@ export const projectPageTextEveryImages = siteContent.projectPageTextEveryImages
 
 // 4. LISTA DE PROYECTOS PARA LA CUADRÍCULA
 export const getGridProjects = (language) => siteContent.gridProjectsByLanguage[language] ?? siteContent.gridProjectsByLanguage.en;
+
+// 5. LISTA DE PROYECTOS PARA EL ARCHIVO
+export const getArchiveProjects = (language) => siteContent.archiveProjectsByLanguage[language] ?? siteContent.archiveProjectsByLanguage.en;

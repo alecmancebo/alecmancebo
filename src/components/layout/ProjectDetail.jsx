@@ -220,7 +220,11 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
               className="project-detail__next-link"
               onClick={() => onOpenProject(project.previousProject)}
             >
-              <CodedText text={`[PREVIOUS: ${project.previousProject.title.toUpperCase()}]`} />
+              {/* Añadimos la prop key aquí */}
+              <CodedText 
+                key={`prev-${project.previousProject.id}`} 
+                text={`[PREVIOUS: ${project.previousProject.title.toUpperCase()}]`} 
+              />
             </button>
           ) : null}
           {project.nextProject ? (
@@ -229,7 +233,11 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
               className="project-detail__next-link"
               onClick={() => onOpenProject(project.nextProject)}
             >
-              <CodedText text={`[NEXT: ${project.nextProject.title.toUpperCase()}]`} />
+              {/* Y la añadimos aquí */}
+              <CodedText 
+                key={`next-${project.nextProject.id}`} 
+                text={`[NEXT: ${project.nextProject.title.toUpperCase()}]`} 
+              />
             </button>
           ) : null}
         </div>

@@ -154,7 +154,7 @@ body {
 
 /*MARK: Splash*/
 
-.splash-screen {
+/*.splash-screen {
   position: fixed;
   inset: 0;
   background: var(--bg-color, #000000);
@@ -211,6 +211,49 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}*/
+
+/* Pantalla de inicio blanca que cubre el contenido de la landing */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 9998;
+  transition: opacity 0.8s ease;
+  pointer-events: none; /* Evita bloquear clics una vez oculto */
+}
+
+/* Estado Inicial: Logo grande y centrado */
+.logo-estado-inicial {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* Centra el elemento y aumenta su tamaño al 200% */
+  transform: translate(-50%, -50%) scale(2);
+  z-index: 9999;
+  cursor: pointer;
+  /* La curva cubic-bezier hace que empiece rápido y frene suavemente */
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              top 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              left 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Estado Final: Logo pequeño en la cabecera */
+.logo-estado-final {
+  position: fixed;
+  top: 20px;  /* Distancia desde arriba en tu navbar */
+  left: 40px; /* Distancia desde la izquierda en tu navbar */
+  /* Elimina el centrado negativo y devuelve al tamaño original (100%) */
+  transform: translate(0, 0) scale(1);
+  z-index: 9999;
+}
+
+/* Clase para ocultar el fondo */
+.oculto {
+  opacity: 0;
 }
 
 @keyframes drawGraffiti {
@@ -1003,7 +1046,7 @@ body {
   position: relative;
   z-index: 1;
   width: auto;
-  max-width: 330px;
+  max-width: 300px;
   display: block;
   padding: var(--space-12-xl) 0px;
 }
@@ -1089,6 +1132,75 @@ body {
   background: var(--color-text);
   color: var(--color-bg);
 }
+
+/*MARK: Archive*/
+
+/*MARK: Archive Page*/
+.archive-view {
+  width: 100%;
+  padding: var(--space-12-xl) var(--layout-pad-x-xl) var(--space-10-xl);
+  background-color: var(--color-bg);
+  min-height: 80vh;
+}
+
+.archive__grid {
+  display: grid;
+  /* 8 columnas idénticas al grid-view */
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  /* Espaciado exacto de grid-view */
+  gap: 68px 20px;
+  align-items: start;
+}
+
+.archive__item {
+  position: relative;
+  /* Cada elemento ocupa 2 de las 8 columnas (4 por fila) */
+  grid-column: span 2;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.archive__item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; /* Mantiene las cajas perfectamente cuadradas */
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.1);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.archive__item:hover img {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.03); /* Efecto de zoom suave */
+}
+
+.archive__item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-4-xl);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.archive__item:hover .archive__item-overlay {
+  opacity: 1;
+}
+
+.archive__item-title {
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: var(--text-m);
+  text-transform: uppercase;
+  margin: 0;
+}
+
 
 /*MARK: Media Queries*/
 
@@ -1285,6 +1397,14 @@ body {
   }
   .about__content-grid {
     gap: var(--space-10-xl);
+  }
+
+  .archive__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 14px;
+  }
+  .archive__item {
+    grid-column: span 1;
   }
 }
 
@@ -1744,5 +1864,18 @@ body {
 
   .footer__reel {
     display: none;
+  }
+
+  .archive-view {
+    padding: calc(var(--space-8-xl) * 3) var(--layout-pad-x-xl) var(--space-8-xl);
+  }
+  .archive__grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .archive__item-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+    align-items: flex-end;
+    opacity: 1;
   }
 }

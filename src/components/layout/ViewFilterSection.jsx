@@ -391,9 +391,10 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
             {filteredProjects.map((project) => (
               <li key={project.id} className="browser__list-item">
                 <button
-                  type="button"
-                  className={`browser__item-button ${activeProjectId === project.id ? 'browser__item-button--active' : ''}`}
-                  onClick={() => openProjectDetail(project)}
+                    type="button"
+                    className={`browser__item-button ${activeProjectId === project.id ? 'browser__item-button--active' : ''}`}
+                    onClick={() => openProjectDetail(project)}
+                    onMouseEnter={() => setActiveProjectId(project.id)}
                 >
                   <span className="browser__item-id">
                     <CodedText text={project.id} />

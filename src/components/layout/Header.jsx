@@ -33,7 +33,7 @@ function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, onNavigatePage, setThe
   const navItems = [
     { key: 'work', label: t('work'), path: '/', view: 'home' },
     { key: 'about', label: t('about'), path: '/about', view: 'about' },
-    { key: 'playground', label: t('playground'), path: '/playground', view: 'playground' }
+    { key: 'archive', label: t('archive'), path: '/archive', view: 'archive' },
   ];
 
   return (
