@@ -8,38 +8,52 @@ import {
   projectDetailImages,
   projectPageImageSpans,
   projectPageTextEveryImages,
-  getArchiveProjects // Importamos la nueva función
+  getArchiveProjects
 } from './PorfolioData';
 
 export default function Archive() {
   const { language } = useLanguage();
   const [viewingProject, setViewingProject] = useState(null);
 
-  // Cargamos los proyectos configurados específicamente para el Archivo
   const archiveProjects = useMemo(() => getArchiveProjects(language), [language]);
 
-  const getNextProject = (projectId) => {
-    const currentIndex = projects.findIndex((item) => item.id === projectId);
-    if (currentIndex === -1) return projects[0];
-    return projects[(currentIndex + 1) % projects.length];
+  const getNextProject = (currentProject) => {
+    const normalizedCurrentTitle = currentProject.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const currentIndex = archiveProjects.findIndex((item) => {
+      const normalizedItemTitle = item.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      return normalizedItemTitle === normalizedCurrentTitle;
+    });
+
+    if (currentIndex === -1) return archiveProjects[0];
+    return archiveProjects[(currentIndex + 1) % archiveProjects.length];
   };
 
-  const getPreviousProject = (projectId) => {
-    const currentIndex = projects.findIndex((item) => item.id === projectId);
-    if (currentIndex === -1) return projects[projects.length - 1];
-    return projects[(currentIndex - 1 + projects.length) % projects.length];
+  const getPreviousProject = (currentProject) => {
+    const normalizedCurrentTitle = currentProject.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const currentIndex = archiveProjects.findIndex((item) => {
+      const normalizedItemTitle = item.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      return normalizedItemTitle === normalizedCurrentTitle;
+    });
+
+    if (currentIndex === -1) return archiveProjects[archiveProjects.length - 1];
+    return archiveProjects[(currentIndex - 1 + archiveProjects.length) % archiveProjects.length];
   };
 
-  const openProjectDetail = (project) => {
-    const baseProject = projects.find((item) => item.id === project.id || item.title === project.title);
+const openProjectDetail = (project) => {
+    const normalizedProjectTitle = project.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    
+    // Busca si existe en la página principal, pero si no existe, no pasa nada.
+    const baseProject = projects.find((item) => {
+      const normalizedItemTitle = item.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      return item.id === project.id || normalizedItemTitle === normalizedProjectTitle;
+    });
 
-    const detailImages =
-      (baseProject && projectPageImages[baseProject.id]) ??
-      (baseProject && projectDetailImages[baseProject.id]) ??
-      project.images ??
-      [];
+    // Esta es la clave: usamos el ID de la base principal si existe, y si no, el ID del propio archivo ('07', '08', etc.)
+    const resolvedId = baseProject?.id ?? project.id;
 
-    const detailSpans = (baseProject && projectPageImageSpans[baseProject.id]) ?? [];
+    // Buscamos las imágenes y los spans usando el resolvedId
+    const detailImages = projectPageImages[resolvedId] ?? projectDetailImages[resolvedId] ?? project.images ?? [];
+    const detailSpans = projectPageImageSpans[resolvedId] ?? [];
     const detailMediaItems = detailImages.map((src, index) => ({
       src,
       span: detailSpans[index] ?? 1,
@@ -47,24 +61,26 @@ export default function Archive() {
 
     setViewingProject({
       ...project,
-      id: baseProject?.id ?? project.id,
+      id: resolvedId,
       category: baseProject?.category ?? project.category,
       projectUrl: baseProject?.projectUrl ?? project.projectUrl ?? '#',
       year: project.year || '2024',
       disciplines: project.disciplines ?? baseProject?.category,
-      textEveryImages: (baseProject && projectPageTextEveryImages[baseProject.id]) ?? 1,
+      textEveryImages: projectPageTextEveryImages[resolvedId] ?? 1,
       images: detailMediaItems,
-      nextProject: getNextProject(baseProject?.id ?? project.id),
-      previousProject: getPreviousProject(baseProject?.id ?? project.id),
+      nextProject: getNextProject(project),
+      previousProject: getPreviousProject(project),
     });
   };
 
   if (viewingProject) {
     return (
       <ProjectDetail
+        key={viewingProject.id}
         project={viewingProject}
         onBack={() => setViewingProject(null)}
         onOpenProject={openProjectDetail}
+        backText="[BACK TO ARCHIVE]"
       />
     );
   }
@@ -83,11 +99,9 @@ export default function Archive() {
             onClick={() => openProjectDetail(project)}
             style={{
               cursor: 'pointer',
-              // Aquí leemos la propiedad span directamente desde siteContent.js
               gridColumn: `span ${project.span || 1}`, 
             }}
           >
-            {/* Contenedor de la imagen a 1 sola columna forzada */}
             <div className="grid-view__media" style={{ gridTemplateColumns: '1fr' }}>
               <img 
                 src={project.images[0]} 
@@ -95,8 +109,6 @@ export default function Archive() {
                 loading="lazy" 
               />
             </div>
-            
-            {/* Textos heredados de grid-view */}
             <h3 className="grid-view__title">
               <TypewriterText text={`${project.title} [${project.year}]`} />
             </h3>

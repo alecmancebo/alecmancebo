@@ -2,12 +2,11 @@ import CodedText from '../effects/CodedText';
 import { useEffect, useRef } from 'react';
 import { useLanguage } from '../effects/LanguageContext';
 import TypewriterText from '../effects/TypewriterText';
-// Importamos la base de datos de textos desde tu nuevo archivo centralizado
 import { textDatabase } from './PorfolioData'; 
 
 const isVideoFile = (src) => /\.(mp4|webm|ogg)$/i.test(src);
 
-export default function ProjectDetail({ project, onBack, onOpenProject }) {
+export default function ProjectDetail({ project, onBack, onOpenProject, backText = "[BACK TO WORKS]" }) {
   const { language } = useLanguage();
   const projectDetailRef = useRef(null);
 
@@ -40,7 +39,6 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
     return <p><TypewriterText text={content} /></p>;
   };
 
-  // 1. Extraemos los datos dinámicos del proyecto actual
   const projectTexts = textDatabase[project.title] || textDatabase['DEFAULT'];
   const textBlocks = projectTexts[language] || projectTexts['en'];
   const normalizeSpan = (value, fallback = 1) => {
@@ -89,7 +87,6 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
     imageIndex += chunkSize;
   }
 
-  // Si sobran imágenes, se añaden al último bloque para no perder contenido.
   if (imageIndex < galleryImages.length) {
     const tailImages = galleryImages.slice(imageIndex);
     if (imageChunks.length === 0) {
@@ -107,15 +104,13 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
   return (
     <article ref={projectDetailRef} className="project-detail" id={`project-${project.id}`}>
       
-      {/* CABECERA GIGANTE (Fija en la parte superior) */}
       <header className="project-detail__hero-header">
         <h1 className="project-detail__title"><TypewriterText text={project.title} /></h1>
       </header>
 
-      {/* BARRA DE METADATOS (Fija en la parte superior) */}
       <div className="project-detail__meta-bar">
         <button className="project-detail__back-btn" onClick={onBack}>
-          <CodedText text="[BACK TO WORKS]" />
+          <CodedText text={backText} />
         </button>
         <a
           className="project-detail__category"
@@ -131,7 +126,6 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
         </span>
       </div>
 
-      {/* IMAGEN PRINCIPAL: siempre ocupa las 4 columnas y va antes del primer párrafo */}
       {leadImage ? (
         <section className="project-detail__media-grid" style={{ '--detail-columns': String(mediaColumns) }}>
           <figure
@@ -154,7 +148,6 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
         </section>
       ) : null}
 
-      {/* INTERCALADO: bloque de texto y luego cada N imágenes (configurable por proyecto) */}
       {Array.from({ length: sectionCount }).map((_, index) => {
         const textBlock = textBlocks[index];
         const chunkImages = imageChunks[index] ?? [];
@@ -220,7 +213,6 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
               className="project-detail__next-link"
               onClick={() => onOpenProject(project.previousProject)}
             >
-              {/* Añadimos la prop key aquí */}
               <CodedText 
                 key={`prev-${project.previousProject.id}`} 
                 text={`[PREVIOUS: ${project.previousProject.title.toUpperCase()}]`} 
@@ -233,7 +225,6 @@ export default function ProjectDetail({ project, onBack, onOpenProject }) {
               className="project-detail__next-link"
               onClick={() => onOpenProject(project.nextProject)}
             >
-              {/* Y la añadimos aquí */}
               <CodedText 
                 key={`next-${project.nextProject.id}`} 
                 text={`[NEXT: ${project.nextProject.title.toUpperCase()}]`} 

@@ -563,12 +563,6 @@ const textDatabase = {
                 col3: 'It includes the ability to add background music to optimize concentration and productivity during work sessions.'
             },
             {
-                tag: 'COMMUNICATION STRATEGY',
-                subtitle: 'Reconnecting with Generation Z',
-                col2: "It aims to transform Microsoft\'s perception through a more relatable, human, conversational, and engaging language on social media. It uses dynamic campaigns on platforms like TikTok, Instagram, and Twitch, relying on content creators, streamers, and tech reviewers.",
-                col3:  "It incorporates digital culture, memes, and youth entertainment dynamics. The goal is to generate engagement and virality, reinforcing the perception of Microsoft as a modern, creative brand that is close to new generations."
-            },
-            {
                 tag: 'THE PROTOTYPE',
                 subtitle: 'An interactive 3D prototype',
                 col2: 'On a technical level, the functional prototype covered a basic navigation flow and the implementation of the initial onboarding process guided by the assistant, helping to visualize the user experience. A basic 3D model of a couple of rooms was built as a visual interactive mockup, simulating the aesthetic of the virtual space without featuring actual execution logic.',
@@ -623,12 +617,6 @@ const textDatabase = {
                 col3: 'Incluye la posibilidad de añadir música de fondo para optimizar la concentración y la productividad durante las sesiones de trabajo.  '
             },
             {
-                tag: 'ESTRATEGIA DE COMUNICACIÓN',
-                subtitle: 'Reconectar con la Generación Z',
-                col2: "Se orienta a transformar la percepción de Microsoft mediante un lenguaje más cercano, humano, conversacional y relatable en redes sociales. Utiliza campañas dinámicas en plataformas como TikTok, Instagram y Twitch apoyándose en creadores de contenido, streamers y tech reviewers. ",
-                col3:  "Incorpora la cultura digital, los memes y dinámicas de entretenimiento juvenil. Se busca generar engagement y viralidad, reforzando la percepción de Microsoft como una marca moderna, creativa y cercana las nuevas generaciones."
-            },
-            {
                 tag: 'EL PROTOTIPO',
                 subtitle: 'Un prototipo interactivo en 3D',
                 col2: 'A nivel técnico, el prototipo funcional abarcó un recorrido básico de navegación y la implementación del flujo de onboarding inicial guiado por el asistente, para ayudar a visualizar la experiencia del usuario. Se construyó un modelo básico de un par de salas en 3D a modo de mockup interactivo visual, simulando la estética del espacio virtual sin llegar a contar con lógica de ejecución real.',
@@ -664,8 +652,8 @@ const projects = [
 	{ id: '02', title: 'ECHAR RAÍCES', category: 'web, gameDev', seed: 'echar-raices', projectUrl: 'https://alec-rodriguez.itch.io/echar-raices' },
 	{ id: '03', title: 'ENTRELÍNEAS', category: 'uxui', seed: 'entrelineas', projectUrl: 'https://www.figma.com/design/1OCW04zQOmjOtNLwMURRsw/Entrel%C3%ADneas---AlecRodr%C3%ADguez?node-id=12-2&t=I4y2LlIt64Dla7Gi-1' },
 	{ id: '04', title: 'ERMES OLEA PORFOLIO', category: 'web', seed: 'ermes-olea-porfolio', projectUrl: 'https://ermes-olea.netlify.app/' },
-	{ id: '05', title: 'FADE', category: 'gameDev, threed', seed: 'fade', projectUrl: 'https://alec-rodriguez.itch.io/fade' },
-	{ id: '06', title: 'MICROSOFT HUDDLE', category: 'gameDev, web, threed', seed: 'microsoft-huddle', projectUrl: 'https://microsofthuddle.framer.website/' },
+	{ id: '05', title: 'FADE', category: 'gameDev, 3d', seed: 'fade', projectUrl: 'https://alec-rodriguez.itch.io/fade' },
+	{ id: '06', title: 'MICROSOFT HUDDLE', category: 'gameDev, web, 3d', seed: 'microsoft-huddle', projectUrl: 'https://microsofthuddle.framer.website/' },
 ]
 
 // MARK: HOME - INDEX COLLAGE LAYOUT
@@ -790,7 +778,19 @@ const projectPageImages = {
 
 	'05': ['/trabajos/FADE Teaser.mp4', '/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade02.png', '/trabajos/Fade visual - 3.png', '/trabajos/Fade visual - 4.png', '/trabajos/Fade visual - 5.png', '/trabajos/Fade visual - 6.png', '/trabajos/Fade visual - 7.png', '/trabajos/Fade visual - 8.png', '/trabajos/Fade01.png', '/trabajos/Fade visual - 1.png', '/trabajos/Fade Mecanica - 1.mp4', '/trabajos/Fade Mecanica - 4.png', '/trabajos/Fade Mecanica - 5.png', '/trabajos/Fade Mecanica - 6.png', '/trabajos/Fade Assets - 1.webp', '/trabajos/Fade Assets - 2.webp', '/trabajos/Fade Assets - 3.png', '/trabajos/Fade Assets - 4.webp', '/trabajos/Fade Assets - 5.png', '/trabajos/Fade visual - 2.png', '/trabajos/Fade Conclusion - 1.png', '/trabajos/Fade Conclusion - 3.mp4',],
 
-	'06': ['/trabajos/Huddle inicio - 1.mp4', '/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle inicio - 2.mp4', '/trabajos/Huddle research - 1.png', '/trabajos/Huddle research - 2.png', '/trabajos/Huddle research - 3.png', '/trabajos/Huddle research - 4.png', '/trabajos/Huddle ideation - 1.png', '/trabajos/Huddle architecture - 1.png',],
+	'06': ['/trabajos/Huddle inicio - 1.mp4', '/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle inicio - 2.mp4', '/trabajos/Huddle research - 1.png', '/trabajos/Huddle research - 2.png', '/trabajos/Huddle research - 3.png', '/trabajos/Huddle research - 4.png', '/trabajos/Huddle ideation - 1.png', '/trabajos/Huddle architecture - 1.png', '/trabajos/Huddle visual - 3.mp4', '/trabajos/Huddle visual - 4.mp4', '/trabajos/Huddle visual - 5.png', '/trabajos/Huddle visual - 6.png', '/trabajos/Huddle visual - 7.png', '/trabajos/Huddle visual - 8.png', '/trabajos/Huddle visual - 9.mp4', '/trabajos/Huddle espacio - 1.jpg', '/trabajos/Huddle espacio - 2.jpg', '/trabajos/Huddle 04.png', '/trabajos/Huddle espacio - 3.jpg', '/trabajos/Huddle - copilot 1.mp4', '/trabajos/Huddle copilot - 2.webp', '/trabajos/Huddle copilot - 3.webp', '/trabajos/Huddle copilot - 4.jpg', '/trabajos/Huddle prototipo - 1.png', '/trabajos/Huddle prototipo - 2.mp4',  '/trabajos/Huddle 02.png'],
+
+    "07": [ "/archivo/En proceso.png"],
+
+    "08": [ "/archivo/Mindscape thumbnail.png"],
+
+    "09": [ "/archivo/En proceso.png"],
+    
+    "10": [ "/archivo/En proceso.png"],
+
+    "11": [ "/archivo/En proceso.png"],
+
+    "12": [ "/archivo/En proceso.png"],
 }
 
 // MARK: PROJECT DETAIL PAGE - IMAGE SPANS (1, 2, OR 4)
@@ -800,7 +800,14 @@ const projectPageImageSpans = {
 	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 4, 2, 2],
 	'04': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 4, 4, 2, 2, 4, 4, 2, 2, 4],
 	'05': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4],
-	'06': [4, 2, 2, 4, 4, 4, 2, 2, 4, 4],
+	'06': [4, 2, 2, 4, 4, 4, 2, 2, 4, 4, 2, 2, 2, 2, 2, 2, 4, 2, 2, 1, 3, 4, 2, 2, 4, 4, 4, 4],
+    "07": [4],
+    "08": [4],
+    "09": [4],
+    "10": [4],
+    "11": [4],
+    "12": [4],
+
 }
 
 // MARK: PROJECT DETAIL PAGE - TEXT EVERY N IMAGES (number or pattern array)
@@ -810,7 +817,7 @@ const projectPageTextEveryImages = {
 	'03': [3, 1, 9, 7, 3, 3, 3, 3, 3, 3],
 	'04': [4, 7, 3, 1, 4],
 	'05': [3, 6, 6, 5, 3],
-	'06': [3, 4, 1, 1]
+	'06': [3, 4, 1, 1, 7, 4, 0, 4, 3]
 }
 
 // MARK: GRID VIEW - PER LANGUAGE PROJECT CARDS
@@ -836,20 +843,20 @@ const gridProjectsByLanguage = {
 // MARK: ARCHIVE VIEW - PER LANGUAGE PROJECT CARDS
 const archiveProjectsByLanguage = {
 	en: [
-		{ id: 'a-1', category: 'product', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'product, graphic', span: 1, images: ['/archivo/Omega traicion thumbnail.jpeg'] },
-		{ id: 'a-2', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
-		{ id: 'a-3', category: 'photography', title: 'GENDERTRASH', year: '2023', disciplines: 'photography', span: 1, images: ['/archivo/En proceso.png'] },
-		{ id: 'a-4', category: 'web', title: 'BAILANDO DESTINOS', year: '2026', disciplines: 'web', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
-		{ id: 'a-5', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2026', disciplines: 'Web', span: 1, images: ['/archivo/En proceso.png'] },
-		{ id: 'a-6', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/Z-tarot thumbnail.png'] },
+		{ id: '07', category: 'product', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'product, graphic', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: '08', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
+		{ id: '09', category: 'photography', title: 'GENDERTRASH', year: '2023', disciplines: 'photography', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '2026', disciplines: 'web', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
+		{ id: '11', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2026', disciplines: 'Web', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/Z-tarot thumbnail.png'] },
 	],
 	es: [
-		{ id: 'a-1', category: 'producto', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'producto, gráfico', span: 1, images: ['/trabajos/Omega traicion thumbnail.jpeg'] },
-		{ id: 'a-2', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
-		{ id: 'a-3', category: 'photografía', title: 'GENDERTRASH', year: '2023', disciplines: 'photografía', span: 1, images: ['/archivo/En proceso.png'] },
-		{ id: 'a-4', category: 'web', title: 'BAILANDO DESTINOS', year: '20264', disciplines: 'web', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
-		{ id: 'a-5', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/En proceso.png'] },
-		{ id: 'a-6', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/Z-tarot thumbnail.png'] },
+		{ id: '07', category: 'producto', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'producto, gráfico', span: 1, images: ['/trabajos/En proceso.png'] },
+		{ id: '08', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
+		{ id: '09', category: 'photografía', title: 'GENDERTRASH', year: '2023', disciplines: 'photografía', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '20264', disciplines: 'web', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
+		{ id: '11', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'web', span: 1, images: ['/archivo/Z-tarot thumbnail.png'] },
 	]
 }
 
