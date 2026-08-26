@@ -108,20 +108,20 @@ const projects = [
 // Tarjetas para la Vista Cuadrícula (solo del g-1 al g-6)
 const gridProjectsByLanguage = {
 	en: [
-		{ id: 'g-1', category: 'web', title: 'TRANSPAPELADES', year: '2024', disciplines: 'WEB', images: ['/trabajos/transpapelades-1.png'] },
-		{ id: 'g-2', category: 'web, gameDev', title: 'ECHAR RAICES', year: '2024', disciplines: 'WEB / GAME-DEV', images: ['/trabajos/Echar-raices 03.png', '/trabajos/Echar-raices 05.png', '/trabajos/Echar-raices 01.png'] },
-		{ id: 'g-3', category: 'uxui', title: 'ENTRELINEAS', year: '2024', disciplines: 'UX/UI', images: ['/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 04.png'] },
-		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2024', disciplines: 'WEB', images: ['/trabajos/E-porfolio-1.png',  '/trabajos/E-porfolio-3.png', '/trabajos/E-porfolio.png'] },
+		{ id: 'g-1', category: 'web', title: 'TRANSPAPELADES', year: '2025', disciplines: 'WEB', images: ['/trabajos/transpapelades-1.png'] },
+		{ id: 'g-2', category: 'web, gameDev', title: 'ECHAR RAICES', year: '2026', disciplines: 'WEB / GAME-DEV', images: ['/trabajos/Echar-raices 03.png', '/trabajos/Echar-raices 05.png', '/trabajos/Echar-raices 01.png'] },
+		{ id: 'g-3', category: 'uxui', title: 'ENTRELINEAS', year: '2026', disciplines: 'UX/UI', images: ['/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 04.png'] },
+		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2026', disciplines: 'WEB', images: ['/trabajos/E-porfolio-1.png',  '/trabajos/E-porfolio-3.png', '/trabajos/E-porfolio.png'] },
 		{ id: 'g-5', category: 'gameDev, threed', title: 'FADE', year: '2024', disciplines: 'GAME-DEV / 3D', images: ['/trabajos/Fade04.png', '/trabajos/Fade02.png'] },
-		{ id: 'g-6', category: 'gameDev, web, threed', title: 'MICROSOFT HUDDLE', year: '2024', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle 02.png'] },
+		{ id: 'g-6', category: 'gameDev, web, threed', title: 'MICROSOFT HUDDLE', year: '2025', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle 02.png'] },
 	],
 	es: [
-		{ id: 'g-1', category: 'web', title: 'TRANSPAPELADES', year: '2024', disciplines: 'WEB', images: ['/trabajos/transpapelades-1.png'] },
-		{ id: 'g-2', category: 'web, gameDev', title: 'ECHAR RAICES', year: '2024', disciplines: 'WEB / GAME-DEV', images: ['/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 02.png', '/trabajos/Echar-raices 03.png'] },
-		{ id: 'g-3', category: 'uxui', title: 'ENTRELINEAS', year: '2024', disciplines: 'UX/UI', images: ['/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 02.png'] },
-		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2024', disciplines: 'WEB', images: ['/trabajos/E-porfolio-1.png', '/trabajos/E-porfolio-2.png', '/trabajos/E-porfolio-3.png'] },
+		{ id: 'g-1', category: 'web', title: 'TRANSPAPELADES', year: '2025', disciplines: 'WEB', images: ['/trabajos/transpapelades-1.png'] },
+		{ id: 'g-2', category: 'web, gameDev', title: 'ECHAR RAICES', year: '2026', disciplines: 'WEB / GAME-DEV', images: ['/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 02.png', '/trabajos/Echar-raices 03.png'] },
+		{ id: 'g-3', category: 'uxui', title: 'ENTRELINEAS', year: '2026', disciplines: 'UX/UI', images: ['/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 02.png'] },
+		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2026', disciplines: 'WEB', images: ['/trabajos/E-porfolio-1.png', '/trabajos/E-porfolio-2.png', '/trabajos/E-porfolio-3.png'] },
 		{ id: 'g-5', category: 'gameDev, threed', title: 'FADE', year: '2024', disciplines: 'GAME-DEV / 3D', images: ['/trabajos/Fade01.png', '/trabajos/Fade02.png'] },
-		{ id: 'g-6', category: 'gameDev, web, threed', title: 'MICROSOFT HUDDLE', year: '2024', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 02.png'] },
+		{ id: 'g-6', category: 'gameDev, web, threed', title: 'MICROSOFT HUDDLE', year: '2025', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 02.png'] },
 	]
 };
 
@@ -180,9 +180,12 @@ const archiveProjectsByLanguage = {
 		{ id: '09', category: 'photography', title: 'GENDERTRASH', year: '2023', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/En proceso.png'] },
 		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '2026', disciplines: 'WEB', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
 		{ id: '11', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2026', disciplines: 'WEB', span: 1, images: ['/archivo/En proceso.png'] },
-		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/Z-tarot thumbnail.png'] },
-        { id: '13', category: 'photography', title: 'RAVEN', year: '2024', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/RAVEN thumbnail.png'] },
-        { id: '14', category: 'photography', title: 'MOONDANCE', year: '2021', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/Fotogramas/Fotograma 1.jpg']}
+		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/Z-tarot thumbnail.png'], projectUrl: 'https://z-tarot.netlify.app/' },
+        { id: '13', category: 'photography', title: 'RAVEN', year: '2022', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/RAVEN thumbnail.png'] },
+        { id: '14', category: 'photography', title: 'MOONDANCE', year: '2021', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/Fotogramas/Fotograma 1.jpg']},
+        { id: '15', category: 'motion graphics', title: 'ADIDAS ORIGINALS', year: '2024', disciplines: 'MOTION GRAPHICS', span: 1, images: ['/archivo/Adidas/Adidas 1.png'], projectUrl: 'https://www.youtube.com/shorts/c25BpxVZI9Y' },
+        { id: '16', category: 'motion graphics', title: 'SUSPIRIA', year: '2024', disciplines: 'MOTION GRAPHICS', span: 1, images: ['/archivo/Suspiria thumbnail.png'], projectUrl: "youtube.com/watch?v=8tYVoyndzfg&feature=youtu.be" },
+        { id: '17', category: 'photography', title: 'NATURA MORTA', year: '2022', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/natura thumbnail.png'] },
 	],
 	es: [
 		{ id: '07', category: 'producto', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'producto, GRÁFICO', span: 1, images: ['/trabajos/En proceso.png'] },
@@ -190,9 +193,13 @@ const archiveProjectsByLanguage = {
 		{ id: '09', category: 'fotografía', title: 'GENDERTRASH', year: '2023', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/En proceso.png'] },
 		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '20264', disciplines: 'WEB', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
 		{ id: '11', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/En proceso.png'] },
-		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/Z-tarot thumbnail.png'] },
-        { id: '13', category: 'fotografía', title: 'RAVEN', year: '2023', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/RAVEN thumbnail.png'] },
-        { id: '14', category: 'fotografía', title: 'MOONDANCE', year: '2021', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/Fotogramas/Fotograma 0.png'] }
+		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/Z-tarot thumbnail.png'], projectUrl: 'https://z-tarot.netlify.app/' },
+        { id: '13', category: 'fotografía', title: 'RAVEN', year: '2022', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/RAVEN thumbnail.png'] },
+        { id: '14', category: 'fotografía', title: 'MOONDANCE', year: '2021', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/Fotogramas/Fotograma 0.png'] },
+        { id: '15', category: 'motion graphics', title: 'ADIDAS ORIGINALS', year: '2024', disciplines: 'MOTION GRAPHICS', span: 1, images: ['/archivo/Adidas/Adidas 1.png'], projectUrl: 'https://www.youtube.com/shorts/c25BpxVZI9Y' },
+        { id: '16', category: 'motion graphics', title: 'SUSPIRIA', year: '2024', disciplines: 'MOTION GRAPHICS', span: 1, images: ['/archivo/Suspiria thumbnail.png'], projectUrl: "youtube.com/watch?v=8tYVoyndzfg&feature=youtu.be"},
+        { id: '17', category: 'fotografía', title: 'NATURA MORTA', year: '2022', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/natura thumbnail.png'] },
+        
 	]
 };
 
@@ -264,6 +271,30 @@ const projectPageImages = {
 		"/archivo/Fotogramas/Fotograma 4.jpg",
 	],
 
+	"15": [
+        "/archivo/Adidas/Adidas 3.mp4",
+		"/archivo/Adidas/Adidas 1.png",
+		"/archivo/Adidas/Adidas 2.png",
+	],
+
+    "16": [
+		"/archivo/Suspiria/Credits 1.mp4",
+		"/archivo/Suspiria/Credits 2.png",
+		"/archivo/Suspiria/Credits 3.png",
+		"/archivo/Suspiria/Credits 4.png",
+		"/archivo/Suspiria/Credits 5.mp4"
+	],
+
+    "17": [
+        "/archivo/natura thumbnail.png",
+        "/archivo/natura/natura 1.jpg",
+		"/archivo/natura/natura 2.jpg",
+		"/archivo/natura/natura 3.jpg",
+		"/archivo/natura/natura 4.jpg",
+		"/archivo/natura/natura 5.jpg",
+		"/archivo/natura/natura 6.jpg",
+		"/archivo/natura/natura 7.jpg"
+	],
     
 };
 
@@ -283,6 +314,9 @@ const projectPageImageSpans = {
     "12": [4, 2, 2, 2, 2, 2, 2, 4],
     "13": [4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     "14": [4, 1, 1, 1, 1, 1],
+    "15": [4, 4, 4],
+    "16": [4, 4, 4, 4, 4],
+    "17":[4, 1, 1, 1, 1, 1, 1, 1]
 };
 
 // Ritmo de aparición del texto
@@ -295,7 +329,10 @@ const projectPageTextEveryImages = {
 	'06': [3, 4, 1, 1, 7, 4, 0, 4, 3],
     "12": [8],
     "13": [13],
-    "14": [6]
+    "14": [6],
+    "15": [3],
+    "16": [5],
+    "17": [8],
 };
 
 
@@ -446,6 +483,54 @@ const textDatabase = {
 			{ tag: 'FOTOGRAFÍA ANALÓGICA', subtitle: 'Fotogramas', col2: 'MOONDANCE es una serie de fotogramas analógicos, explorando la interacción entre luces, sombras y formas orgánicas abstractas.', col3: 'Este proceso sin cámara captura la huella directa de los objetos sobre el papel fotográfico, creando una atmósfera lunar.' }
 		]
 	},
+
+    "ADIDAS ORIGINALS": {
+		en: [
+			{
+                tag: 'MOTION GRAPHICS & ANIMATION',
+                subtitle: 'A retro and urban approach',
+                col2: 'This university project consists of a social media reel designed for Adidas Originals, specifically focusing on the classic Gazelle sneakers. The goal was to combine the action and energy typical of sports footwear advertisements with a distinct urban and retro touch that characterizes the Originals line.',
+                col3: 'The visual identity embraces a grunge aesthetic, utilizing textures like torn paper, graffiti, and pencil strokes. A monochromatic black and white color palette centers the attention on textures and movement, while the modern ITC Avante Garde typography provides a sharp contrast.'
+            }
+		],
+		es: [
+			{
+                tag: 'MOTION GRAPHICS Y ANIMACIÓN',
+                subtitle: 'Un enfoque retro y urbano',
+                col2: 'Este proyecto universitario consiste en un reel para redes sociales diseñado para Adidas Originals, centrado específicamente en las clásicas zapatillas Gazelle. El objetivo era combinar la acción y energía propias de los anuncios de calzado deportivo junto a un toque urbano y retro que caracteriza a la línea Originals.',
+                col3: 'La identidad visual adopta una estética grunge, utilizando texturas como papel roto, grafitis y trazos de lápiz. Una paleta monocromática en blanco y negro centra la atención en las texturas y el movimiento, mientras que la tipografía moderna ITC Avante Garde aporta un fuerte contraste.'
+            }
+		]
+	},
+
+    "SUSPIRIA": {
+		en: [
+			{
+                tag: 'MOTION GRAPHICS & ANIMATION',
+                subtitle: 'A geometric nightmare in red and black',
+                col2: 'This project consists of a title sequence animation for the 1977 Italian supernatural horror film Suspiria, directed by Dario Argento[cite: 8]. The story follows an American ballet student at a German dance academy that serves as a front for a supernatural conspiracy[cite: 8]. The piece relies on the film\'s distinct aesthetic, characterized by geometric wall patterns, fantastic architecture, and a strong supernatural feel[cite: 8].',
+                col3: 'The visual identity of the animation is built upon distinct silhouettes, symmetrical Art Deco-style patterns, and a grunge texture, using exclusively red and black[cite: 8]. The color red takes on both aesthetic and symbolic importance, representing the impending danger, while the "Righteous" typeface reinforces the Art Deco inspiration[cite: 8]. The animation draws stylistic references from classic thriller sequences like Vertigo and Psycho[cite: 8].'
+            }
+		],
+		es: [
+			{
+                tag: 'MOTION GRAPHICS Y ANIMACIÓN',
+                subtitle: 'Una pesadilla geométrica en rojo y negro',
+                col2: 'Este proyecto consiste en la animación de los títulos de crédito para la película italiana de terror sobrenatural de 1977 Suspiria, dirigida por Dario Argento[cite: 8]. La cinta trata sobre una estudiante de ballet estadounidense en una academia alemana que sirve de tapadera para una conspiración sobrenatural[cite: 8]. La pieza se apoya en la estética identificativa de la película, caracterizada por patrones geométricos, arquitectura fantástica y una fuerte sensación sobrenatural[cite: 8].',
+                col3: 'La identidad visual de la animación se construye a partir de siluetas diferenciadas, patrones simétricos de estilo Art Deco y texturas grunge, utilizando exclusivamente los colores rojo y negro[cite: 8]. El rojo cobra una gran importancia estética y simbólica al representar el peligro que se avecina, mientras que la tipografía "Righteous" refuerza la inspiración Art Deco[cite: 8]. El estilo toma referencias de secuencias clásicas de suspense como Vértigo o Psycho[cite: 8].'
+            }
+		]
+	},
+
+    "NATURA MORTA": {
+		en: [
+			{ tag: 'FINE ART PHOTOGRAPHY', subtitle: 'Painterly echoes and baroque lighting', col2: 'NATURA MORTA is a photographic series exploring the aesthetics of classical painting through a contemporary lens. Using chiaroscuro lighting techniques the project blurs the line between photography and Renaissance portraiture.', col3: 'The composition incorporates traditional still-life elements—withered flora, metallic reflections, and symbolic objects—alongside evocative portraits.' }
+		],
+		es: [
+			{ tag: 'FOTOGRAFÍA BELLAS ARTES', subtitle: 'Ecos pictóricos e iluminación barroca', col2: 'NATURA MORTA es una serie fotográfica que explora la estética de la pintura clásica a través de un prisma contemporáneo. Mediante técnicas de iluminación de claroscuro, el proyecto desdibuja la línea entre la fotografía y el retrato renacentista.', col3: 'La composición incorpora elementos tradicionales del bodegón —flora marchita, reflejos metálicos y objetos simbólicos— junto a retratos evocadores.' }
+		]
+	},
+
 	DEFAULT: {
 		en: [
 			{ tag: 'CASE STUDY', subtitle: 'Project details under construction.', col2: 'We are documenting the design process, challenges encountered, and solutions implemented for this project. Check back soon for the full case study.', col3: 'The documentation will include wireframes, brand strategy, color palette, and the final product development.' }
