@@ -4,7 +4,7 @@ import TypewriterText from '../effects/TypewriterText'
 import { useLanguage } from '../effects/LanguageContext'
 
 const socialLinks = [
-  { label: 'VIMEO', url: 'https://vimeo.com/alecrmancebo' },
+  { label: 'YOUTUBE', url: 'https://www.youtube.com/@alecmancebo' },
   { label: 'INSTAGRAM', url: 'https://www.instagram.com/alekxty/' },
   { label: 'DRIBBBLE', url: 'https://dribbble.com/alecrmancebo' }, 
   { label: 'LINKEDIN', url: 'https://www.linkedin.com/in/alec-mancebo/' },
