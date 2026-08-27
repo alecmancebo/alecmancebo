@@ -175,11 +175,10 @@ const projectMontageLayout = {
 
 const archiveProjectsByLanguage = {
 	en: [
-		{ id: '07', category: 'product', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'PRODUCT, GRAPHIC', span: 1, images: ['/archivo/En proceso.png'] },
+		{ id: '07', category: 'product', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'PRODUCT, GRAPHIC', span: 1, images: ['/archivo/Omega-traicion/OT - 0.png'], projectUrl: "https://www.youtube.com/watch?v=hme6EHy2FaA" },
 		{ id: '08', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
 		{ id: '09', category: 'photography', title: 'GENDERTRASH', year: '2023', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/En proceso.png'] },
 		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '2026', disciplines: 'WEB', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
-		{ id: '11', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2026', disciplines: 'WEB', span: 1, images: ['/archivo/En proceso.png'] },
 		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/Z-tarot thumbnail.png'], projectUrl: 'https://z-tarot.netlify.app/' },
         { id: '13', category: 'photography', title: 'RAVEN', year: '2022', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/RAVEN thumbnail.png'] },
         { id: '14', category: 'photography', title: 'MOONDANCE', year: '2021', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/Fotogramas/Fotograma 1.jpg']},
@@ -188,11 +187,10 @@ const archiveProjectsByLanguage = {
         { id: '17', category: 'photography', title: 'NATURA MORTA', year: '2022', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/natura thumbnail.png'] },
 	],
 	es: [
-		{ id: '07', category: 'producto', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'producto, GRÁFICO', span: 1, images: ['/trabajos/En proceso.png'] },
+		{ id: '07', category: 'producto', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'producto, GRÁFICO', span: 1, images: ['/trabajos/Omega-traicion/OT - 0.png'], projectUrl: "https://www.youtube.com/watch?v=hme6EHy2FaA" },
 		{ id: '08', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
 		{ id: '09', category: 'fotografía', title: 'GENDERTRASH', year: '2023', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/En proceso.png'] },
 		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '20264', disciplines: 'WEB', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
-		{ id: '11', category: 'web', title: 'ELENA NIETO PORFOLIO', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/En proceso.png'] },
 		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/Z-tarot thumbnail.png'], projectUrl: 'https://z-tarot.netlify.app/' },
         { id: '13', category: 'fotografía', title: 'RAVEN', year: '2022', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/RAVEN thumbnail.png'] },
         { id: '14', category: 'fotografía', title: 'MOONDANCE', year: '2021', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/Fotogramas/Fotograma 0.png'] },
@@ -232,11 +230,58 @@ const projectPageImages = {
 	
     '06': ['/trabajos/Huddle inicio - 1.mp4', '/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle inicio - 2.mp4', '/trabajos/Huddle research - 1.png', '/trabajos/Huddle research - 2.png', '/trabajos/Huddle research - 3.png', '/trabajos/Huddle research - 4.png', '/trabajos/Huddle ideation - 1.png', '/trabajos/Huddle architecture - 1.png', '/trabajos/Huddle visual - 3.mp4', '/trabajos/Huddle visual - 4.mp4', '/trabajos/Huddle visual - 5.png', '/trabajos/Huddle visual - 6.png', '/trabajos/Huddle visual - 7.png', '/trabajos/Huddle visual - 8.png', '/trabajos/Huddle visual - 9.mp4', '/trabajos/Huddle espacio - 1.jpg', '/trabajos/Huddle espacio - 2.jpg', '/trabajos/Huddle 04.png', '/trabajos/Huddle espacio - 3.jpg', '/trabajos/Huddle - copilot 1.mp4', '/trabajos/Huddle copilot - 2.webp', '/trabajos/Huddle copilot - 3.webp', '/trabajos/Huddle copilot - 4.jpg', '/trabajos/Huddle prototipo - 1.png', '/trabajos/Huddle prototipo - 2.mp4',  '/trabajos/Huddle 02.png'],
 
-    "07": [ "/archivo/En proceso.png"],
+    "07": [ 
+		"/archivo/Omega-traicion/OT - 0.png",
+		"/archivo/Omega-traicion/OT - 1.png",
+		"/archivo/Omega-traicion/OT - 2.png",
+		"/archivo/Omega-traicion/OT - 3.png",
+		"/archivo/Omega-traicion/OT - 4.png",
+		"/archivo/Omega-traicion/OT - 5.png",
+		"/archivo/Omega-traicion/OT - 6.mp4",
+		"/archivo/Omega-traicion/OT - 7.png",
+		"/archivo/Omega-traicion/OT - 8.png",
+		"/archivo/Omega-traicion/OT - 9.png",
+		"/archivo/Omega-traicion/OT - 10.png",
+		"/archivo/Omega-traicion/OT - 11.png",
+		"/archivo/Omega-traicion/OT - 12.png",
+		"/archivo/Omega-traicion/OT - 13.png",
+		"/archivo/Omega-traicion/OT - 14.png",
+		"/archivo/Omega-traicion/OT - 15.png",
+		"/archivo/Omega-traicion/OT - 16.png",
+		"/archivo/Omega-traicion/OT - 18.png",
+		"/archivo/Omega-traicion/OT - 19.png",
+		"/archivo/Omega-traicion/OT - 20.png",
+		"/archivo/Omega-traicion/OT - 21.png",
+		"/archivo/Omega-traicion/OT - 22.png",
+		"/archivo/Omega-traicion/OT - 23.png",
+		"/archivo/Omega-traicion/OT - 24.png",
+		"/archivo/Omega-traicion/OT - 25.png",
+		"/archivo/Omega-traicion/OT - 26.png",
+		"/archivo/Omega-traicion/OT - 27.png",
+		"/archivo/Omega-traicion/OT - 28.png",
+		"/archivo/Omega-traicion/OT - 29.png",
+		"/archivo/Omega-traicion/OT - 30.png",
+		"/archivo/Omega-traicion/OT - 31.png",
+		"/archivo/Omega-traicion/OT - 32.png",
+		"/archivo/Omega-traicion/OT - 33.png",
+		"/archivo/Omega-traicion/OT - 34.png",
+		"/archivo/Omega-traicion/OT - 35.png",
+		"/archivo/Omega-traicion/OT - 36.png",
+		"/archivo/Omega-traicion/OT - 37.png",
+		"/archivo/Omega-traicion/OT - 38.png",
+		"/archivo/Omega-traicion/OT - 39.mp4",
+		"/archivo/Omega-traicion/OT - 40.png",
+		"/archivo/Omega-traicion/OT - 41.png",
+		"/archivo/Omega-traicion/OT - 42.png",
+		"/archivo/Omega-traicion/OT - 43.png",
+		"/archivo/Omega-traicion/OT - 44.png",
+		"/archivo/Omega-traicion/OT - 45.png",
+		"/archivo/Omega-traicion/OT - 46.png",
+		"/archivo/Omega-traicion/OT - 47.png"
+	],
     "08": [ "/archivo/Mindscape thumbnail.png"],
     "09": [ "/archivo/En proceso.png"],
     "10": [ "/archivo/En proceso.png"],
-    "11": [ "/archivo/En proceso.png"],
     "12": [
 		"/archivo/z-tarot/Z-Tarot 0.mp4",
 		"/archivo/z-tarot/Z-Tarot 1.png",
@@ -306,11 +351,10 @@ const projectPageImageSpans = {
 	'04': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 4, 4, 2, 2, 4, 4, 2, 2, 4],
 	'05': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4],
 	'06': [4, 2, 2, 4, 4, 4, 2, 2, 4, 4, 2, 2, 2, 2, 2, 2, 4, 2, 2, 1, 3, 4, 2, 2, 4, 4, 4, 4],
-    "07": [4],
+    "07": [4, 2, 2, 2, 2, 4, 4, 2, 2, 4, 4, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 2, 4, 4, 1, 1, 1, 1, 1, 2, 1],
     "08": [4],
     "09": [4],
     "10": [4],
-    "11": [4],
     "12": [4, 2, 2, 2, 2, 2, 2, 4],
     "13": [4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     "14": [4, 1, 1, 1, 1, 1],
@@ -327,6 +371,7 @@ const projectPageTextEveryImages = {
 	'04': [4, 7, 3, 1, 4],
 	'05': [3, 6, 6, 5, 3],
 	'06': [3, 4, 1, 1, 7, 4, 0, 4, 3],
+	"07": [6, 3, 2, 1, 1, 3, 8, 8, 2, 4, 8],
     "12": [8],
     "13": [13],
     "14": [6],
@@ -459,6 +504,123 @@ const textDatabase = {
             { tag: 'EL PROTOTIPO', subtitle: 'Un prototipo interactivo en 3D', col2: 'A nivel técnico, el prototipo funcional abarcó un recorrido básico de navegación y la implementación del flujo de onboarding inicial guiado por el asistente, para ayudar a visualizar la experiencia del usuario. Se construyó un modelo básico de un par de salas en 3D a modo de mockup interactivo visual, simulando la estética del espacio virtual sin llegar a contar con lógica de ejecución real.', col3: 'El desarrollo abarcó además el diseño de la identidad visual, el sistema de personalización de avatares, la interfaz de usuario de las aplicaciones integradas y la producción de un tráiler y web de introducción explicativos.' }
 		]
 	},
+
+	"OMEGA TRAICIÓN": {
+		en: [
+			{ tag: 'INTEGRAL PRODUCT DESIGN', 
+			  subtitle: 'A sustainable game of betrayal and cooperation', 
+			  col2: "Omega TrAIción is a social deduction, betrayal, and cooperation board game developed by Nebula Studio. The narrative is set in the year 2050 aboard the Omega spaceship, which represents Earth's last hope. A sentient artificial intelligence (AI) has infiltrated the system with the goal of sabotaging the mission and leading the ship to destruction.", 
+			  col3: 'Players take on the role of crew members and must complete tasks, debate, and collaborate to repair the ship, while simultaneously trying to identify and stop the AI hidden among them. The main objective of the project is to educate through play, fostering critical thinking, cooperation, and awareness about future sustainable development scenarios.' 
+			},
+			{ tag: 'METASYSTEM & SCENARIOS', 
+			  subtitle: 'Systemic design and 2050 climate scenarios', 
+			  col2: "The project falls under the Meta System Design (MSD) methodology, integrating the product's complete lifecycle, from raw material extraction to its final assimilation. Gameplay dynamics are conditioned by four sustainable development scenarios projected for the year 2050 (based on the ARUP report). These scenarios act as a narrative framework and are:", 
+			  col3: ["Post-Anthropocene: Harmony with the planet and 92% clean energy.", "Greentocracy: Strict and authoritarian climate measures with a reduction in individual liberties.", "Extinction Express: Economic growth ignoring the environment, causing a decline in health and quality of life.", "Humans Inc.: Technological progress at the expense of planetary health."]
+			},
+			{ tag: 'SDGs, NEB & DESIGN BRIEF', 
+				subtitle: 'Designing for the Anthropocene', 
+				col2: 'Current urban design and new technologies have limited play in public spaces, favoring individualism and dissociation. Furthermore, the linear production model (use and throw away) severely damages the planet. This game emerges as an opportunity to strengthen social bonds and promote responsible consumption. Sustainable Development Goals (SDGs):', 
+				col3: ["SDG 4: The game develops skills in players and educates about sustainability.", "SDG 10: Accessible and inclusive design regardless of the users' economy, religion, or culture.", "SDG 12: Fosters eco-responsible behaviors and respects the environment in all its phases."]
+			},
+			{
+				col2: "The design brief was: Creation of a Phygital (physical + digital) system of medium complexity, manufactured locally, without integrated electronic components, and with a reusable container. To acomplish this, the New European Bauhaus (NEB) principles were applied:",
+				col3: ["Beautiful: Coherent, clean, original, and attractive aesthetics that maintain functionality.", "Sustainable: Integration of sustainability in components, using renewable materials, facilitating repair, and striving for zero waste.", "Inclusive: Accessible for different ages, inclusive of diverse social groups, and featuring adaptations for visual impairments."]
+			},	
+			{ tag: 'BASE DESIGNS & IDEATION', 
+				subtitle: 'Exploring mechanics and narratives', 
+				col2: 'During the ideation phase, multiple proposals were evaluated. Mechanics from existing hidden-role and survival games such as Among Us, Saboteur, and The Werewolves of Millers Hollow were taken as references. The Omega Traición proposal was selected for its capacity to generate collaborative dynamics, its focus on sustainable resource management, and the high replayability offered by a modular board.', 
+				col3: 'The strengths and weaknesses of each were analyzed; for example, several lacked the required digital integration or maintenance services. Omega Traición was chosen for its collaboration and sabotage dynamics (inspired by Saboteur and Among Us), although its mechanics needed to be simplified. Following the selection, the team created detailed, high-quality sketches to explore viable alternatives for the physical components and the system structure.'
+			},
+			{ tag: 'USER RESEARCH', 
+				subtitle: 'Empathy maps and service journeys', 
+				col2: 'Using UX and Design Thinking tools, the AEIOU system (Activities, Environments, Interactions, Objects, and Users) was mapped to define usage flows. Empathy maps and User Personas were created to understand the audience. For example, Jorge (15 years old, a student looking for offline alternatives to e-sports) and Anais (27 years old, a marketing professional concerned about eco-anxiety and sustainable activism).', 
+				col3: 'The Service Journey ensured that the system included post-sale services: part repair, game updates, and disposal instructions.' 
+			},
+			{ tag: 'VISUAL DESIGN & COMPONENTS', 
+				subtitle: 'Eco-friendly materials and modularity', 
+				col2: 'The game includes a modular board composed of 7 pieces, 60 task cards, 75 action cards, 15 special action cards, 10 event cards, 8 character cards, and 4 2050 scenario cards. It also incorporates role tokens (1 AI and 7 crew members). The materials selected were recycled cardstocks (300g and 150g) in matte finishes, printed with eco-friendly inks (CMYK), were selected.', 
+				col3: 'The visual identity uses silver, black, white, blue, purple, gray, and yellow tones. The packaging was designed in recycled synthetic leather with velcro closures and cotton straps, meant to store the cards and board without single-use plastics.'
+			},
+			{ tag: 'PROTOTYPING & FEEDBACK', 
+				subtitle: 'Iterating the game mechanics', 
+				col2: 'Rapid prototypes (sketches and conceptual design) were developed to validate the gameplay mechanics. Following the feedback sessions, crucial changes were applied: the generic saboteur figure was replaced by an AI.', 
+				col3: 'The mechanic of permanent player death was eliminated; instead, the group votes to "veto" a player for a single round, allowing everyone to participate until the end.'
+			},
+			{ tag: 'PRODUCTION & LIFECYCLE', 
+				subtitle: 'Local manufacturing and zero waste', 
+				col2: 'The manufacturing process was planned locally in Madrid, Spain, optimizing logistics to use land transport and reduce the carbon footprint. The use of toxic glues and composite elements that are difficult to separate was avoided, ensuring a clean assembly.', 
+				col3: "The assimilation model promotes that, once the game's lifespan ends, the cards can be easily recycled, and the fabric packaging serves as a pencil case or pouch for personal items."
+			},
+			{ tag: 'DIGITAL INTEGRATION', 
+				subtitle: 'A \'phygital\' and expandable platform', 
+				col2: 'The Omega TrAIción experience is connected to a digital platform via NFC tags or QR codes integrated into the packaging. The website centralizes the game instructions, reducing paper waste in the box.', 
+				col3: "It offers a maintenance and repair service: free printable templates to replace lost cards. It provides constant upgrades: users can download customizable templates to co-design new tasks and expand the game." 
+			},
+			{ tag: 'TESTING LABORATORY', 
+				subtitle: 'Academic integration and future testing', 
+				col2: 'Final validation required the production of maximum-quality 1:1 scale prototypes, producing a minimum of 2 copies for testing. Playtesting sessions were conducted with users in collaboration with public high schools in Madrid. Metrics on satisfaction, rule comprehension, and engagement were collected.', 
+				col3: 'The playtesting results confirmed that the hidden-role dynamic effectively helps players retain concepts about the circular economy.'
+			},
+		],
+		es: [
+            { tag: 'DISEÑO INTEGRAL DE PRODUCTO', 
+              subtitle: 'Un juego sostenible de traición y cooperación', 
+              col2: "Omega TrAIción es un juego de mesa de deducción social, traición y cooperación desarrollado por Nebula Studio. La narrativa se sitúa en el año 2050 a bordo de la nave espacial Omega, la cual representa la última esperanza para la Tierra. Una inteligencia artificial (IA) consciente se ha infiltrado en el sistema con el objetivo de sabotear la misión y llevar la nave a la destrucción.", 
+              col3: 'Los jugadores asumen el rol de tripulantes y deben completar tareas, debatir y colaborar para reparar la nave, al mismo tiempo que intentan identificar y detener a la IA oculta entre ellos. El objetivo principal del proyecto es educar jugando, fomentando el pensamiento crítico, la cooperación y la concienciación sobre futuros escenarios de desarrollo sostenible.' 
+            },
+            { tag: 'METASISTEMA Y ESCENARIOS', 
+              subtitle: 'Diseño sistémico y escenarios climáticos 2050', 
+              col2: "El proyecto se enmarca dentro de la metodología Meta System Design (MSD), integrando el ciclo vital completo del producto, desde la extracción de materia prima hasta su asimilación final. La dinámica de las partidas está condicionada por cuatro escenarios de desarrollo sostenible proyectados para el año 2050 (basados en el informe ARUP). Estos escenarios actúan como marco narrativo y son:", 
+              col3: ["Post-Antropoceno: Armonía con el planeta y un 92% de energía limpia.", "Greentocracy: Medidas climáticas estrictas y autoritarias con merma de libertades individuales.", "Extinción Express: Crecimiento económico ignorando el medioambiente, provocando un declive en la salud y calidad de vida.", "Humans Inc.: Progreso tecnológico a costa de la salud planetaria."]
+            },
+            { tag: 'ODS, NEB Y BRIEF DE DISEÑO', 
+                subtitle: 'Diseñando para el Antropoceno', 
+                col2: 'El diseño urbano actual y las nuevas tecnologías han limitado el juego en los espacios públicos, favoreciendo el individualismo y la disociación. Además, el modelo de producción lineal (usar y tirar) daña gravemente el planeta. Este juego surge como una oportunidad para fortalecer los lazos sociales y promover el consumo responsable. Objetivos de Desarrollo Sostenible (ODS):', 
+                col3: ["ODS 4: El juego desarrolla habilidades en los jugadores y educa sobre la sostenibilidad.", "ODS 10: Diseño accesible e inclusivo sin importar la economía, religión o cultura de los usuarios.", "ODS 12: Fomenta comportamientos eco-responsables y respeta el medio ambiente en todas sus fases."]
+            },
+            {
+                col2: "El brief de diseño fue: Creación de un sistema Figital (físico + digital) de complejidad media, fabricado localmente, sin componentes electrónicos integrados y con un contenedor reutilizable. Para lograrlo, se aplicaron los principios de la New European Bauhaus (NEB):",
+                col3: ["Belleza: Estética coherente, limpia, original y atractiva que mantiene la funcionalidad.", "Sostenibilidad: Integración de la sostenibilidad en componentes, usando materiales renovables, facilitando la reparación y buscando el cero residuos.", "Inclusión: Accesible para distintas edades, inclusivo para colectivos sociales diversos y con adaptaciones para discapacidades visuales."]
+            },  
+            { tag: 'DISEÑOS BASE E IDEACIÓN', 
+                subtitle: 'Explorando mecánicas y narrativas', 
+                col2: 'Durante la fase de ideación se evaluaron múltiples propuestas. Se tomaron como referencia mecánicas de juegos existentes de roles ocultos y supervivencia como Among Us, Saboteur y Los Hombres Lobo de Castronegro. Se seleccionó la propuesta Omega Traición por su capacidad para generar dinámicas de colaboración, su enfoque en la gestión sostenible de recursos y la alta rejugabilidad que ofrece un tablero modular.', 
+                col3: 'Se analizaron los puntos fuertes y débiles de cada una; por ejemplo, varias carecían de la integración digital o los servicios de mantenimiento requeridos. Omega Traición fue elegida por sus dinámicas de colaboración y sabotaje (inspiradas en Saboteur y Among Us), aunque requería simplificar sus mecánicas. Tras la selección, el equipo realizó bocetos detallados de alta calidad para explorar alternativas viables para los componentes físicos y la estructura del sistema.'
+            },
+            { tag: 'USER RESEARCH', 
+                subtitle: 'Mapas de empatía y service journeys', 
+                col2: 'Mediante herramientas de UX y Design Thinking, se mapeó el sistema AEIOU (Actividades, Entornos, Interacciones, Objetos y Usuarios) para definir los flujos de uso. Se crearon mapas de empatía y User Personas para comprender a la audiencia. Por ejemplo, Jorge (15 años, un estudiante que busca alternativas offline a los e-sports) y Anais (27 años, una profesional del marketing preocupada por la eco-ansiedad y el activismo sostenible).', 
+                col3: 'El Service Journey garantizó que el sistema incluyera servicios posventa: reparación de piezas, actualizaciones del juego e instrucciones de desecho.' 
+            },
+            { tag: 'DISEÑO VISUAL Y COMPONENTES', 
+                subtitle: 'Materiales ecológicos y modularidad', 
+                col2: 'El juego incluye un tablero modular compuesto por 7 piezas, 60 cartas de tareas, 75 de acción, 15 de acción especial, 10 de eventos, 8 cartas de personaje y 4 cartas de escenario 2050. También incorpora fichas de rol (1 IA y 7 tripulantes). Los materiales seleccionados fueron cartulinas recicladas (300g y 150g) en acabados mate, impresas con tintas ecológicas (CMYK).', 
+                col3: 'La identidad visual utiliza tonos plateados, negros, blancos, azules, morados, grises y amarillos. El packaging fue diseñado en tela de polipiel reciclada con cierres de velcro y cintas de algodón, pensado para almacenar las cartas y el tablero sin plásticos de un solo uso.'
+            },
+            { tag: 'PROTOTIPADO Y FEEDBACK', 
+                subtitle: 'Iterando las mecánicas de juego', 
+                col2: 'Se desarrollaron prototipos rápidos (bocetos y diseño conceptual) para validar las mecánicas de juego. Tras las sesiones de feedback, se aplicaron cambios cruciales: la figura genérica del saboteador fue reemplazada por una IA.', 
+                col3: 'Se eliminó la mecánica de muerte definitiva de los jugadores; en su lugar, el grupo vota para "vetar" a un jugador durante una sola ronda, permitiendo que todos participen hasta el final.'
+            },
+            { tag: 'PRODUCCIÓN Y CICLO VITAL', 
+                subtitle: 'Fabricación local y cero residuos', 
+                col2: 'El proceso de fabricación se planificó a nivel local en Madrid, España, optimizando la logística para usar transporte terrestre y reducir la huella de carbono. Se evitó el uso de pegamentos tóxicos y elementos compuestos difíciles de separar, asegurando un ensamblaje limpio.', 
+                col3: "El modelo de asimilación promueve que, una vez terminada la vida útil del juego, las cartas se puedan reciclar fácilmente, y el packaging de tela sirva como estuche o neceser para efectos personales."
+            },
+            { tag: 'INTEGRACIÓN DIGITAL', 
+                subtitle: 'Una plataforma figital y expandible', 
+                col2: 'La experiencia de Omega TrAIción está conectada a una plataforma digital mediante etiquetas NFC o códigos QR integrados en el packaging. La web centraliza las instrucciones del juego, reduciendo el gasto de papel en la caja.', 
+                col3: "Ofrece un servicio de mantenimiento y reparación: plantillas de libre impresión para reponer cartas perdidas. Aporta actualización constante: los usuarios pueden descargar plantillas personalizables para co-diseñar nuevas tareas y expandir el juego." 
+            },
+            { tag: 'LABORATORIO DE TESTEO', 
+                subtitle: 'Integración académica y validación futura', 
+                col2: 'La validación final requirió la producción de prototipos a escala 1:1 de máxima calidad, fabricando un mínimo de 2 ejemplares para pruebas. Se realizaron sesiones de juego con usuarios en colaboración con institutos públicos de Madrid. Se recogieron métricas de satisfacción, comprensión de reglas y engagement.', 
+                col3: 'Los resultados de las pruebas confirmaron que la dinámica de roles ocultos ayuda eficazmente a los jugadores a retener conceptos sobre la economía circular.'
+            },
+			]
+	},
+
+
 	"Z-TAROT": {
 		en: [
 			{ tag: 'WEB DESIGN', subtitle: 'Contemporary and interactive spirituality for Gen Z', col2: "Z-Tarot is an interactive, gamified web platform specifically designed for Generation Z that combines contemporary interest in spirituality with internet humor and codes. The experience offers illustrated readings that connect with modern daily life, providing useful advice and a space for self-discovery through a minimalist, dark, and mystical aesthetic that sets it apart from traditional portals.", col3: 'Developed from scratch using HTML, CSS, and JavaScript, the website not only functions as an interactive game that connects with youth digital trends, but also serves as an innovative online portfolio for the updated illustrations and card decks of @inkgraveyard.' },
