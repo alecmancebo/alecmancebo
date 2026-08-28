@@ -640,8 +640,8 @@ const textDatabase = {
 			{
                 tag: 'PROJECT OVERVIEW',
                 subtitle: 'A mental health and decision-making app',
-                col2: 'Mindscape is an AI-powered wellness application designed to help young adults navigate complex life decisions and manage anxiety[cite: 16]. It provides a safe digital space to practice conflict resolution and emotional management[cite: 16].',
-                col3: 'Developed as a comprehensive UX/UI case study, the project explores how artificial intelligence can guide users without making choices for them, ensuring they retain their own judgment and agency[cite: 16].'
+                col2: 'Mindscape is an AI-powered wellness application designed to help young adults navigate complex life decisions and manage anxiety. It provides a safe digital space to practice conflict resolution and emotional management.',
+                col3: 'Developed as a comprehensive UX/UI case study, the project explores how artificial intelligence can guide users without making choices for them, ensuring they retain their own judgment and agency.'
             },
 			{
                 tag: 'UX/UI & DESIGN SPRINT',
@@ -672,8 +672,8 @@ const textDatabase = {
 			{
                 tag: 'RESUMEN DEL PROYECTO',
                 subtitle: 'Una app de bienestar y toma de decisiones',
-                col2: 'Mindscape es una aplicación impulsada por inteligencia artificial diseñada para ayudar a los jóvenes a navegar por decisiones vitales complejas y gestionar la ansiedad[cite: 16]. Proporciona un espacio digital seguro para practicar la resolución de conflictos y la gestión emocional[cite: 16].',
-                col3: 'Desarrollado como un caso de estudio completo de UX/UI, el proyecto explora cómo la inteligencia artificial puede orientar a los usuarios sin tomar las decisiones por ellos, asegurando que mantengan su propio criterio y agencia personal[cite: 16].'
+                col2: 'Mindscape es una aplicación impulsada por inteligencia artificial diseñada para ayudar a los jóvenes a navegar por decisiones vitales complejas y gestionar la ansiedad. Proporciona un espacio digital seguro para practicar la resolución de conflictos y la gestión emocional.',
+                col3: 'Desarrollado como un caso de estudio completo de UX/UI, el proyecto explora cómo la inteligencia artificial puede orientar a los usuarios sin tomar las decisiones por ellos, asegurando que mantengan su propio criterio y agencia personal.'
             },
 			{
                 tag: 'UX/UI & DESIGN SPRINT',
