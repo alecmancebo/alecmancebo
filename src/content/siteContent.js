@@ -176,9 +176,9 @@ const projectMontageLayout = {
 const archiveProjectsByLanguage = {
 	en: [
 		{ id: '07', category: 'product', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'PRODUCT, GRAPHIC', span: 1, images: ['/archivo/Omega-traicion/OT - 0.png'], projectUrl: "https://www.youtube.com/watch?v=hme6EHy2FaA" },
-		{ id: '08', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
+		{ id: '08', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'], projectUrl:"https://www.figma.com/proto/L8JY6OzlmmkAdTavQ6jGUa/Design-sprint?node-id=655-14990&viewport=47%2C163%2C0.1&t=O9pS3M503JboJgUS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=122%3A73&show-proto-sidebar=1&page-id=38%3A2" },
 		{ id: '09', category: 'photography', title: 'GENDERTRASH', year: '2023', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/En proceso.png'] },
-		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '2026', disciplines: 'WEB', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
+		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '2026', disciplines: 'WEB', span: 1, images: ['/archivo/En proceso.png'] },
 		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/Z-tarot thumbnail.png'], projectUrl: 'https://z-tarot.netlify.app/' },
         { id: '13', category: 'photography', title: 'RAVEN', year: '2022', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/RAVEN thumbnail.png'] },
         { id: '14', category: 'photography', title: 'MOONDANCE', year: '2021', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/Fotogramas/Fotograma 1.jpg']},
@@ -187,10 +187,10 @@ const archiveProjectsByLanguage = {
         { id: '17', category: 'photography', title: 'NATURA MORTA', year: '2022', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/natura thumbnail.png'] },
 	],
 	es: [
-		{ id: '07', category: 'producto', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'producto, GRÁFICO', span: 1, images: ['/trabajos/Omega-traicion/OT - 0.png'], projectUrl: "https://www.youtube.com/watch?v=hme6EHy2FaA" },
-		{ id: '08', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'] },
+		{ id: '07', category: 'producto', title: 'OMEGA TRAICIÓN', year: '2024', disciplines: 'PRODUCTO, GRÁFICO', span: 1, images: ['/archivo/Omega-traicion/OT - 0.png'], projectUrl: "https://www.youtube.com/watch?v=hme6EHy2FaA" },
+		{ id: '08', category: 'UX/UI', title: 'MINDSCAPE', year: '2026', disciplines: 'UX/UI', span: 1, images: ['/archivo/Mindscape thumbnail.png'], projectUrl:"https://www.figma.com/proto/L8JY6OzlmmkAdTavQ6jGUa/Design-sprint?node-id=655-14990&viewport=47%2C163%2C0.1&t=O9pS3M503JboJgUS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=122%3A73&show-proto-sidebar=1&page-id=38%3A2" },
 		{ id: '09', category: 'fotografía', title: 'GENDERTRASH', year: '2023', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/En proceso.png'] },
-		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '20264', disciplines: 'WEB', span: 1, images: ['/archivo/Bailando Destinos thumbnail.png'] },
+		{ id: '10', category: 'web', title: 'BAILANDO DESTINOS', year: '20264', disciplines: 'WEB', span: 1, images: ['/archivo/En proceso.png'] },
 		{ id: '12', category: 'web', title: 'Z-TAROT', year: '2024', disciplines: 'WEB', span: 1, images: ['/archivo/Z-tarot thumbnail.png'], projectUrl: 'https://z-tarot.netlify.app/' },
         { id: '13', category: 'fotografía', title: 'RAVEN', year: '2022', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/RAVEN thumbnail.png'] },
         { id: '14', category: 'fotografía', title: 'MOONDANCE', year: '2021', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/Fotogramas/Fotograma 0.png'] },
@@ -243,7 +243,6 @@ const projectPageImages = {
 		"/archivo/Omega-traicion/OT - 9.png",
 		"/archivo/Omega-traicion/OT - 10.png",
 		"/archivo/Omega-traicion/OT - 11.png",
-		"/archivo/Omega-traicion/OT - 12.png",
 		"/archivo/Omega-traicion/OT - 13.png",
 		"/archivo/Omega-traicion/OT - 14.png",
 		"/archivo/Omega-traicion/OT - 15.png",
@@ -279,7 +278,30 @@ const projectPageImages = {
 		"/archivo/Omega-traicion/OT - 46.png",
 		"/archivo/Omega-traicion/OT - 47.png"
 	],
-    "08": [ "/archivo/Mindscape thumbnail.png"],
+    "08": [ "/archivo/Mindscape thumbnail.png", 
+			"/archivo/Mindscape/Mindscape 1.png",
+			"/archivo/Mindscape/Mindscape 2.mp4",
+			"/archivo/Mindscape/Mindscape 3.mp4",
+			"/archivo/Mindscape/Mindscape 4.mp4",
+			"/archivo/Mindscape/Mindscape 5.png",
+			"/archivo/Mindscape/Mindscape 6.png",
+			"/archivo/Mindscape/Mindscape 7.png",
+			"/archivo/Mindscape/Mindscape 8.png",
+			"/archivo/Mindscape/Mindscape 9.mp4",
+			"/archivo/Mindscape/Mindscape 10.png",
+			"/archivo/Mindscape/Mindscape 11.png",
+			"/archivo/Mindscape/Mindscape 12.png",
+			"/archivo/Mindscape/Mindscape 13.png",
+			"/archivo/Mindscape/Mindscape 14.png",
+			"/archivo/Mindscape/Mindscape 15.png",
+			"/archivo/Mindscape/Mindscape 16.mp4",
+			"/archivo/Mindscape/Mindscape 17.mp4",
+			"/archivo/Mindscape/Mindscape 18.png",
+			"/archivo/Mindscape/Mindscape 19.png",
+			"/archivo/Mindscape/Mindscape 20.png",
+			"/archivo/Mindscape/Mindscape 21.png",
+			"/archivo/Mindscape/Mindscape 22.png",
+	],
     "09": [ "/archivo/En proceso.png"],
     "10": [ "/archivo/En proceso.png"],
     "12": [
@@ -351,8 +373,8 @@ const projectPageImageSpans = {
 	'04': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 4, 4, 2, 2, 4, 4, 2, 2, 4],
 	'05': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4],
 	'06': [4, 2, 2, 4, 4, 4, 2, 2, 4, 4, 2, 2, 2, 2, 2, 2, 4, 2, 2, 1, 3, 4, 2, 2, 4, 4, 4, 4],
-    "07": [4, 2, 2, 2, 2, 4, 4, 2, 2, 4, 4, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 2, 4, 4, 1, 1, 1, 1, 1, 2, 1],
-    "08": [4],
+    "07": [4, 2, 2, 2, 2, 4, 4, 2, 2, 4, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 2, 4, 4, 1, 1, 1, 1, 1, 2, 1],
+    "08": [4, 4, 2, 2, 4, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 4, 4, 4],
     "09": [4],
     "10": [4],
     "12": [4, 2, 2, 2, 2, 2, 2, 4],
@@ -371,7 +393,8 @@ const projectPageTextEveryImages = {
 	'04': [4, 7, 3, 1, 4],
 	'05': [3, 6, 6, 5, 3],
 	'06': [3, 4, 1, 1, 7, 4, 0, 4, 3],
-	"07": [6, 3, 2, 1, 1, 3, 8, 8, 2, 4, 8],
+	"07": [6, 3, 2, 1, 3, 8, 8, 2, 4, 8],
+	"08": [4, 2, 11, 3, 2],
     "12": [8],
     "13": [13],
     "14": [6],
@@ -521,10 +544,6 @@ const textDatabase = {
 				subtitle: 'Designing for the Anthropocene', 
 				col2: 'Current urban design and new technologies have limited play in public spaces, favoring individualism and dissociation. Furthermore, the linear production model (use and throw away) severely damages the planet. This game emerges as an opportunity to strengthen social bonds and promote responsible consumption. Sustainable Development Goals (SDGs):', 
 				col3: ["SDG 4: The game develops skills in players and educates about sustainability.", "SDG 10: Accessible and inclusive design regardless of the users' economy, religion, or culture.", "SDG 12: Fosters eco-responsible behaviors and respects the environment in all its phases."]
-			},
-			{
-				col2: "The design brief was: Creation of a Phygital (physical + digital) system of medium complexity, manufactured locally, without integrated electronic components, and with a reusable container. To acomplish this, the New European Bauhaus (NEB) principles were applied:",
-				col3: ["Beautiful: Coherent, clean, original, and attractive aesthetics that maintain functionality.", "Sustainable: Integration of sustainability in components, using renewable materials, facilitating repair, and striving for zero waste.", "Inclusive: Accessible for different ages, inclusive of diverse social groups, and featuring adaptations for visual impairments."]
 			},	
 			{ tag: 'BASE DESIGNS & IDEATION', 
 				subtitle: 'Exploring mechanics and narratives', 
@@ -578,10 +597,6 @@ const textDatabase = {
                 col2: 'El diseño urbano actual y las nuevas tecnologías han limitado el juego en los espacios públicos, favoreciendo el individualismo y la disociación. Además, el modelo de producción lineal (usar y tirar) daña gravemente el planeta. Este juego surge como una oportunidad para fortalecer los lazos sociales y promover el consumo responsable. Objetivos de Desarrollo Sostenible (ODS):', 
                 col3: ["ODS 4: El juego desarrolla habilidades en los jugadores y educa sobre la sostenibilidad.", "ODS 10: Diseño accesible e inclusivo sin importar la economía, religión o cultura de los usuarios.", "ODS 12: Fomenta comportamientos eco-responsables y respeta el medio ambiente en todas sus fases."]
             },
-            {
-                col2: "El brief de diseño fue: Creación de un sistema Figital (físico + digital) de complejidad media, fabricado localmente, sin componentes electrónicos integrados y con un contenedor reutilizable. Para lograrlo, se aplicaron los principios de la New European Bauhaus (NEB):",
-                col3: ["Belleza: Estética coherente, limpia, original y atractiva que mantiene la funcionalidad.", "Sostenibilidad: Integración de la sostenibilidad en componentes, usando materiales renovables, facilitando la reparación y buscando el cero residuos.", "Inclusión: Accesible para distintas edades, inclusivo para colectivos sociales diversos y con adaptaciones para discapacidades visuales."]
-            },  
             { tag: 'DISEÑOS BASE E IDEACIÓN', 
                 subtitle: 'Explorando mecánicas y narrativas', 
                 col2: 'Durante la fase de ideación se evaluaron múltiples propuestas. Se tomaron como referencia mecánicas de juegos existentes de roles ocultos y supervivencia como Among Us, Saboteur y Los Hombres Lobo de Castronegro. Se seleccionó la propuesta Omega Traición por su capacidad para generar dinámicas de colaboración, su enfoque en la gestión sostenible de recursos y la alta rejugabilidad que ofrece un tablero modular.', 
@@ -618,6 +633,73 @@ const textDatabase = {
                 col3: 'Los resultados de las pruebas confirmaron que la dinámica de roles ocultos ayuda eficazmente a los jugadores a retener conceptos sobre la economía circular.'
             },
 			]
+	},
+
+	"MINDSCAPE": {
+		en: [
+			{
+                tag: 'PROJECT OVERVIEW',
+                subtitle: 'A mental health and decision-making app',
+                col2: 'Mindscape is an AI-powered wellness application designed to help young adults navigate complex life decisions and manage anxiety[cite: 16]. It provides a safe digital space to practice conflict resolution and emotional management[cite: 16].',
+                col3: 'Developed as a comprehensive UX/UI case study, the project explores how artificial intelligence can guide users without making choices for them, ensuring they retain their own judgment and agency[cite: 16].'
+            },
+			{
+                tag: 'UX/UI & DESIGN SPRINT',
+                subtitle: 'Guiding decisions in the AI era',
+                col2: 'The project addresses a generational issue: young people aged 18 to 30 face choice overload and fear of making the wrong vital decisions. The challenge was to design an AI-supported digital experience that guides them without replacing their judgment or oversimplifying their problems.',
+                col3: 'Developed during a one-week Design Sprint, the methodology included Sprint Questions, Roadmaps mapping distinct User Personas in different life stages, and "How Might We" frameworks to translate user anxieties into tangible digital features.'
+            },
+            {
+                tag: 'FEATURES & APP DESIGN',
+                subtitle: 'Virtual scenarios and pattern detection',
+                col2: 'Mindscape relies on three pillars: creating virtual environments to practice responses to daily conflicts safely, AI-driven pattern detection (e.g., identifying a tendency towards "complacency"), and improving emotional skills through tailored challenges.',
+                col3: 'The app guides the user from an emotion-centered onboarding process to an Emotional Map Dashboard. Here, users can check statistics, review psychological insights, and quickly access conversational simulations with the AI.'
+            },
+            {
+                tag: 'VISUAL DESIGN & UI KIT',
+                subtitle: 'Calmness through typography and color',
+                col2: 'The typography features Fredoka One for headings, conveying softness, care, and tranquility, combined with Urbanist for body text to ensure high geometric readability at smaller sizes.',
+                col3: 'The color palette consists of pastel tones and dark contrasts (#CCE5E2, #0C121E, #7D788D, #D6BAD2, #F1F1F1). This combination was specifically chosen to evoke calmness, invite reflection, and convey a sense of closeness to the user.'
+            },
+            {
+                tag: 'TESTING & ITERATION',
+                subtitle: 'Usability metrics and user feedback',
+                col2: 'Usability tests conducted with a navigable prototype showed strong results: the onboarding and scenario creation tasks achieved 100% and 90% success rates, respectively. Users highly praised the careful aesthetics and the calming spatial layout.',
+                col3: 'However, frictions were detected, including a high misclick rate (~46%) and slow loading times. The actionable conclusions dictated reducing animations, relocating hidden buttons, and increasing the size of critical navigation arrows to improve the final experience.'
+            }
+		],
+		es: [
+			{
+                tag: 'RESUMEN DEL PROYECTO',
+                subtitle: 'Una app de bienestar y toma de decisiones',
+                col2: 'Mindscape es una aplicación impulsada por inteligencia artificial diseñada para ayudar a los jóvenes a navegar por decisiones vitales complejas y gestionar la ansiedad[cite: 16]. Proporciona un espacio digital seguro para practicar la resolución de conflictos y la gestión emocional[cite: 16].',
+                col3: 'Desarrollado como un caso de estudio completo de UX/UI, el proyecto explora cómo la inteligencia artificial puede orientar a los usuarios sin tomar las decisiones por ellos, asegurando que mantengan su propio criterio y agencia personal[cite: 16].'
+            },
+			{
+                tag: 'UX/UI & DESIGN SPRINT',
+                subtitle: 'Guiando decisiones en la era de la IA',
+                col2: 'El proyecto nace de una problemática generacional: los jóvenes de 18 a 30 años se enfrentan a un exceso de opciones y a una gran presión por el miedo a equivocarse. El reto fue diseñar una experiencia digital apoyada en IA que los oriente sin sustituir su criterio ni simplificar en exceso el problema.',
+                col3: 'Desarrollado en una semana mediante la metodología ágil Design Sprint, el proceso incluyó Sprint Questions, Roadmaps para empatizar con distintos User Personas y preguntas "How Might We" para transformar los problemas detectados en funcionalidades tangibles.'
+            },
+            {
+                tag: 'FUNCIONALIDADES Y APP',
+                subtitle: 'Escenarios virtuales y detección de patrones',
+                col2: 'Mindscape ofrece tres pilares: creación de entornos virtuales para ensayar respuestas a conflictos cotidianos sin consecuencias reales, detección inteligente de patrones de conducta (ej. tendencia a la "complacencia"), y mejora de habilidades emocionales mediante retos específicos.',
+                col3: 'La interfaz guía al usuario desde un onboarding centrado en su estado de ánimo hasta un Dashboard o Mapa emocional. Desde ahí puede consultar sus estadísticas, revisar el calendario de insights y acceder rápidamente a simulaciones conversacionales.'
+            },
+            {
+                tag: 'DISEÑO VISUAL Y UI KIT',
+                subtitle: 'Calma a través de la tipografía y el color',
+                col2: 'La tipografía principal es Fredoka One para los titulares, una fuente de bordes redondeados que transmite suavidad y cuidado, combinada con Urbanist para los cuerpos de texto, asegurando una alta legibilidad geométrica en tamaños pequeños.',
+                col3: 'La paleta cromática se compone de tonos pastel y oscuros de contraste (#CCE5E2, #0C121E, #7D788D, #D6BAD2, #F1F1F1). Esta combinación fue elegida para evocar calma e invitar a la reflexión, transmitiendo cercanía al usuario.'
+            },
+            {
+                tag: 'TESTEO E ITERACIÓN',
+                subtitle: 'Métricas de usabilidad y feedback',
+                col2: 'Se realizaron pruebas de usabilidad con un prototipo navegable. El flujo de registro (onboarding) y la creación de escenarios lograron un 100% y 90% de éxito respectivamente. Los usuarios valoraron muy positivamente la estética y la disposición espacial.',
+                col3: 'No obstante, se detectaron fricciones como una alta tasa de clics erróneos (~46%) y tiempos de carga excesivos. Las conclusiones determinaron reducir las animaciones, reubicar botones ocultos y aumentar el tamaño de controles críticos para pulir la experiencia.'
+            }
+		]
 	},
 
 
