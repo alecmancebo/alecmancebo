@@ -6,7 +6,6 @@ import { useLanguage } from '../effects/LanguageContext'
 const socialLinks = [
   { label: 'YOUTUBE', url: 'https://www.youtube.com/@alecmancebo' },
   { label: 'INSTAGRAM', url: 'https://www.instagram.com/alekxty/' },
-  { label: 'DRIBBBLE', url: 'https://dribbble.com/alecrmancebo' }, 
   { label: 'LINKEDIN', url: 'https://www.linkedin.com/in/alec-mancebo/' },
   { label: 'BEHANCE', url: 'https://www.behance.net/alecrodrgu' },
   { label: 'GITHUB', url: 'https://github.com/alecmancebo' },

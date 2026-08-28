@@ -99,7 +99,7 @@ const aboutContent = {
 const projects = [
 	{ id: '01', title: 'TRANSPAPELADES', category: 'web', seed: 'transpapelades', projectUrl: 'https://www.figma.com/proto/3DFEMbsYkkBTMtyLTK1JZm/Transpapelades?node-id=909-23563&viewport=328%2C554%2C0.02&t=Rcr2OJrNfdRrTgkx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=909%3A23563&show-proto-sidebar=1&page-id=97%3A2' },
 	{ id: '02', title: 'ECHAR RAÍCES', category: 'web, gameDev', seed: 'echar-raices', projectUrl: 'https://alec-rodriguez.itch.io/echar-raices' },
-	{ id: '03', title: 'ENTRELÍNEAS', category: 'uxui', seed: 'entrelineas', projectUrl: 'https://www.figma.com/design/1OCW04zQOmjOtNLwMURRsw/Entrel%C3%ADneas---AlecRodr%C3%ADguez?node-id=12-2&t=I4y2LlIt64Dla7Gi-1' },
+	{ id: '03', title: 'ENTRELÍNEAS', category: 'uxui', seed: 'entrelineas', projectUrl: 'https://www.figma.com/proto/1OCW04zQOmjOtNLwMURRsw/Entrel%C3%ADneas---AlecRodr%C3%ADguez?node-id=44-675&p=f&t=nhPQUKLodyw6IDig-1&scaling=scale-down&content-scaling=fixed&page-id=12%3A6&starting-point-node-id=44%3A591&show-proto-sidebar=1' },
 	{ id: '04', title: 'ERMES OLEA PORFOLIO', category: 'web', seed: 'ermes-olea-porfolio', projectUrl: 'https://ermes-olea.netlify.app/' },
 	{ id: '05', title: 'FADE', category: 'gameDev, 3d', seed: 'fade', projectUrl: 'https://alec-rodriguez.itch.io/fade' },
 	{ id: '06', title: 'MICROSOFT HUDDLE', category: 'gameDev, web, 3d', seed: 'microsoft-huddle', projectUrl: 'https://microsofthuddle.framer.website/' },
