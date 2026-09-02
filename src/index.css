@@ -549,7 +549,16 @@ body {
   max-height: 85vh;
   transform: translate(-50%, -50%);
   object-fit: contain;
-  opacity: 0.3;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.webgl-landing-logo {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
 }
 
@@ -740,6 +749,15 @@ body {
   bottom: 0;
   min-height: 0;
   z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 180ms ease, visibility 0s linear 180ms;
+}
+
+.browser__stage--visible {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .browser__stage-item {
@@ -1365,6 +1383,20 @@ body {
 
   .browser {
     padding: var(--space-3-xl) var(--browser-pad-x-xl) 0;
+  }
+
+  .browser__background-logo {
+    opacity: 0.3;
+  }
+
+  .webgl-landing-logo {
+    display: none;
+  }
+
+  .browser__stage {
+    visibility: visible;
+    opacity: 1;
+    transition: none;
   }
 
   .browser__toolbar {

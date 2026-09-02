@@ -13,6 +13,7 @@ import {
   getGridProjects,
 } from './PorfolioData';
 import { footerReelImages } from './Footer';
+import WebGLLandingLogo from './WebGLLandingLogo';
 
 const defaultMontageLayout = [
   { src: 'https://picsum.photos/seed/default-1/900/1200', x: 16, y: 50, w: 14, z: 2 },
@@ -89,6 +90,7 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
   })
   const [viewMode, setViewMode] = useState(() => savedViewState.viewMode === 'grid' ? 'grid' : 'list')
   const [filter, setFilter] = useState(() => savedViewState.filter || 'all')
+  const [hoveredProjectId, setHoveredProjectId] = useState(null)
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [activeProjectId, setActiveProjectId] = useState(() => savedViewState.activeProjectId || projects[0].id)
   const [prevProjectId, setPrevProjectId] = useState(null)
@@ -371,6 +373,7 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
         alt=""
         aria-hidden="true"
       />
+      <WebGLLandingLogo />
       <div className="browser__toolbar">
         <div className="browser__views" role="group" aria-label="View selector">
           <button
@@ -419,7 +422,13 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
                     type="button"
                     className={`browser__item-button ${activeProjectId === project.id ? 'browser__item-button--active' : ''}`}
                     onClick={() => openProjectDetail(project)}
-                    onMouseEnter={() => setActiveProjectId(project.id)}
+                    onMouseEnter={() => {
+                      setActiveProjectId(project.id)
+                      setHoveredProjectId(project.id)
+                    }}
+                    onMouseLeave={() => setHoveredProjectId(null)}
+                    onFocus={() => setHoveredProjectId(project.id)}
+                    onBlur={() => setHoveredProjectId(null)}
                 >
                   <span className="browser__item-id">
                     <CodedText text={project.id} />
@@ -434,7 +443,7 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
 
           <MobileReel />
 
-          <div className="browser__stage" aria-hidden="true">
+          <div className={`browser__stage ${hoveredProjectId ? 'browser__stage--visible' : ''}`} aria-hidden="true">
             {prevProjectId && (
               projectsWithMontage.find((p) => p.id === prevProjectId)?.montage.map((image, index) => (
                 <article
