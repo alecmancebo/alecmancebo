@@ -80,10 +80,17 @@ const buildProjectMontage = (project) => {
 }
 
 function ViewFilterSection({ viewingProject, setViewingProject }) {
-  const [viewMode, setViewMode] = useState('list')
-  const [filter, setFilter] = useState('all')
+  const [savedViewState] = useState(() => {
+    try {
+      return JSON.parse(window.localStorage.getItem('portfolio-home-view')) || {}
+    } catch {
+      return {}
+    }
+  })
+  const [viewMode, setViewMode] = useState(() => savedViewState.viewMode === 'grid' ? 'grid' : 'list')
+  const [filter, setFilter] = useState(() => savedViewState.filter || 'all')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [activeProjectId, setActiveProjectId] = useState(projects[0].id)
+  const [activeProjectId, setActiveProjectId] = useState(() => savedViewState.activeProjectId || projects[0].id)
   const [prevProjectId, setPrevProjectId] = useState(null)
   const [isCompactViewport, setIsCompactViewport] = useState(() => (typeof window !== 'undefined' ? window.innerWidth <= 980 : false))
   const [isTabletViewport, setIsTabletViewport] = useState(() => (typeof window !== 'undefined' ? window.innerWidth > 640 && window.innerWidth <= 980 : false))
@@ -93,6 +100,18 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
   const lastActiveProjectIdRef = useRef(projects[0].id)
 
   const { t, language } = useLanguage()
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem('portfolio-home-view', JSON.stringify({
+        viewMode,
+        filter,
+        activeProjectId,
+      }))
+    } catch {
+      // Ignore storage failures.
+    }
+  }, [viewMode, filter, activeProjectId])
 
   const gridProjects = useMemo(() => getGridProjects(language), [language]);
 

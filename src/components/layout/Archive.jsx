@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import TypewriterText from '../effects/TypewriterText';
 import ProjectDetail from './ProjectDetail';
 import { useLanguage } from '../effects/LanguageContext';
@@ -13,9 +13,70 @@ import {
 
 export default function Archive() {
   const { language } = useLanguage();
-  const [viewingProject, setViewingProject] = useState(null);
+  const [savedArchiveState] = useState(() => {
+    try {
+      const savedProject = window.localStorage.getItem('portfolio-archive-project')
+      return {
+        project: savedProject ? JSON.parse(savedProject) : null,
+        hasArchiveHistory: window.history.state?.portfolioPage === 'archive',
+      }
+    } catch {
+      return { project: null, hasArchiveHistory: false }
+    }
+  });
+  const [viewingProject, setViewingProject] = useState(() => {
+    if (savedArchiveState.hasArchiveHistory) {
+      return window.history.state.portfolioArchiveProject ?? null
+    }
+
+    return window.history.state?.portfolioPage ? null : savedArchiveState.project
+  });
+  const skipHistoryEffectRef = useRef(savedArchiveState.hasArchiveHistory || !savedArchiveState.project);
 
   const archiveProjects = useMemo(() => getArchiveProjects(language), [language]);
+
+  useEffect(() => {
+    try {
+      if (viewingProject) {
+        window.localStorage.setItem('portfolio-archive-project', JSON.stringify(viewingProject))
+      } else {
+        window.localStorage.removeItem('portfolio-archive-project')
+      }
+    } catch {
+      // Ignore storage failures.
+    }
+  }, [viewingProject]);
+
+  useEffect(() => {
+    const handlePopState = (event) => {
+      if (event.state?.portfolioPage !== 'archive') {
+        return
+      }
+
+      skipHistoryEffectRef.current = true
+      setViewingProject(event.state.portfolioArchiveProject ?? null)
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, []);
+
+  useEffect(() => {
+    if (skipHistoryEffectRef.current) {
+      skipHistoryEffectRef.current = false
+      return
+    }
+
+    window.history.pushState(
+      {
+        ...window.history.state,
+        portfolioPage: 'archive',
+        portfolioArchiveProject: viewingProject,
+      },
+      '',
+      window.location.href,
+    )
+  }, [viewingProject]);
 
   const getNextProject = (currentProject) => {
     const normalizedCurrentTitle = currentProject.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
