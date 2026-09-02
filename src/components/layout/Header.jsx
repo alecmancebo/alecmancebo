@@ -1,17 +1,35 @@
-import { useState } from 'react'
 import CodedText from '../effects/CodedText'
 import { useLanguage } from '../effects/LanguageContext'
 import RealTimeClock from '../effects/realTimeClock';
 import { FooterBio } from './Footer'
-
+import { useState, useEffect } from 'react'
 
 function BrandBlock({ onNavigatePage }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (window.isVisualsReady) {
+      setIsVisible(true);
+    } else {
+      const handleVisuals = () => setIsVisible(true);
+      window.addEventListener('visualsReady', handleVisuals);
+      return () => window.removeEventListener('visualsReady', handleVisuals);
+    }
+  }, []);
+
   const handleLogoClick = () => {
     onNavigatePage('home')
   }
 
   return (
-    <div className="header__brand">
+    <div 
+      className="header__brand" 
+      style={{
+        opacity: isVisible ? 1 : 0, 
+        transform: isVisible ? 'translateY(0)' : 'translateY(-15px)', 
+        transition: 'opacity 0.8s ease, transform 0.8s ease'
+      }}
+    >
       <button type="button" className="header__brand-logo" onClick={handleLogoClick} aria-label="Go to home">
         <img src="/elementos/graffiti.svg" alt="Brand Logo" />
       </button>

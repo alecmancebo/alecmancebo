@@ -164,10 +164,6 @@ export default function SplashScreen({ onComplete }) {
           <MyGraffitiSVG />
         </div>
       </div>
-      
-      <div className="splash-text">
-        [CLIC ANYWHERE]
-      </div>
     </div>
   );
 }

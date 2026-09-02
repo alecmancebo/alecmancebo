@@ -44,7 +44,7 @@ function FooterLinks() {
   return (
     <div className={`footer__links-container ${areLinksOpen ? 'footer__links-container--open' : ''}`}>
       <div className="footer__links">
-        {socialLinks.map((link, index) => (
+        {socialLinks.map((link) => (
         <a 
           key={link.label} 
           className="footer__link" 
@@ -52,7 +52,8 @@ function FooterLinks() {
           target="_blank" 
           rel="noopener noreferrer"
         >
-            <CodedText text={link.label} delay={100 + (index * 100)} /> --&gt;
+            {/* Metemos la flecha dentro del texto codificado para que se anime junto a la palabra */}
+            <CodedText text={`${link.label} -->`} />
         </a>
         ))}
       </div>
@@ -79,17 +80,37 @@ export const footerReelImages = [
 
 function FooterReelSlot() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
 
+  // Escucha la señal visual
+  useEffect(() => {
+    if (window.isVisualsReady) {
+      setIsVisible(true);
+    } else {
+      const handleVisuals = () => setIsVisible(true);
+      window.addEventListener('visualsReady', handleVisuals);
+      return () => window.removeEventListener('visualsReady', handleVisuals);
+    }
+  }, [])
+
+  // Loop de imágenes
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((previousIndex) => (previousIndex + 1) % footerReelImages.length)
     }, 1000)
-
     return () => clearInterval(intervalId)
   }, [])
 
   return (
-    <div className="footer__reel" aria-label="Videoreel slot">
+    <div 
+      className="footer__reel" 
+      aria-label="Videoreel slot"
+      style={{
+        opacity: isVisible ? 1 : 0, 
+        transform: isVisible ? 'translateY(0)' : 'translateY(15px)', 
+        transition: 'opacity 0.8s ease, transform 0.8s ease'
+      }}
+    >
       <div className="footer__reel-slot">
         <img
           src={footerReelImages[currentImageIndex]}
@@ -99,7 +120,6 @@ function FooterReelSlot() {
     </div>
   )
 }
-
 function Footer() {
   return (
     <footer className="footer">

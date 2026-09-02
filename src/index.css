@@ -154,65 +154,6 @@ body {
 
 /*MARK: Splash*/
 
-/*.splash-screen {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-color, #000000);
-  color: var(--text-color, #ffffff);
-  z-index: 99999;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.splash-layer {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none; 
-}
-
-.layer-normal {
-  mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), transparent 0%, transparent 95%, black 100%);
-  -webkit-mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), transparent 0%, transparent 95%, black 100%);
-}
-
-.layer-distorted {
-  mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), black 0%, black 99%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), black 0%, black 99%, transparent 100%);
-  mix-blend-mode: lighten; 
-}
-
-.layer-distorted .splash-logo-center {
-  filter: url(#extreme-liquid);
-}
-
-.splash-logo-center svg {
-  width: 80vw;
-  max-width: 1000px;
-  height: auto;
-  display: block;
-}
-
-.splash-logo-center svg path {
-  fill: transparent;
-  stroke: var(--text-color, #ffffff);
-  stroke-width: 2px;
-  stroke-dasharray: 4000;
-  stroke-dashoffset: 4000;
-  animation: 
-    drawGraffiti 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards, 
-    fillGraffiti 0.5s ease-out 1.5s forwards;
-}
-
-.splash-logo-center {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
-
 /* Pantalla de inicio que cubre el contenido de la landing */
 .splash-screen {
   position: fixed;
@@ -337,14 +278,6 @@ body {
   pointer-events: none;
 }
 
-.webgl-liquid-splash__canvas {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 .webgl-liquid-splash__hint {
   position: absolute;
   left: 50%;
@@ -360,6 +293,38 @@ body {
   to { opacity: 1; }
 }
 
+/* 1. El canvas WebGL empieza invisible y aparece a los 2.5s */
+.webgl-liquid-splash__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /* 1.5s de duración, con un ligero retraso de 0.2s al cargar la página */
+  animation: fadeInCanvas 0.5s ease 0.1s forwards; 
+}
+
+@keyframes fadeInCanvas {
+  to { opacity: 1; }
+}
+
+/* --- ANIMACIÓN UNIFICADA DE ENTRADA PARA IMÁGENES --- */
+@keyframes imagePageFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Aplica a: Cuadrícula, Detalles de Proyecto, About y Archive */
+.grid-view__media img,
+.project-detail__media-item img,
+.project-detail__media-item video,
+.about__media img,
+.archive__item img {
+  opacity: 0;
+  /* 0.3s de duración de fade in y 0.2s de retraso (puedes ajustar el 0.2s a tu gusto) */
+  animation: imagePageFadeIn 0.3s ease 0.2s forwards;
+}
 
 /*MARK: Portfolio*/
 
@@ -544,7 +509,7 @@ body {
   z-index: 0;
   top: 49%;
   left: 50%;
-  width: 88vw;
+  width: 83vw;
   height: auto;
   max-height: 85vh;
   transform: translate(-50%, -50%);
@@ -560,6 +525,8 @@ body {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
+  opacity: 0.9;
+  filter: contrast(3) blur(4px);
 }
 
 .browser__toolbar {
@@ -682,6 +649,30 @@ body {
   opacity: 0.8;
 }
 
+/* Transición suave base */
+.webgl-landing-logo,
+.browser__background-logo {
+  transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+}
+
+/* 1. Imagen estática: Al abrir Grid View O al hacer hover en la lista */
+.browser--grid .browser__background-logo,
+.browser:has(.browser__item-button:hover) .browser__background-logo {
+  opacity: 0.5;
+  filter: blur(10px);
+  /* Mantenemos el translate para que no se descentre al aplicar el scale */
+}
+
+/* 2. Canvas WebGL: Al abrir Grid View O al hacer hover en la lista */
+.browser--grid .webgl-landing-logo,
+.browser:has(.browser__item-button:hover) .webgl-landing-logo {
+  opacity: 0.5;
+  filter: blur(10px);
+  /* El canvas ocupa el 100% de la pantalla, solo necesita scale */
+
+}
+
+
 .browser__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(14rem, 1fr));
@@ -695,6 +686,8 @@ body {
   min-height: 0;
   overflow: visible;
   padding: 18px 0 0;
+  z-index: 1;
+  position: relative;
 }
 
 .grid-view__canvas {
@@ -770,13 +763,13 @@ body {
   overflow: visible;
   pointer-events: auto;
   opacity: 0;
-  animation: stageFadeIn 3s ease forwards;
-  transition: opacity 3s ease, filter 240ms ease;
-  filter: grayscale(1) contrast(1);
+  animation: stageFadeIn 0.3s ease 0.2s forwards;
+  transition: opacity 1s ease, filter 240ms ease;
+  /*filter: grayscale(1) contrast(1);*/
 }
 
 .browser__stage-item--exiting {
-  animation: stageFadeOut 3s ease forwards;
+  animation: stageFadeOut 1s ease forwards;
   pointer-events: none;
 }
 
@@ -1087,15 +1080,15 @@ body {
 
 .about-view {
   width: 100%;
-  padding: calc(var(--space-11-xl) * 2) var(--layout-pad-x-xl) var(--space-10-xl) var(--layout-pad-x-xl);
+  padding: calc(var(--space-11-xl) * 2) var(--layout-pad-x-xl) 0px var(--layout-pad-x-xl);
   background-color: var(--color-bg);
   color: var(--color-text);
 }
 
 /* Biografía superior izquierda */
 .about__header-area {
-  max-width: 420px;
-  margin-bottom: 12vh;
+    max-width: 420px;
+    margin-bottom: 10vh;
 }
 
 .about__bio-text {
@@ -1162,10 +1155,11 @@ body {
 .about__media {
   position: relative;
   z-index: 1;
-  width: auto;
+  width: 60%;
   max-width: 300px;
   display: block;
-  padding: var(--space-12-xl) 0px;
+  padding: 0 0 var(--space-12-xl) 0px;
+  order: -1;
 }
 
 .about__media img {
@@ -1174,7 +1168,7 @@ body {
   max-width: 330px;
   height: auto;
   object-fit: contain;
-  filter: grayscale(1);
+  /*filter: grayscale(1);*/
   transition: filter 0.3s ease;
 }
 
@@ -1284,7 +1278,7 @@ body {
   aspect-ratio: 1 / 1; /* Mantiene las cajas perfectamente cuadradas */
   object-fit: cover;
   display: block;
-  filter: grayscale(1) contrast(1.1);
+  /*filter: grayscale(1) contrast(1.1);*/
   transition: filter 0.4s ease, transform 0.4s ease;
 }
 
@@ -1784,9 +1778,9 @@ body {
     opacity: 0.65;
   }
 
-  .grid-view__card:hover img {
+  /*.grid-view__card:hover img {
     filter: grayscale(1) contrast(1);
-  }
+  }*/
 
   .grid-view {
     margin-top: var(--space-8-xl);

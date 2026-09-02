@@ -30,17 +30,37 @@ const spreadStepY = 0
 
 function MobileReel() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
 
+  // Escucha la señal visual
+  useEffect(() => {
+    if (window.isVisualsReady) {
+      setIsVisible(true);
+    } else {
+      const handleVisuals = () => setIsVisible(true);
+      window.addEventListener('visualsReady', handleVisuals);
+      return () => window.removeEventListener('visualsReady', handleVisuals);
+    }
+  }, [])
+
+  // Loop de imágenes
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setCurrentImageIndex((previousIndex) => (previousIndex + 1) % footerReelImages.length)
     }, 1000)
-
     return () => window.clearInterval(intervalId)
   }, [])
 
   return (
-    <div className="mobile-reel" aria-label="Work reel">
+    <div 
+      className="mobile-reel" 
+      aria-label="Work reel"
+      style={{
+        opacity: isVisible ? 1 : 0, 
+        transform: isVisible ? 'scale(1)' : 'scale(0.95)', 
+        transition: 'opacity 0.8s ease, transform 0.8s ease'
+      }}
+    >
       <img src={footerReelImages[currentImageIndex]} alt="Work preview" />
     </div>
   )

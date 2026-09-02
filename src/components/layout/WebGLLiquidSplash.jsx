@@ -16,22 +16,25 @@ const fragmentShaderSource = `
   uniform sampler2D u_texture;
   uniform vec2 u_resolution;
   uniform vec2 u_logoSize;
+  uniform vec2 u_logoOrigin;
   uniform vec2 u_pointer;
   uniform float u_strength;
   uniform float u_time;
   varying vec2 v_uv;
-  uniform vec2 u_logoOrigin;
 
   void main() {
     vec2 uv = v_uv;
-        vec2 logoOrigin = u_logoOrigin;
+    vec2 logoOrigin = u_logoOrigin;
     vec2 logoSize = u_logoSize / u_resolution;
     vec2 imageUv = (uv - logoOrigin) / logoSize;
     vec2 pointerDistance = uv - u_pointer;
+    
+    // Distorsión por puntero
     float distanceToPointer = length(pointerDistance);
     float influence = exp(-distanceToPointer * 24.0) * u_strength;
     float wave = sin(distanceToPointer * 42.0 - u_time * 5.0) * influence;
     vec2 direction = normalize(pointerDistance + vec2(0.0001));
+    
     imageUv.y = 1.0 - imageUv.y;
     imageUv += direction * wave * 0.05;
     imageUv += vec2(
@@ -84,6 +87,15 @@ export default function WebGLLiquidSplash({ onComplete }) {
   const completedRef = useRef(false)
 
   useEffect(() => {
+    // 6 segundos de pantalla de carga (ajústalo a tu gusto)
+    const timer = setTimeout(() => {
+      handleComplete()
+    }, 3000)
+    
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
     const canvas = canvasRef.current
     const container = containerRef.current
     const gl = canvas?.getContext('webgl', { alpha: true, antialias: true })
@@ -112,6 +124,7 @@ export default function WebGLLiquidSplash({ onComplete }) {
     const strengthLocation = gl.getUniformLocation(program, 'u_strength')
     const timeLocation = gl.getUniformLocation(program, 'u_time')
     const textureLocation = gl.getUniformLocation(program, 'u_texture')
+
     const pointer = { x: 0.5, y: 0.5 }
     const targetPointer = { x: 0.5, y: 0.5 }
     let imageReady = false
@@ -172,6 +185,8 @@ export default function WebGLLiquidSplash({ onComplete }) {
       pointer.x += (targetPointer.x - pointer.x) * 0.12
       pointer.y += (targetPointer.y - pointer.y) * 0.12
       strength += (targetStrength - strength) * 0.08
+      
+      const elapsedTime = now - startTime;
 
       if (imageReady) {
         gl.clearColor(0, 0, 0, 0)
@@ -190,7 +205,8 @@ export default function WebGLLiquidSplash({ onComplete }) {
         gl.uniform2f(logoOriginLocation, logoRect.left * pixelRatio / canvas.width, 1 - ((logoRect.top + logoRect.height) * pixelRatio / canvas.height))
         gl.uniform2f(pointerLocation, pointer.x, pointer.y)
         gl.uniform1f(strengthLocation, strength)
-        gl.uniform1f(timeLocation, (now - startTime) / 1000)
+        gl.uniform1f(timeLocation, elapsedTime / 1000)
+        
         gl.drawArrays(gl.TRIANGLES, 0, 6)
       }
 
@@ -225,7 +241,6 @@ export default function WebGLLiquidSplash({ onComplete }) {
   return (
     <div ref={containerRef} className="webgl-liquid-splash" onClick={handleComplete}>
       <canvas ref={canvasRef} className="webgl-liquid-splash__canvas" aria-hidden="true" />
-      <span className="webgl-liquid-splash__hint">[CLIC ANYWHERE]</span>
     </div>
   )
 }

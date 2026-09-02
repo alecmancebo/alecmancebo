@@ -5,29 +5,19 @@ import { useState, useEffect, useRef } from 'react'
 import { LanguageProvider } from './components/effects/LanguageContext' 
 import CustomCursor from './components/effects/CustomCursor';
 import About from './components/layout/About';
-/*import Playground from './components/layout/Playground';*/
 import Archive from './components/layout/Archive';
 import WebGLLiquidSplash from './components/layout/WebGLLiquidSplash';
+
+window.isSplashComplete = false;
 
 function App() {
   const [theme, setTheme] = useState('dark')
   const [showSplash, setShowSplash] = useState(true)
-  const [currentPage, setCurrentPage] = useState(() => {
-    try {
-      const savedPage = window.localStorage.getItem('portfolio-current-page')
-      return ['home', 'about', 'archive'].includes(savedPage) ? savedPage : 'home'
-    } catch {
-      return 'home'
-    }
-  });
-  const [viewingProject, setViewingProject] = useState(() => {
-    try {
-      const savedProject = window.localStorage.getItem('portfolio-home-project')
-      return savedProject ? JSON.parse(savedProject) : null
-    } catch {
-      return null
-    }
-  });
+  
+  // 1. Estados limpios: siempre empiezan en la página principal ('home') y sin proyectos abiertos
+  const [currentPage, setCurrentPage] = useState('home');
+  const [viewingProject, setViewingProject] = useState(null);
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const skipHistoryEffectRef = useRef(true)
 
@@ -47,17 +37,12 @@ function App() {
   }, [theme])
 
   useEffect(() => {
-    const initialHistoryState = window.history.state
-    if (initialHistoryState?.portfolioPage) {
-      setCurrentPage(initialHistoryState.portfolioPage)
-      setViewingProject(initialHistoryState.portfolioProject ?? null)
-    } else {
-      window.history.replaceState(
-        getHistoryState(currentPage, viewingProject),
-        '',
-        window.location.href,
-      )
-    }
+    // 2. Al recargar la página, sobrescribimos el historial del navegador para forzar el inicio
+    window.history.replaceState(
+      getHistoryState('home', null),
+      '',
+      window.location.href,
+    )
 
     const handlePopState = (event) => {
       const nextPage = event.state?.portfolioPage
@@ -90,22 +75,22 @@ function App() {
     )
   }, [currentPage, viewingProject])
 
-  useEffect(() => {
-    try {
-      window.localStorage.setItem('portfolio-current-page', currentPage)
-      if (viewingProject) {
-        window.localStorage.setItem('portfolio-home-project', JSON.stringify(viewingProject))
-      } else {
-        window.localStorage.removeItem('portfolio-home-project')
-      }
-    } catch {
-      // Ignore storage failures.
-    }
-  }, [currentPage, viewingProject])
+  // Se ha eliminado completamente el guardado en window.localStorage para evitar que retenga la última vista
 
   return (
     <LanguageProvider>
-        {showSplash && <WebGLLiquidSplash onComplete={() => setShowSplash(false)} />}
+        {showSplash && <WebGLLiquidSplash onComplete={() => {
+          setShowSplash(false);
+          
+          window.isVisualsReady = true;
+          window.dispatchEvent(new Event('visualsReady'));
+          
+          setTimeout(() => {
+            window.isSplashComplete = true;
+            window.dispatchEvent(new Event('splashComplete'));
+          }, 600); 
+          
+        }} />}
         <div className={`portfolio ${isMenuOpen ? 'portfolio--menu-open' : ''}`}>
           {!showSplash && <CustomCursor />}
           <Header

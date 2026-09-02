@@ -17,26 +17,41 @@ export default function CodedText({ text, fromRight = false }) {
     setDisplayedText('')
     let characterIndex = 0
     let typingInterval
-    const revealTimeout = window.setTimeout(() => {
-      typingInterval = window.setInterval(() => {
-        characterIndex += 1
-        setDisplayedText(text.substring(0, characterIndex))
-        if (characterIndex >= text.length) {
-          window.clearInterval(typingInterval)
-        }
-      }, 15)
-    }, TYPEWRITER_PAGE_DELAY)
+    let revealTimeout
+
+    const startTyping = () => {
+      revealTimeout = window.setTimeout(() => {
+        typingInterval = window.setInterval(() => {
+          characterIndex += 1
+          setDisplayedText(text.substring(0, characterIndex))
+          if (characterIndex >= text.length) {
+            window.clearInterval(typingInterval)
+          }
+        }, 15)
+      }, TYPEWRITER_PAGE_DELAY)
+    }
+
+    if (window.isSplashComplete === true) {
+      startTyping();
+    } else {
+      const handleSplash = () => startTyping();
+      window.addEventListener('splashComplete', handleSplash);
+      return () => {
+        window.removeEventListener('splashComplete', handleSplash);
+        window.clearTimeout(revealTimeout);
+        window.clearInterval(typingInterval);
+      }
+    }
 
     return () => {
-      window.clearTimeout(revealTimeout)
-      window.clearInterval(typingInterval)
+      window.clearTimeout(revealTimeout);
+      window.clearInterval(typingInterval);
     }
   }, [text])
 
   const handlePointerOver = () => {
     if (!textRef.current || displayedText !== text) return
 
-    // Mata la animación anterior si se hace hover repetidamente
     if (tlRef.current) tlRef.current.kill()
 
     const t = textRef.current
@@ -68,7 +83,6 @@ export default function CodedText({ text, fromRight = false }) {
           }
         },
         onComplete: () => {
-          // Asegura que al terminar vuelva al texto original exacto
           t.innerHTML = text
         }
       }
@@ -76,8 +90,10 @@ export default function CodedText({ text, fromRight = false }) {
   }
 
   return (
-    <span ref={textRef} onPointerOver={handlePointerOver} style={{ display: 'inline-block' }}>
-      {displayedText}
+    <span onPointerOver={handlePointerOver} style={{ display: 'inline-block' }}>
+      <span ref={textRef}>{displayedText}</span>
+      {/* Esto reserva el ancho total para evitar saltos y movimientos hacia la izquierda */}
+      <span style={{ visibility: 'hidden' }}>{text.substring(displayedText.length)}</span>
     </span>
   )
 }
