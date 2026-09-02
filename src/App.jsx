@@ -7,6 +7,7 @@ import CustomCursor from './components/effects/CustomCursor';
 import About from './components/layout/About';
 /*import Playground from './components/layout/Playground';*/
 import Archive from './components/layout/Archive';
+import WebGLLiquidSplash from './components/layout/WebGLLiquidSplash';
 
 function App() {
   const [theme, setTheme] = useState('dark')
@@ -104,8 +105,9 @@ function App() {
 
   return (
     <LanguageProvider>
+        {showSplash && <WebGLLiquidSplash onComplete={() => setShowSplash(false)} />}
         <div className={`portfolio ${isMenuOpen ? 'portfolio--menu-open' : ''}`}>
-          <CustomCursor />
+          {!showSplash && <CustomCursor />}
           <Header
             setTheme={setTheme}
             onNavigatePage={navigateToPage}

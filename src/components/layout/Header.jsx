@@ -5,14 +5,6 @@ import RealTimeClock from '../effects/realTimeClock';
 import { FooterBio } from './Footer'
 
 
-function SidePill({ label, position }) {
-  return (
-    <div className={`header__pill header__pill--${position}`} aria-hidden="true">
-      <span className="header__pill-text">{label}</span>
-    </div>
-  )
-}
-
 function BrandBlock({ onNavigatePage }) {
   const handleLogoClick = () => {
     onNavigatePage('home')

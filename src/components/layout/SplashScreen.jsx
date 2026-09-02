@@ -37,8 +37,8 @@ export default function SplashScreen({ onComplete }) {
 
       const deltaX = e.clientX - mouse.current.x;
       const deltaY = e.clientY - mouse.current.y;
-      const speed = Math.min(Math.sqrt(deltaX * deltaX + deltaY * deltaY), 450);
-      
+      const speed = Math.min(Math.sqrt(deltaX * deltaX + deltaY * deltaY), 120);
+
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
 
@@ -50,21 +50,21 @@ export default function SplashScreen({ onComplete }) {
       });
 
       gsap.to(displacementRef.current, {
-        attr: { scale: speed * 15 },
-        duration: 0.2,
-        ease: "power4.out",
+        attr: { scale: 18 + speed * 0.45 },
+        duration: 0.45,
+        ease: "power2.out",
         overwrite: "auto"
       });
 
       clearTimeout(timer.current);
       timer.current = setTimeout(() => {
         gsap.to(displacementRef.current, {
-          attr: { scale: 0 },
-          duration: 2,
-          ease: "elastic.out(1, 0.15)",
+          attr: { scale: 14 },
+          duration: 1.4,
+          ease: "power2.out",
           overwrite: "auto"
         });
-      }, 50);
+      }, 120);
     };
 
     window.addEventListener('mousemove', handleMouseMove);

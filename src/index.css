@@ -213,17 +213,62 @@ body {
   align-items: center;
 }*/
 
-/* Pantalla de inicio blanca que cubre el contenido de la landing */
+/* Pantalla de inicio que cubre el contenido de la landing */
 .splash-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #000000;
+  color: #ffffff;
   z-index: 9998;
   transition: opacity 0.8s ease;
-  pointer-events: none; /* Evita bloquear clics una vez oculto */
+  cursor: pointer;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.splash-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.layer-normal {
+  mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), transparent 0%, transparent 95%, black 100%);
+  -webkit-mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), transparent 0%, transparent 95%, black 100%);
+}
+
+.layer-distorted {
+  mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), black 0%, black 99%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), black 0%, black 99%, transparent 100%);
+  mix-blend-mode: lighten;
+}
+
+.layer-distorted .splash-logo-center {
+  filter: url(#extreme-liquid);
+}
+
+.splash-logo-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-logo-center svg {
+  width: 88vw;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+}
+
+.splash-logo-center svg path {
+  fill: #fefefe;
 }
 
 /* Estado Inicial: Logo grande y centrado */
@@ -266,13 +311,48 @@ body {
 
 .splash-text {
   position: absolute;
-  bottom: 20vh;
+  bottom: 16vh;
   left: 50%;
   transform: translateX(-50%);
   font-size: var(--text-m);
   font-family: 'Roboto Mono', monospace;
   opacity: 0;
   animation: fadeIn 1s ease-out 2s forwards;
+  pointer-events: none;
+}
+
+.webgl-liquid-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  overflow: hidden;
+  background: #000000;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.85s ease;
+}
+
+.webgl-liquid-splash--closing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.webgl-liquid-splash__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.webgl-liquid-splash__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 16vh;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: var(--text-m);
   pointer-events: none;
 }
 
@@ -349,6 +429,7 @@ body {
   border: 0;
   background: transparent;
   cursor: pointer;
+  position: relative;
 }
 
 .header__brand img {
@@ -455,12 +536,29 @@ body {
   min-height: 0;
   padding: var(--space-4-xl) var(--browser-pad-x-xl) 0;
   font-family: var(--font-mono);
+  position: relative;
+}
+
+.browser__background-logo {
+  position: fixed;
+  z-index: 0;
+  top: 49%;
+  left: 50%;
+  width: 88vw;
+  height: auto;
+  max-height: 85vh;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .browser__toolbar {
   display: flex;
   align-items: center;
   gap: var(--space-9-xl);
+  position: relative;
+  z-index: 4;
 }
 
 .browser__views {
@@ -536,6 +634,7 @@ body {
   gap: var(--space-11-xl);
   align-items: start;
   position: relative;
+  z-index: 3;
 }
 
 .browser__index-view .browser__list {

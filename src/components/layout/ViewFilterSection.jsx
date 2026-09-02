@@ -365,6 +365,12 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
 
   return (
     <section ref={browserRef} className={`browser browser--${viewMode}`} aria-label="Project browser">
+      <img
+        className="browser__background-logo"
+        src="/elementos/alec%20svg%20linea.svg"
+        alt=""
+        aria-hidden="true"
+      />
       <div className="browser__toolbar">
         <div className="browser__views" role="group" aria-label="View selector">
           <button
