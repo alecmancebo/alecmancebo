@@ -398,23 +398,11 @@ body {
 }
 
 .header__brand img {
-  width: 200px;
+  width: 50px;    
   height: auto;
   display: block;
   object-fit: contain;
 }
-
-/*.header__brand-mark {
-  font-size: var(--text-xl);
-  line-height: 1;
-  font-weight: 700;
-}
-
-.header__brand-name {
-  font-size: var(--text-xl);
-  font-weight: 600;
-  white-space: nowrap;
-}*/
 
 .header__nav {
   display: contents;
