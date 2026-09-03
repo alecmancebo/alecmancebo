@@ -4,7 +4,7 @@ export default function RealTimeClock() {
   const [time, setTime] = useState(new Date());
   const [visibleChars, setVisibleChars] = useState(0);
 
-  // 1. Reloj en tiempo real (se actualiza cada segundo en segundo plano)
+  // 1. Reloj en tiempo real (se actualiza cada segundo)
   useEffect(() => {
     const timerId = setInterval(() => {
       setTime(new Date());
@@ -12,13 +12,13 @@ export default function RealTimeClock() {
     return () => clearInterval(timerId);
   }, []);
 
-  // 2. Animación de escritura (espera a la señal de la pantalla de carga)
+  // 2. Animación de escritura
   useEffect(() => {
     let typingInterval;
     let delayTimeout;
 
     const startTyping = () => {
-      setVisibleChars(0); // Nos aseguramos de que empiece en 0
+      setVisibleChars(0); 
       
       delayTimeout = setTimeout(() => {
         typingInterval = setInterval(() => {
@@ -30,8 +30,8 @@ export default function RealTimeClock() {
             }
             return prev + 1;
           });
-        }, 60); // Velocidad: 60ms por letra
-      }, 300); // 300ms de margen tras desaparecer la pantalla negra
+        }, 60);
+      }, 300); 
     };
 
     if (window.isSplashComplete === true) {
@@ -58,11 +58,8 @@ export default function RealTimeClock() {
 
   return (
     <span style={{ display: 'inline-block' }}>
-      {/* Texto visible animado */}
       <span>{timeString.substring(0, visibleChars)}</span>
-      
-      {/* Texto oculto para reservar el espacio exacto y evitar saltos */}
       <span style={{ opacity: 0 }}>{timeString.substring(visibleChars)}</span>
     </span>
   );
-}s
+}
