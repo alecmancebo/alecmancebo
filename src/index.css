@@ -398,7 +398,7 @@ body {
 }
 
 .header__brand img {
-  width: 50px;    
+  width: 200px;    
   height: auto;
   display: block;
   object-fit: contain;
