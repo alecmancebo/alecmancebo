@@ -142,7 +142,7 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
     { value: 'web', label: t('web') },
     { value: 'gameDev', label: t('gameDev') },
     { value: 'uxui', label: t('uxui') },
-    { value: 'threed', label: t('threed') },
+    { value: '3d', label: t('3d') },
     { value: 'graphic', label: t('graphic') },
   ];
 
