@@ -19,7 +19,7 @@
   --text-xl: 40px;
   --text-l: 24px;
   --text-t: 18px;
-  --text-m: 10px;
+  --text-m: 11px;
 
   --font-mono: 'Roboto Mono', monospace;
   --font-sans: 'Google Sans', sans-serif;
@@ -811,7 +811,7 @@ body {
 
 .footer {
   min-height: 8.25rem;
-  padding: var(--space-9-xl) var(--footer-pad-x-xl) var(--space-10-xl);
+  padding: var(--space-3-xl) var(--footer-pad-x-xl) var(--space-10-xl);
   display: grid;
   grid-template-columns: 1.3fr 0.6fr 0.5fr auto;
   align-items: end;

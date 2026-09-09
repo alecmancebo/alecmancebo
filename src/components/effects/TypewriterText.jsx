@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 
 export const TYPEWRITER_PAGE_DELAY = 0;
 
-export default function TypewriterText({ text = "", speed = 10, delay = 0 }) {
+export default function TypewriterText({ text = "", speed = 15, delay = 0 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
+  // 1. Detectamos cuándo entra en pantalla
   useEffect(() => {
     const currentElement = containerRef.current;
     if (!currentElement) return;
@@ -31,6 +32,7 @@ export default function TypewriterText({ text = "", speed = 10, delay = 0 }) {
     };
   }, []);
 
+  // 2. Animación de escritura de alta velocidad
   useEffect(() => {
     if (!text || !isVisible) return;
 
@@ -39,14 +41,22 @@ export default function TypewriterText({ text = "", speed = 10, delay = 0 }) {
 
     const startTyping = () => {
       setCurrentIndex(0);
+      
+      // LA MAGIA: Si el texto es largo, agrupamos caracteres.
+      // Dividir entre 50 asegura que NINGÚN texto, por largo que sea, tarde más de ~0.6 segundos totales.
+      const charsPerTick = Math.max(1, Math.ceil(text.length / 100));
+
       timeoutId = setTimeout(() => {
         typingInterval = setInterval(() => {
           setCurrentIndex((prev) => {
-            const next = prev + 1;
-            if (next >= text.length) clearInterval(typingInterval);
+            const next = prev + charsPerTick; // Sumamos varias letras de golpe
+            if (next >= text.length) {
+              clearInterval(typingInterval);
+              return text.length;
+            }
             return next;
           });
-        }, speed);
+        }, speed); // 12 milisegundos por salto
       }, TYPEWRITER_PAGE_DELAY + delay);
     };
 
@@ -74,6 +84,7 @@ export default function TypewriterText({ text = "", speed = 10, delay = 0 }) {
   return (
     <span ref={containerRef} style={{ display: 'inline' }}>
       <span>{visibleText}</span>
+      {/* Mantenemos el texto oculto renderizado para que el layout no dé saltos visuales */}
       <span style={{ visibility: 'hidden' }}>{hiddenText}</span>
     </span>
   );

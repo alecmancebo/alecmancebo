@@ -14,7 +14,7 @@ export const gridProjectsByLanguage = {
 		{ id: 'g-1', category: 'web', title: 'TRANSPAPELADES', year: '2025', disciplines: 'WEB', images: ['/trabajos/transpapelades-1.png'] },
 		{ id: 'g-2', category: 'web, gameDev', title: 'ECHAR RAÍCES', year: '2026', disciplines: 'WEB / GAME-DEV', images: ['/trabajos/Echar-raices 03.png', '/trabajos/Echar-raices 05.png', '/trabajos/Echar-raices 01.png'] },
 		{ id: 'g-3', category: 'uxui', title: 'ENTRELÍNEAS', year: '2026', disciplines: 'UX/UI', images: ['/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 04.png'] },
-		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2026', disciplines: 'WEB', images: ['/trabajos/E-porfolio-1.png',  '/trabajos/E-porfolio-3.png', '/trabajos/E-porfolio.png'] },
+		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2026', disciplines: 'WEB', images: ['/trabajos/Ermes front - 1.png',  '/trabajos/Ermes - inicio 2.png', '/trabajos/E-porfolio.png'] },
 		{ id: 'g-5', category: 'gameDev, 3d', title: 'FADE', year: '2024', disciplines: 'GAME-DEV / 3D', images: ['/trabajos/Fade04.png', '/trabajos/Fade02.png'] },
 		{ id: 'g-6', category: 'gameDev, web, 3d', title: 'MICROSOFT HUDDLE', year: '2025', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle 02.png'] },
 	],
@@ -22,7 +22,7 @@ export const gridProjectsByLanguage = {
 		{ id: 'g-1', category: 'web', title: 'TRANSPAPELADES', year: '2025', disciplines: 'WEB', images: ['/trabajos/transpapelades-1.png'] },
 		{ id: 'g-2', category: 'web, gameDev', title: 'ECHAR RAÍCES', year: '2026', disciplines: 'WEB / GAME-DEV', images: ['/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 02.png', '/trabajos/Echar-raices 03.png'] },
 		{ id: 'g-3', category: 'uxui', title: 'ENTRELÍNEAS', year: '2026', disciplines: 'UX/UI', images: ['/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 02.png'] },
-		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2026', disciplines: 'WEB', images: ['/trabajos/E-porfolio-1.png', '/trabajos/E-porfolio-2.png', '/trabajos/E-porfolio-3.png'] },
+		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2026', disciplines: 'WEB', images: ['/trabajos/Ermes front - 1.png',  '/trabajos/Ermes - inicio 2.png', '/trabajos/E-porfolio.png'] },
 		{ id: 'g-5', category: 'gameDev, 3d', title: 'FADE', year: '2024', disciplines: 'GAME-DEV / 3D', images: ['/trabajos/Fade01.png', '/trabajos/Fade02.png'] },
 		{ id: 'g-6', category: 'gameDev, web, 3d', title: 'MICROSOFT HUDDLE', year: '2025', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 02.png'] },
 	]

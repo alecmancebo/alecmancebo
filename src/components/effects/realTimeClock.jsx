@@ -30,8 +30,8 @@ export default function RealTimeClock() {
             }
             return prev + 1;
           });
-        }, 60);
-      }, 300); 
+        }, 50);
+      }, 100); 
     };
 
     if (window.isSplashComplete === true) {
