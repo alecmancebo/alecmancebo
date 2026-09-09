@@ -109,20 +109,27 @@ export default function ProjectDetail({ project, onBack, onOpenProject, backText
       </header>
 
       <div className="project-detail__meta-bar">
+        {/* Izquierda: Botón de volver */}
         <button className="project-detail__back-btn" onClick={onBack}>
           <CodedText text={backText} />
         </button>
+
+        {/* Medio: Enlace dinámico VER / VIEW (Mantiene la clase original para el hover de la flecha) */}
         <a
           className="project-detail__category"
           href={project.projectUrl || '#'}
           aria-label={`${project.title} project link`}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <span className="project-detail__category-label">
-            {project.disciplines?.toUpperCase() || project.category?.toUpperCase()}
+            {language === 'es' ? 'VER' : 'VIEW'}
           </span>
         </a>
+
+        {/* Derecha: Rama/Disciplina (Reemplaza al año, pero mantiene la clase para alinearse a la derecha) */}
         <span className="project-detail__year">
-          {project.year || "2024"}
+          {project.disciplines?.toUpperCase() || project.category?.toUpperCase()}
         </span>
       </div>
 
