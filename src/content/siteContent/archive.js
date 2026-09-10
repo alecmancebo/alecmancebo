@@ -9,6 +9,8 @@ export const archiveProjectsByLanguage = {
         /*{ id: '14', category: 'photography', title: 'MOONDANCE', year: '2021', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/Fotogramas/Fotograma 1.jpg']},*/
         { id: '15', category: 'motion graphics', title: 'ADIDAS ORIGINALS', year: '2024', disciplines: 'MOTION GRAPHICS', span: 1, images: ['/archivo/Adidas/Adidas 1.png'], projectUrl: 'https://www.youtube.com/shorts/c25BpxVZI9Y' },
         { id: '16', category: 'motion graphics', title: 'SUSPIRIA', year: '2024', disciplines: 'MOTION GRAPHICS', span: 1, images: ['/archivo/Suspiria thumbnail.png'], projectUrl: "youtube.com/watch?v=8tYVoyndzfg&feature=youtu.be" },
+		{ id: '06', category: 'gameDev, 3d', title: 'FADE', year: '2024', disciplines: 'GAME-DEV / 3D', images: ['/trabajos/Fade01.png', '/trabajos/Fade02.png'], projectUrl: 'https://alec-rodriguez.itch.io/fade' },
+
         /*{ id: '17', category: 'photography', title: 'NATURA MORTA', year: '2022', disciplines: 'PHOTOGRAPHY', span: 1, images: ['/archivo/natura thumbnail.png'] },*/
 	],
 	es: [
@@ -21,6 +23,7 @@ export const archiveProjectsByLanguage = {
         /*{ id: '14', category: 'fotografía', title: 'MOONDANCE', year: '2021', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/Fotogramas/Fotograma 0.png'] },*/
         { id: '15', category: 'motion graphics', title: 'ADIDAS ORIGINALS', year: '2024', disciplines: 'MOTION GRAPHICS', span: 1, images: ['/archivo/Adidas/Adidas 1.png'], projectUrl: 'https://www.youtube.com/shorts/c25BpxVZI9Y' },
         { id: '16', category: 'motion graphics', title: 'SUSPIRIA', year: '2024', disciplines: 'MOTION GRAPHICS', span: 1, images: ['/archivo/Suspiria thumbnail.png'], projectUrl: "youtube.com/watch?v=8tYVoyndzfg&feature=youtu.be"},
+		{ id: '06', category: 'gameDev, 3d', title: 'FADE', year: '2024', disciplines: 'GAME-DEV / 3D', images: ['/trabajos/Fade01.png', '/trabajos/Fade02.png'], projectUrl: 'https://alec-rodriguez.itch.io/fade' },
         /*{ id: '17', category: 'fotografía', title: 'NATURA MORTA', year: '2022', disciplines: 'FOTOGRAFÍA', span: 1, images: ['/archivo/natura thumbnail.png'] },*/
         
 	]

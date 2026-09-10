@@ -3,8 +3,7 @@ export const projects = [
 	{ id: '02', title: 'ECHAR RAÍCES', category: 'web, gameDev', seed: 'echar-raices', projectUrl: 'https://alec-rodriguez.itch.io/echar-raices' },
 	{ id: '03', title: 'ENTRELÍNEAS', category: 'uxui', seed: 'entrelineas', projectUrl: 'https://www.figma.com/proto/1OCW04zQOmjOtNLwMURRsw/Entrel%C3%ADneas---AlecRodr%C3%ADguez?node-id=44-675&p=f&t=nhPQUKLodyw6IDig-1&scaling=scale-down&content-scaling=fixed&page-id=12%3A6&starting-point-node-id=44%3A591&show-proto-sidebar=1' },
 	{ id: '04', title: 'ERMES OLEA PORFOLIO', category: 'web', seed: 'ermes-olea-porfolio', projectUrl: 'https://ermes-olea.netlify.app/' },
-	{ id: '05', title: 'FADE', category: 'gameDev, 3d', seed: 'fade', projectUrl: 'https://alec-rodriguez.itch.io/fade' },
-	{ id: '06', title: 'MICROSOFT HUDDLE', category: 'gameDev, web, 3d', seed: 'microsoft-huddle', projectUrl: 'https://microsofthuddle.framer.website/' },
+	{ id: '05', title: 'MICROSOFT HUDDLE', category: 'gameDev, web, 3d', seed: 'microsoft-huddle', projectUrl: 'https://microsofthuddle.framer.website/' },
 ];
 
 // Tarjetas para la Vista Cuadrícula (solo del g-1 al g-6)
@@ -15,16 +14,14 @@ export const gridProjectsByLanguage = {
 		{ id: 'g-2', category: 'web, gameDev', title: 'ECHAR RAÍCES', year: '2026', disciplines: 'WEB / GAME-DEV', images: ['/trabajos/Echar-raices 03.png', '/trabajos/Echar-raices 05.png', '/trabajos/Echar-raices 01.png'] },
 		{ id: 'g-3', category: 'uxui', title: 'ENTRELÍNEAS', year: '2026', disciplines: 'UX/UI', images: ['/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 04.png'] },
 		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2026', disciplines: 'WEB', images: ['/trabajos/Ermes front - 1.png',  '/trabajos/Ermes - inicio 2.png', '/trabajos/E-porfolio.png'] },
-		{ id: 'g-5', category: 'gameDev, 3d', title: 'FADE', year: '2024', disciplines: 'GAME-DEV / 3D', images: ['/trabajos/Fade04.png', '/trabajos/Fade02.png'] },
-		{ id: 'g-6', category: 'gameDev, web, 3d', title: 'MICROSOFT HUDDLE', year: '2025', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle 02.png'] },
+		{ id: 'g-5', category: 'gameDev, web, 3d', title: 'MICROSOFT HUDDLE', year: '2025', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle 02.png'] },
 	],
 	es: [
 		{ id: 'g-1', category: 'web', title: 'TRANSPAPELADES', year: '2025', disciplines: 'WEB', images: ['/trabajos/transpapelades-1.png'] },
 		{ id: 'g-2', category: 'web, gameDev', title: 'ECHAR RAÍCES', year: '2026', disciplines: 'WEB / GAME-DEV', images: ['/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 02.png', '/trabajos/Echar-raices 03.png'] },
 		{ id: 'g-3', category: 'uxui', title: 'ENTRELÍNEAS', year: '2026', disciplines: 'UX/UI', images: ['/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 02.png'] },
 		{ id: 'g-4', category: 'web', title: 'ERMES OLEA PORFOLIO', year: '2026', disciplines: 'WEB', images: ['/trabajos/Ermes front - 1.png',  '/trabajos/Ermes - inicio 2.png', '/trabajos/E-porfolio.png'] },
-		{ id: 'g-5', category: 'gameDev, 3d', title: 'FADE', year: '2024', disciplines: 'GAME-DEV / 3D', images: ['/trabajos/Fade01.png', '/trabajos/Fade02.png'] },
-		{ id: 'g-6', category: 'gameDev, web, 3d', title: 'MICROSOFT HUDDLE', year: '2025', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 02.png'] },
+		{ id: 'g-5', category: 'gameDev, web, 3d', title: 'MICROSOFT HUDDLE', year: '2025', disciplines: 'GAME-DEV / WEB / 3D', images: ['/trabajos/Huddle 01.png', '/trabajos/Huddle 02.png'] },
 	]
 };
 
@@ -59,12 +56,6 @@ export const projectMontageLayout = {
         { src: '/trabajos/E-porfolio-4.png', x: 58, y: 24, w: 8, z: 5, tablet: { x: 56, y: 18, w: 10 } },
 	],
 	'05': [
-		{ src: '/trabajos/Fade04.png', x: 27, y: 62, w: 32, z: 2, tablet: { x: 27, y: 58, w: 38 } },
-		{ src: '/trabajos/Fade02.png', x: 40, y: 27, w: 20, z: 4, tablet: { x: 40, y: 27, w: 26 } },
-		{ src: '/trabajos/Fade03.png', x: 80, y: 38, w: 25, z: 3, tablet: { x: 80, y: 38, w: 29 } },
-		{ src: '/trabajos/Fade01.png', x: 63, y: 74, w: 18, z: 5, tablet: { x: 63, y: 74, w: 22 } },
-	],
-	'06': [
 		{ src: '/trabajos/Huddle 02.png', x: 40, y: 42, w: 35, z: 4, tablet: { x: 40, y: 38, w: 38 } },
 		{ src: '/trabajos/Huddle 03.png', x: 20, y: 68, w: 30, z: 2, tablet: { x: 20, y: 68, w: 32 } },
 		{ src: '/trabajos/Huddle 01.png', x: 65, y: 76, w: 16, z: 3, tablet: { x: 65, y: 74, w: 19 } },

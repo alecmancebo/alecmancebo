@@ -3,8 +3,7 @@ export const projectDetailImages = {
 	'02': ['/trabajos/Echar-raices 02.png', '/trabajos/Echar-raices 04.png', '/trabajos/Echar-raices 01.png', '/trabajos/Echar-raices 03.png'],
 	'03': ['/trabajos/Entrelineas 04.png', '/trabajos/Entrelineas 01.png', '/trabajos/Entrelineas 03.png', '/trabajos/Entrelineas 02.png'],
 	'04': ['/trabajos/E-porfolio.png', '/trabajos/E-porfolio-2.png', '/trabajos/E-porfolio-3.png', '/trabajos/E-porfolio-1.png'],
-	'05': ['/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade01.png', '/trabajos/Fade02.png'],
-	'06': ['/trabajos/Huddle 03.png', '/trabajos/Huddle 01.png', '/trabajos/Huddle 04.png', '/trabajos/Huddle 02.png'],
+	'05': ['/trabajos/Huddle 03.png', '/trabajos/Huddle 01.png', '/trabajos/Huddle 04.png', '/trabajos/Huddle 02.png'],
 };
 
 // Rutas de todas las imágenes de la vista detalle
@@ -18,9 +17,9 @@ export const projectPageImages = {
 	
     '04': ['/trabajos/Ermes - inicio 1.mp4', '/trabajos/Ermes - inicio 2.png', '/trabajos/Ermes - inicio 3.png', '/trabajos/Ermes inicio - 4.png', "/trabajos/Ermes inicio - 5.mp4", "/trabajos/Ermes visual - 1.png", "/trabajos/Ermes visual - 2.gif", '/trabajos/Ermes visual - 3.mp4', '/trabajos/Ermes visual - 4.mp4', '/trabajos/Ermes visual - 5.mp4', '/trabajos/Ermes visual - 6.png', '/trabajos/Ermes visual - 7.png', '/trabajos/Ermes front - 1.png', '/trabajos/Ermes front - 2.png', '/trabajos/Ermes front - 3.png', '/trabajos/Ermes escalability - 1.png', '/trabajos/Ermes conclusion - 1.png', '/trabajos/Ermes conclusion - 2.mp4', '/trabajos/Ermes conclusion - 3.mp4'],
 	
-    '05': ['/trabajos/FADE Teaser.mp4', '/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade02.png', '/trabajos/Fade visual - 3.png', '/trabajos/Fade visual - 4.png', '/trabajos/Fade visual - 5.png', '/trabajos/Fade visual - 6.png', '/trabajos/Fade visual - 7.png', '/trabajos/Fade visual - 8.png', '/trabajos/Fade01.png', '/trabajos/Fade visual - 1.png', '/trabajos/Fade Mecanica - 1.mp4', '/trabajos/Fade Mecanica - 4.png', '/trabajos/Fade Mecanica - 5.png', '/trabajos/Fade Mecanica - 6.png', '/trabajos/Fade Assets - 1.webp', '/trabajos/Fade Assets - 2.webp', '/trabajos/Fade Assets - 3.png', '/trabajos/Fade Assets - 4.webp', '/trabajos/Fade Assets - 5.png', '/trabajos/Fade visual - 2.png', '/trabajos/Fade Conclusion - 1.png', '/trabajos/Fade Conclusion - 3.mp4'],
+    '06': ['/trabajos/FADE Teaser.mp4', '/trabajos/Fade03.png', '/trabajos/Fade04.png', '/trabajos/Fade02.png', '/trabajos/Fade visual - 3.png', '/trabajos/Fade visual - 4.png', '/trabajos/Fade visual - 5.png', '/trabajos/Fade visual - 6.png', '/trabajos/Fade visual - 7.png', '/trabajos/Fade visual - 8.png', '/trabajos/Fade01.png', '/trabajos/Fade visual - 1.png', '/trabajos/Fade Mecanica - 1.mp4', '/trabajos/Fade Mecanica - 4.png', '/trabajos/Fade Mecanica - 5.png', '/trabajos/Fade Mecanica - 6.png', '/trabajos/Fade Assets - 1.webp', '/trabajos/Fade Assets - 2.webp', '/trabajos/Fade Assets - 3.png', '/trabajos/Fade Assets - 4.webp', '/trabajos/Fade Assets - 5.png', '/trabajos/Fade visual - 2.png', '/trabajos/Fade Conclusion - 1.png', '/trabajos/Fade Conclusion - 3.mp4'],
 	
-    '06': ['/trabajos/Huddle inicio - 1.mp4', '/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle inicio - 2.mp4', '/trabajos/Huddle research - 1.png', '/trabajos/Huddle research - 2.png', '/trabajos/Huddle research - 3.png', '/trabajos/Huddle research - 4.png', '/trabajos/Huddle ideation - 1.png', '/trabajos/Huddle architecture - 1.png', '/trabajos/Huddle visual - 3.mp4', '/trabajos/Huddle visual - 4.mp4', '/trabajos/Huddle visual - 5.png', '/trabajos/Huddle visual - 6.png', '/trabajos/Huddle visual - 7.png', '/trabajos/Huddle visual - 8.png', '/trabajos/Huddle visual - 9.mp4', '/trabajos/Huddle espacio - 1.jpg', '/trabajos/Huddle espacio - 2.jpg', '/trabajos/Huddle 04.png', '/trabajos/Huddle espacio - 3.jpg', '/trabajos/Huddle - copilot 1.mp4', '/trabajos/Huddle copilot - 2.webp', '/trabajos/Huddle copilot - 3.webp', '/trabajos/Huddle copilot - 4.jpg', '/trabajos/Huddle prototipo - 1.png', '/trabajos/Huddle prototipo - 2.mp4',  '/trabajos/Huddle 02.png'],
+    '05': ['/trabajos/Huddle inicio - 1.mp4', '/trabajos/Huddle 01.png', '/trabajos/Huddle 03.png', '/trabajos/Huddle inicio - 2.mp4', '/trabajos/Huddle research - 1.png', '/trabajos/Huddle research - 2.png', '/trabajos/Huddle research - 3.png', '/trabajos/Huddle research - 4.png', '/trabajos/Huddle ideation - 1.png', '/trabajos/Huddle architecture - 1.png', '/trabajos/Huddle visual - 3.mp4', '/trabajos/Huddle visual - 4.mp4', '/trabajos/Huddle visual - 5.png', '/trabajos/Huddle visual - 6.png', '/trabajos/Huddle visual - 7.png', '/trabajos/Huddle visual - 8.png', '/trabajos/Huddle visual - 9.mp4', '/trabajos/Huddle espacio - 1.jpg', '/trabajos/Huddle espacio - 2.jpg', '/trabajos/Huddle 04.png', '/trabajos/Huddle espacio - 3.jpg', '/trabajos/Huddle - copilot 1.mp4', '/trabajos/Huddle copilot - 2.webp', '/trabajos/Huddle copilot - 3.webp', '/trabajos/Huddle copilot - 4.jpg', '/trabajos/Huddle prototipo - 1.png', '/trabajos/Huddle prototipo - 2.mp4',  '/trabajos/Huddle 02.png'],
 
     "07": [ 
 		"/archivo/Omega-traicion/OT - 0.png",
@@ -164,8 +163,8 @@ export const projectPageImageSpans = {
 	'02': [ 4, 2, 2, 4, 2, 2, 4, 1, 3, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2],
 	'03': [4, 2, 2, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 2, 2, 4, 4, 2, 2],
 	'04': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 4, 4, 2, 2, 4, 4, 2, 2, 4],
-	'05': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4],
-	'06': [4, 2, 2, 4, 4, 4, 2, 2, 4, 4, 2, 2, 2, 2, 2, 2, 4, 2, 2, 1, 3, 4, 2, 2, 4, 4, 4, 4],
+	'06': [4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4],
+	'05': [4, 2, 2, 4, 4, 4, 2, 2, 4, 4, 2, 2, 2, 2, 2, 2, 4, 2, 2, 1, 3, 4, 2, 2, 4, 4, 4, 4],
     "07": [4, 2, 2, 2, 2, 4, 4, 2, 2, 4, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 2, 4, 4, 1, 1, 1, 1, 1, 2, 1],
     "08": [4, 4, 2, 2, 4, 4, 4, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 4, 4, 4],
     "09": [4],
@@ -185,8 +184,8 @@ export const projectPageTextEveryImages = {
 	'02': [0, 3, 5, 3, 5, 3],
 	'03': [3, 1, 9, 7, 3, 3, 3, 3, 3, 3],
 	'04': [4, 7, 3, 1, 4],
-	'05': [3, 6, 6, 5, 3],
-	'06': [3, 4, 1, 1, 7, 4, 0, 4, 3],
+	'06': [3, 6, 6, 5, 3],
+	'05': [3, 4, 1, 1, 7, 4, 0, 4, 3],
 	"07": [6, 3, 2, 1, 3, 8, 8, 2, 4, 8],
 	"08": [4, 2, 11, 3, 2],
     "12": [8],
