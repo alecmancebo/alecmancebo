@@ -375,6 +375,28 @@ function ViewFilterSection({ viewingProject, setViewingProject }) {
     };
   }, [viewMode, filteredProjects, activeProjectId]);
 
+  // NUEVO: Escucha si la URL viene con un proyecto directo al cargar la página
+  const getSlug = (title) => {
+    if (!title) return '';
+    return title.toString().toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+  };
+
+  useEffect(() => {
+    if (!viewingProject && window.location.hash.startsWith('#/project/')) {
+      const urlSlug = window.location.hash.replace('#/project/', '');
+      const projectToOpen = projects.find(p => getSlug(p.title) === urlSlug || p.id === urlSlug);
+      
+      if (projectToOpen) {
+        setTimeout(() => openProjectDetail(projectToOpen), 0);
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  
+
   if (viewingProject) {
     return (
       <ProjectDetail

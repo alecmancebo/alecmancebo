@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useMemo, useEffect } from 'react';
 import TypewriterText from '../effects/TypewriterText';
 import ProjectDetail from './ProjectDetail';
 import { useLanguage } from '../effects/LanguageContext';
@@ -11,72 +11,10 @@ import {
   getArchiveProjects
 } from './PorfolioData';
 
-export default function Archive() {
+// Ahora Archive recibe viewingProject desde App.jsx
+export default function Archive({ viewingProject, setViewingProject }) {
   const { language } = useLanguage();
-  const [savedArchiveState] = useState(() => {
-    try {
-      const savedProject = window.localStorage.getItem('portfolio-archive-project')
-      return {
-        project: savedProject ? JSON.parse(savedProject) : null,
-        hasArchiveHistory: window.history.state?.portfolioPage === 'archive',
-      }
-    } catch {
-      return { project: null, hasArchiveHistory: false }
-    }
-  });
-  const [viewingProject, setViewingProject] = useState(() => {
-    if (savedArchiveState.hasArchiveHistory) {
-      return window.history.state.portfolioArchiveProject ?? null
-    }
-
-    return window.history.state?.portfolioPage ? null : savedArchiveState.project
-  });
-  const skipHistoryEffectRef = useRef(savedArchiveState.hasArchiveHistory || !savedArchiveState.project);
-
   const archiveProjects = useMemo(() => getArchiveProjects(language), [language]);
-
-  useEffect(() => {
-    try {
-      if (viewingProject) {
-        window.localStorage.setItem('portfolio-archive-project', JSON.stringify(viewingProject))
-      } else {
-        window.localStorage.removeItem('portfolio-archive-project')
-      }
-    } catch {
-      // Ignore storage failures.
-    }
-  }, [viewingProject]);
-
-  useEffect(() => {
-    const handlePopState = (event) => {
-      if (event.state?.portfolioPage !== 'archive') {
-        return
-      }
-
-      skipHistoryEffectRef.current = true
-      setViewingProject(event.state.portfolioArchiveProject ?? null)
-    }
-
-    window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
-  }, []);
-
-  useEffect(() => {
-    if (skipHistoryEffectRef.current) {
-      skipHistoryEffectRef.current = false
-      return
-    }
-
-    window.history.pushState(
-      {
-        ...window.history.state,
-        portfolioPage: 'archive',
-        portfolioArchiveProject: viewingProject,
-      },
-      '',
-      window.location.href,
-    )
-  }, [viewingProject]);
 
   const getNextProject = (currentProject) => {
     const normalizedCurrentTitle = currentProject.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -100,19 +38,15 @@ export default function Archive() {
     return archiveProjects[(currentIndex - 1 + archiveProjects.length) % archiveProjects.length];
   };
 
-const openProjectDetail = (project) => {
+  const openProjectDetail = (project) => {
     const normalizedProjectTitle = project.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     
-    // Busca si existe en la página principal, pero si no existe, no pasa nada.
     const baseProject = projects.find((item) => {
       const normalizedItemTitle = item.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
       return item.id === project.id || normalizedItemTitle === normalizedProjectTitle;
     });
 
-    // Esta es la clave: usamos el ID de la base principal si existe, y si no, el ID del propio archivo ('07', '08', etc.)
     const resolvedId = baseProject?.id ?? project.id;
-
-    // Buscamos las imágenes y los spans usando el resolvedId
     const detailImages = projectPageImages[resolvedId] ?? projectDetailImages[resolvedId] ?? project.images ?? [];
     const detailSpans = projectPageImageSpans[resolvedId] ?? [];
     const detailMediaItems = detailImages.map((src, index) => ({
@@ -133,6 +67,27 @@ const openProjectDetail = (project) => {
       previousProject: getPreviousProject(project),
     });
   };
+
+  // INTERCEPTOR URL DIRECTA AL ARCHIVO (#/archive/07)
+  const getSlug = (title) => {
+    if (!title) return '';
+    return title.toString().toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+  };
+
+  useEffect(() => {
+    if (!viewingProject && window.location.hash.startsWith('#/archive/')) {
+      const urlSlug = window.location.hash.replace('#/archive/', '');
+      const projectToOpen = archiveProjects.find(p => getSlug(p.title) === urlSlug || p.id === urlSlug);
+      
+      if (projectToOpen) {
+        setTimeout(() => openProjectDetail(projectToOpen), 0);
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [archiveProjects]);
 
   if (viewingProject) {
     return (

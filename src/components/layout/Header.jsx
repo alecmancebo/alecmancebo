@@ -30,9 +30,9 @@ function BrandBlock({ onNavigatePage }) {
         transition: 'opacity 0.8s ease, transform 0.8s ease'
       }}
     >
-      <button type="button" className="header__brand-logo" onClick={handleLogoClick} aria-label="Go to home">
+      <a href="#/" className="header__brand-logo" onClick={(e) => { e.preventDefault(); handleLogoClick(); }} aria-label="Go to home">
         <img src="/elementos/graffiti.svg" alt="Brand Logo" />
-      </button>
+      </a>
     </div>
   )
 }
@@ -40,10 +40,11 @@ function BrandBlock({ onNavigatePage }) {
 function MainNav({ isMenuOpen, onToggleMenu, onCloseMenu, onNavigatePage, setTheme }) {
   const { t, setLanguage } = useLanguage()
 
+  // Mantenemos la estructura original, pero actualizamos los paths para el hash routing
   const navItems = [
-    { key: 'work', label: t('work'), path: '/', view: 'home' },
-    { key: 'about', label: t('about'), path: '/about', view: 'about' },
-    { key: 'archive', label: t('archive'), path: '/archive', view: 'archive' },
+    { key: 'work', label: t('work'), path: '#/', view: 'home' },
+    { key: 'about', label: t('about'), path: '#/about', view: 'about' },
+    { key: 'archive', label: t('archive'), path: '#/archive', view: 'archive' },
   ];
 
   return (
